@@ -150,9 +150,9 @@ This section will therefore highlight key operational aspects associated with Al
 
 ---
 
-|Previous Page|Next Page|
-|:--|:--|
-|[Security](./Security.md) |[AlwaysOn Reference Implementation](https://github.com/Azure/AlwaysOn/blob/main/docs/reference-implementation/README.md)
+|Previous Page|
+|:--|
+|[Security](./Security.md) |
 
 ---
 
