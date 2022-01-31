@@ -1,0 +1,9 @@
+# Owners of repository
+/.github/CODEOWNERS @calcof
+/README.md @calcof
+
+# Owners for introduction docs
+/docs/introduction/ @calcof @heoelri
+
+# Owners of design methodology docs
+/docs/design-guidelines/  @calcof @hjscherer @sebader @msimecek @heoelri @nielsams
