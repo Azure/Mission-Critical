@@ -119,7 +119,7 @@ ClusterHealthStatus
 
 These aggregated scores can subsequently be represented as a dependency chart using visualization tools like Grafana to illustrate the health model. The image below depicts an example layered health model from the [foundational-online](https://github.com/azure/alwayson-foundational-online) reference implementation, and demonstrates how a change in health state for a foundational component can have a cascading impact to user flows and overall application health (the example values correspond to the table in the previous image).
 
-[![AlwaysOn Example Health Model Visualization](/docs/media/images/alwayson-example-fault-states.png "AlwaysOn Example Health Model Visualization")](./Health-Modeling.md)
+[![AlwaysOn Example Health Model Visualization](/docs/media/alwayson-example-fault-states.png "AlwaysOn Example Health Model Visualization")](./Health-Modeling.md)
 
 ## Unified Data Sink for Correlated Analysis
 
@@ -376,7 +376,7 @@ Machine learning models can be applied to correlate and prioritize operational d
 
 More specifically, an AIOps methodology can be applied to distil critical insights about the behavior of the system, users, and DevOps processes. These insights can include identifying a problem happening now (*detect*), quantifying why the problem is happening (*diagnose*), or signaling what will happen in the future (*predict*). Such insights can be used to drive actions which adjust and optimize the application to mitigate active or potential issues, leveraging key business metrics, system quality metrics, and DevOps productivity metrics, to prioritize according to business impact. Conducted actions can themselves be infused into the system though a feedback loop which further trains the underlying model to drive additional efficiencies.
 
-[![AlwaysOn AIOps Methodologies](/docs/media/lwayson-aiops-methodology.png "AlwaysOn AIOps Methodologies")](./Health-Modeling.md)
+[![AlwaysOn AIOps Methodologies](/docs/media/alwayson-aiops-methodology.png "AlwaysOn AIOps Methodologies")](./Health-Modeling.md)
 
 There are multiple analytical technologies within Azure, such as Azure Synapse and Azure Databricks, which can be leveraged to build and train analytical models for AIOps. This section will therefore focus on how these technologies can be positioned within an AlwaysOn application design to accommodate AIOps and drive predictive action, focusing on Azure Synapse which reduces friction by bringing together the best of Azure's data services along with powerful new features.
 
