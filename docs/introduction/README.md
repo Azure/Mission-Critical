@@ -8,7 +8,7 @@ Getting started on Microsoft Azure is now easier than ever, however, building mi
 
 - Operationalizing mission-critical applications requires a high degree of engineering rigor and maturity throughout the end-to-end engineering lifecycle as well as the ability to learn from failure.
 
-AlwaysOn strives to address the challenge of building mission-critical applications on Azure, leveraging lessons from numerous customer applications and first-party solutions, such as Xbox Live, to provide actionable and authoritative guidance which applies [Well-Architected](/azure/architecture/framework/) best practices as the technical foundation for building and operating a highly reliable solution on Azure at-scale.
+AlwaysOn strives to address the challenge of building mission-critical applications on Azure, leveraging lessons from numerous customer applications and first-party solutions, such as Xbox Live, to provide actionable and authoritative guidance that applies [Well-Architected](/azure/architecture/framework/) best practices as the technical foundation for building and operating a highly reliable solution on Azure at-scale.
 
 More specifically, AlwaysOn provides a design methodology to guide readers through the design process of building a highly reliable cloud-native application on Azure, explaining key design considerations and requisite design decisions along with associated trade-offs. Additionally, AlwaysOn provides a gallery of fully functional production-ready reference implementations aligned to common industry scenarios, which can serve as a basis for further solution development.
 
