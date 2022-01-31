@@ -63,7 +63,7 @@ Align the target architecture with the Azure platform roadmap to inform the appl
 
 AlwaysOn can integrate seamlessly within an Azure Landing Zone, and is deployable within both the *Online* or *Corp. Connected* Landing Zone formats as demonstrated within the image below.
 
-[![AlwaysOn and Landing Zone Integration](./images/alwayson-landing-zones.gif "AlwaysOn Landing Zone Integration")](./Design-Areas.md)
+[![AlwaysOn and Landing Zone Integration](/docs/media/alwayson-landing-zones.gif "AlwaysOn Landing Zone Integration")](./Design-Areas.md)
 
 It is crucial to understand and identify in which connectivity scenario an AlwaysOn application requires since Azure Landing Zones support different landing zones archetypes.
 
