@@ -7,26 +7,28 @@ AlwaysOn is an open source project that provides a **prescriptive architectural 
 1. **Architectural Guidelines**: cloud-native design methodology to guide readers through the architectural process of building a mature mission-critical application on Microsoft Azure, articulating key design considerations and requisite design decisions along with associated trade-offs.
 
 2. **Fully Functional Reference Implementations**: end-to-end reference implementations intended to provide a solution orientated basis to showcase mission-critical application development on Microsoft Azure, leveraging Azure-native platform capabilities to maximize reliability and operational effectiveness.
-    * Design and implementation guidance to help readers understand and use the AlwaysOn design methodology in the context of a particular scenario.
-    * Production-ready technical artifacts including Infrastructure-as-Code (IaC) resources and Continuous-Integration/Continuous-Deployment (CI/CD) pipelines (GitHub and Azure DevOps) to deploy an AlwaysOn application with mature end-to-end operational wrappers.
+    - Design and implementation guidance to help readers understand and use the AlwaysOn design methodology in the context of a particular scenario.
+    - Production-ready technical artifacts including Infrastructure-as-Code (IaC) resources and Continuous-Integration/Continuous-Deployment (CI/CD) pipelines (GitHub and Azure DevOps) to deploy an AlwaysOn application with mature end-to-end operational wrappers.
 
 ## AlwaysOn | Table of Contents
 
-* [Introduction | What is AlwaysOn?](./docs/introduction/README.md) - Detailed introduction into AlwaysOn, the problem it is intended to solve and the value it can provide.
+- [Introduction | What is AlwaysOn?](./docs/introduction/README.md) - Detailed introduction into AlwaysOn, the problem it is intended to solve and the value it can provide.
 
-* [Design Methodology | AlwaysOn Architectural Approach](./docs/design-methodology/README.md) - Prescriptive guidance aligned to 8 critical design areas guides users to design and build an AlwaysOn application, outlining a recommended decision process.
+- [Design Methodology | AlwaysOn Architectural Approach](./docs/design-methodology/README.md) - Prescriptive guidance aligned to 8 critical design areas guides users to design and build an AlwaysOn application, outlining a recommended decision process.
 
-* [Foundational Reference Implementation | Online](https://github.com/azure/alwayson-foundational-online) - Everything required to understand and build a copy of the foundational reference implementation intended for online scenarios that are public-facing and do not require private network connectivity to a surrounding organizational technical estate.
+- [Foundational Reference Implementation | Online](https://github.com/azure/alwayson-foundational-online) - Everything required to understand and build a copy of the foundational reference implementation intended for online scenarios that are public-facing and do not require private network connectivity to a surrounding organizational technical estate.
 
-* [Foundational Reference Implementation | Connected](https://github.com/azure/alwayson-foundational-connected) - Everything required to understand and build a copy of the foundational reference implementation intended for private scenarios that require integration with an organizational technical estate for either public-facing or internal-facing workloads.
+- [Foundational Reference Implementation | Connected](https://github.com/azure/alwayson-foundational-connected) - Everything required to understand and build a copy of the foundational reference implementation intended for private scenarios that require integration with an organizational technical estate for either public-facing or internal-facing workloads.
 
 ## Helpful Information
 
-* [Getting Started](./docs/Getting-Started.md) outlines the process and required steps to deploy AlwaysOn in your environment, including preparing the Azure DevOps pipelines. It should be read in tandem with the [Reference Implementation Guide](./docs/reference-implementation/README.md).
+- Each reference implementation provides a getting *Getting Started guide* in the repository:
+  - Foundational Reference Implementation Online | [Getting started guide](https://github.com/Azure/AlwaysOn-foundational-online/blob/main/docs/reference-implementation/Getting-Started.md)
+  - Foundational Reference Implementation Connected | [Getting started guide](https://github.com/Azure/AlwaysOn-foundational-connected/blob/main/docs/reference-implementation/Getting-Started.md)
 
-* [Frequently Asked Questions](./docs/FAQ.md): captures responses to common issues and challenges associated with using the AlwaysOn project.
+- [Frequently Asked Questions](./docs/FAQ.md): captures responses to common issues and challenges associated with using the AlwaysOn project.
 
-* [Full List of Documentation](./docs/README.md) contains a complete breakdown of the AlwaysOn repository to help navigate the contained guidance.
+- [Full List of Documentation](./docs/README.md) contains a complete breakdown of the AlwaysOn repository to help navigate the contained guidance.
 
 ## Contributing
 
