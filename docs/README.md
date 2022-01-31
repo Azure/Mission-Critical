@@ -10,19 +10,19 @@
 
 ## AlwaysOn Design Methodology
 
-- [How to use the AlwaysOn Design Methodology](./design-guidelines/README.md)
-- [Design Principles](./design-guidelines/Principles.md)
-- [Design Areas](./design-guidelines/Design-Areas.md)
-  - [Reference Architecture](./design-guidelines/Design-Areas.md#reference-architecture)
-  - [Cross Cutting Concerns](./design-guidelines/Design-Areas.md#cross-cutting-concerns)
-  - [Application Design](./design-guidelines/App-Design.md)
-  - [Application Platform](./design-guidelines/App-Platform.md)
-  - [Data Platform](./design-guidelines/Data-Platform.md)
-  - [Health Modeling and Observability](./design-guidelines/Health-Modeling.md)
-  - [Deployment and Testing](./design-guidelines/Deployment-Testing.md)
-  - [Networking and Connectivity](./design-guidelines/Networking.md)
-  - [Security](./design-guidelines/Security.md)
-  - [Operational Procedures](./design-guidelines/Operational-Procedures.md)
+- [How to use the AlwaysOn Design Methodology](./design-methodology/README.md)
+- [Design Principles](./design-methodology/Principles.md)
+- [Design Areas](./design-methodology/Design-Areas.md)
+  - [Reference Architecture](./design-methodology/Design-Areas.md#reference-architecture)
+  - [Cross Cutting Concerns](./design-methodology/Design-Areas.md#cross-cutting-concerns)
+  - [Application Design](./design-methodology/App-Design.md)
+  - [Application Platform](./design-methodology/App-Platform.md)
+  - [Data Platform](./design-design-methodology/Data-Platform.md)
+  - [Health Modeling and Observability](./design-design-methodology/Health-Modeling.md)
+  - [Deployment and Testing](./design-design-methodology/Deployment-Testing.md)
+  - [Networking and Connectivity](./design-design-methodology/Networking.md)
+  - [Security](./design-design-methodology/Security.md)
+  - [Operational Procedures](./design-methodology/Operational-Procedures.md)
 
 ---
 
