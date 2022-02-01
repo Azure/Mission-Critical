@@ -17,7 +17,7 @@
   - [Cross Cutting Concerns](./design-methodology/Design-Areas.md#cross-cutting-concerns)
   - [Application Design](./design-methodology/App-Design.md)
   - [Application Platform](./design-methodology/App-Platform.md)
-  - [Data Platform](./design-design-methodology/Data-Platform.md)
+  - [Data Platform](./design-methodology/Data-Platform.md)
   - [Health Modeling and Observability](./design-design-methodology/Health-Modeling.md)
   - [Deployment and Testing](./design-design-methodology/Deployment-Testing.md)
   - [Networking and Connectivity](./design-design-methodology/Networking.md)
