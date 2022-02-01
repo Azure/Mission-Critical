@@ -18,10 +18,10 @@
   - [Application Design](./design-methodology/App-Design.md)
   - [Application Platform](./design-methodology/App-Platform.md)
   - [Data Platform](./design-methodology/Data-Platform.md)
-  - [Health Modeling and Observability](./design-design-methodology/Health-Modeling.md)
-  - [Deployment and Testing](./design-design-methodology/Deployment-Testing.md)
-  - [Networking and Connectivity](./design-design-methodology/Networking.md)
-  - [Security](./design-design-methodology/Security.md)
+  - [Health Modeling and Observability](./design-methodology/Health-Modeling.md)
+  - [Deployment and Testing](./design-methodology/Deployment-Testing.md)
+  - [Networking and Connectivity](./design-methodology/Networking.md)
+  - [Security](./design-methodology/Security.md)
   - [Operational Procedures](./design-methodology/Operational-Procedures.md)
 
 ---
