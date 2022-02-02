@@ -44,4 +44,4 @@ The AlwaysOn project strives to address this complex consumption experience for 
 
 ---
 
-[AlwaysOn - Full List of Documentation](/docs/README.md)
+[AlwaysOn | Documentation Inventory](/docs/README.md)

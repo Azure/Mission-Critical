@@ -12,7 +12,7 @@ To add or edit content within the AlwaysOn repositories, please take a fork of a
 
 The AlwaysOn project is separated into **3** different repositories:
 
-- [AlwaysOn](./README.md): contains the AlwaysOn design methodology, covering the design pattern ad approach to guide readers to defining a target AlwaysOn architecture.
+- [AlwaysOn](/docs/README.md): contains the AlwaysOn design methodology, covering the design pattern ad approach to guide readers to defining a target AlwaysOn architecture.
   - Overarching topics are documented as separate markdown documents within the `/docs/` directory.
 
 - [AlwaysOn-Foundational-Online](http://github.com/azure/alwayson-foundational-online): contains the AlwaysOn foundational reference implementation intended for online scenarios that are public-facing and do not require private network connectivity to a surrounding organizational technical estate.

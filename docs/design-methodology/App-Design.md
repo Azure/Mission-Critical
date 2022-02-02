@@ -316,4 +316,4 @@ When issues are not transient in-nature and cannot be fully mitigated within app
 
 ---
 
-[AlwaysOn - Full List of Documentation](/docs/README.md)
+[AlwaysOn | Documentation Inventory](/docs/README.md)

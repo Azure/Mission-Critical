@@ -76,4 +76,4 @@ Application architectures established using the AlwaysOn design methodology must
 
 ---
 
-[AlwaysOn - Full List of Documentation](/docs/README.md)
+[AlwaysOn | Documentation Inventory](/docs/README.md)

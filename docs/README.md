@@ -1,4 +1,4 @@
-# AlwaysOn | Table of Contents
+# AlwaysOn | Documentation Inventory
 
 - [Landing Page](/README.md)
 

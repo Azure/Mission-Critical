@@ -549,4 +549,4 @@ The delivery of network policies is consistent regardless of whether Azure or Ca
 
 ---
 
-[AlwaysOn - Full List of Documentation](/docs/README.md)
+[AlwaysOn | Documentation Inventory](/docs/README.md)

@@ -800,4 +800,4 @@ Azure Synapse provides an enterprise analytical platform that brings together re
 
 ---
 
-[AlwaysOn - Full List of Documentation](/docs/README.md)
+[AlwaysOn | Documentation Inventory](/docs/README.md)
