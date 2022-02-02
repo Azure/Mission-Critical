@@ -10,7 +10,7 @@ AlwaysOn is an open source project that provides a **prescriptive architectural 
     - Design and implementation guidance to help readers understand and use the AlwaysOn design methodology in the context of a particular scenario.
     - Production-ready technical artifacts including Infrastructure-as-Code (IaC) resources and Continuous-Integration/Continuous-Deployment (CI/CD) pipelines (GitHub and Azure DevOps) to deploy an AlwaysOn application with mature end-to-end operational wrappers.
 
-## AlwaysOn | Table of Contents
+## AlwaysOn | Navigation
 
 - [Introduction | What is AlwaysOn?](./docs/introduction/README.md) - Detailed introduction into AlwaysOn, the problem it is intended to solve and the value it can provide.
 
@@ -22,13 +22,13 @@ AlwaysOn is an open source project that provides a **prescriptive architectural 
 
 ## Helpful Information
 
-- Each reference implementation provides a getting *Getting Started guide* in the repository:
-  - Foundational Reference Implementation Online | [Getting started guide](https://github.com/Azure/AlwaysOn-foundational-online/blob/main/docs/reference-implementation/Getting-Started.md)
-  - Foundational Reference Implementation Connected | [Getting started guide](https://github.com/Azure/AlwaysOn-foundational-connected/blob/main/docs/reference-implementation/Getting-Started.md)
+The foundational reference implementations are separated within a dedicated repository containing all relevant documentation and technical artefacts, along with a *getting started guide*:
+  - [Foundational-Online Reference Implementation](https://github.com/Azure/AlwaysOn-foundational-online/blob/main/docs/reference-implementation/Getting-Started.md)
+  - [Foundational-Connected Reference Implementation](https://github.com/Azure/AlwaysOn-foundational-connected/blob/main/docs/reference-implementation/Getting-Started.md)
 
-- [Frequently Asked Questions](./docs/FAQ.md): captures responses to common issues and challenges associated with using the AlwaysOn project.
+[![AlwaysOn Repo Structure](/docs/media/alwayson-repo-structure.png "AlwaysOn Repo Structure")](./CONTRIBUTE.md)
 
-- [Full List of Documentation](./docs/README.md) contains a complete breakdown of the AlwaysOn repository to help navigate the contained guidance.
+> A list of [Frequently Asked Questions](./docs/FAQ.md) is provided to capture common issues and challenges associated with using the AlwaysOn project.
 
 ## Contributing
 

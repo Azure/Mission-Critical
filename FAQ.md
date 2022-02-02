@@ -35,4 +35,4 @@ Wherever possible, Azure Managed Identities are used to avoid exposing any sensi
 All secrets are stored in Azure Key Vault at deployment time via Terraform. These secrets are then loaded into Azure Kubernetes Service as Kubernetes secrets (and where required as environment variables in the pods) or handed over at deployment time as parameters for helm charts etc. Some temporary secrets, such as SSL/TLS certificates managed by *cert-manager*, are stored within the Kubernetes cluster only.
 
 ---
-[AlwaysOn | Documentation Inventory](/README.md)
+[AlwaysOn | Documentation Inventory](/docs/README.md)
