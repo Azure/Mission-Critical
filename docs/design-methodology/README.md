@@ -1,18 +1,18 @@
-# How to Use the AlwaysOn Design Methodology
+# How to Use the AlwaysOn design methodology
 
 The AlwaysOn design methodology is intended to define easy to follow guidance surrounding critical design decisions which must be made to produce a target AlwaysOn architecture.
 
-## Critical Design Path
+## Critical design path
 
 At the heart of an AlwaysOn target architecture definition lies a critical design path, comprised of 5 foundational [design principles](./Principles.md) and 8 [fundamental design areas](./Design-Areas.md) with heavily interrelated and dependent design decisions.
 
 Ultimately, the impact of decisions made within each area will reverberate across other design areas and design decisions. Readers are strongly advised to familiarize themselves with these 8 critical design areas, reviewing provided considerations and recommendations to better understand the consequences of encompassed decisions, which may later produce trade-offs or unforeseen consequences within related areas. For example, to define a target architecture it is critical to determine how best to monitor application health across key components. In this instance, the reader should review the Health Modelling design area, using the outlined recommendations to help drive decisions.
 
-## Design for Business Requirements
+## Design for business requirements
 
 Not all business-critical applications have the same requirements, and as a result the review considerations and design recommendations provided by the AlwaysOn design methodology may yield different design decisions and trade-offs which is to be expected.
 
-### Reliability Tiers
+### Reliability tiers
 
 Reliability is a subjective concept and for an application to be appropriately reliable it must reflect the business requirements surrounding it. For example, a mission-critical application with a 99.999% availability Service Level Objective (SLO) requires a much higher level of reliability and operational rigour than another application with an SLO of 99.9%. However, there are obvious financial and opportunity cost implications for introducing greater reliability, and such trade-offs should be carefully considered.
 
@@ -36,19 +36,19 @@ The image below demonstrates how the different reliability tiers and underlying 
 
 [![AlwaysOn Availability Targets](/docs/media/alwayson-slo.gif "AlwaysOn Availability Targets")](./README.md)
 
-### Opportunity Cost
+### Opportunity cost
 
 There is a opportunity cost associated with achieving an AlwaysOn application design since it requires significant engineering investment in fundamental reliability concepts, such as fully embracing Infrastructure as Code, deployment automation, and chaos engineering. This comes at a cost in terms of time/effort which could be invested elsewhere to deliver new application functionality and features.
 
 Furthermore, maximizing reliability with an AlwaysOn application design can also have a significant bearing on financial costs, primarily through the duplication of resources and the distribution of resources across regions to achieve high availability. To avoid excess costs, it is highly recommended that **AlwaysOn solutions not be over-engineered/over-optimized/over-provisioned beyond relevant business requirements**.
 
-## Synthetic Application Construction
+## Synthetic application construction
 
-In parallel to design activities, it is highly recommended that a synthetic AlwaysOn application environment be established using the [foundational-online](https://github.com/Azure/AlwaysOn-Foundational-Online) and [foundational-connected](https://github.com/Azure/AlwaysOn-Foundational-Connected) reference implementations. 
+In parallel to design activities, it is highly recommended that a synthetic AlwaysOn application environment be established using the [foundational-online](https://github.com/Azure/AlwaysOn-Foundational-Online) and [foundational-connected](https://github.com/Azure/AlwaysOn-Foundational-Connected) reference implementations.
 
 This provides hands-on opportunities to validate design decisions by replicating the target architecture, allowing for design uncertainty to be swiftly assessed. If applied correctly with representative requirement coverage, most problematic issues likely to hinder progress can be uncovered and subsequently addressed.
 
-## Target Architecture Evolution
+## Target architecture evolution
 
 Application architectures established using the AlwaysOn design methodology must continue to evolve in alignment with Azure platform roadmaps to support optimized sustainability.
 

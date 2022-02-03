@@ -1,4 +1,4 @@
-# AlwaysOn Design Principles
+# Design principles
 
 The AlwaysOn architectural framework presented within this repository is underpinned by 5 key design principles which serve as a compass for subsequent design decisions across technical domains and the critical design areas. Readers are strongly advised to familiarize themselves with these principles to better understand their impact and the trade-offs associated with non-adherence.
 
@@ -10,7 +10,7 @@ The AlwaysOn architectural framework presented within this repository is underpi
 
 [![AlwaysOn Design Principles](/docs/media/alwayson-design-principles.png "AlwaysOn Design Principles")](./Principles.md)
 
-## Maximum Reliability
+## Maximum reliability
 
 - **Design for failure** - Failure is impossible to avoid in a highly distributed multi-tenant cloud environment like Azure. By anticipating failures and cascading or correlated impact, from individual components to entire Azure regions, a solution can be designed and developed in a resilient manner.
 
@@ -20,7 +20,7 @@ The AlwaysOn architectural framework presented within this repository is underpi
 
 - **Design for self-healing** - Self healing describes a system's ability to deal with failures automatically through pre-defined remediation protocols connected to failure modes within the solution. It is an advanced concept that requires a high level of system maturity with monitoring and automation, but should be an aspiration from inception to maximize reliability.
 
-## Sustainable Performance and Scalability
+## Sustainable performance and scalability
 
 - **Design for scale-out** - Scale-out is a concept that focuses on a system's ability to respond to demand through horizontal growth. This means that as traffic grows, more resource units are added in parallel instead of increasing the size of the existing resources. A systems ability to handle expected and unexpected traffic increases through scale-units is essential to overall performance and reliability by further reducing the impact of a single resource failure.
 
@@ -30,9 +30,9 @@ The AlwaysOn architectural framework presented within this repository is underpi
 
 - **Baseline performance and identify bottlenecks** - Performance testing with detailed telemetry from every system component allows for the identification of bottlenecks within the system, including components which need to be scaled in relation to other components, and this information should be incorporated into the capacity model.
 
-- **Use Containerized or serverless architecture** - Using managed compute services and containerized architectures significantly reduces the ongoing administrative and operational overhead of designing, operating, and scaling applications by shifting infrastructure deployment and maintenance to the managed service provider.
+- **Use containerized or serverless architecture** - Using managed compute services and containerized architectures significantly reduces the ongoing administrative and operational overhead of designing, operating, and scaling applications by shifting infrastructure deployment and maintenance to the managed service provider.
 
-## Operations by Design
+## Operations by design
 
 - **Loosely coupled components** - Loose coupling enables independent and on-demand testing, deployments, and updates to components of the application while minimizing inter-team dependencies for support, services, resources, or approvals.
 
@@ -44,7 +44,7 @@ The AlwaysOn architectural framework presented within this repository is underpi
 
 - **Embrace continuous operational improvement** - Prioritize routine improvement of the system and user experience, leveraging a health model to understand and measure operational efficiency with feedback mechanisms to enable application teams to understand and address gaps in an iterative manner.
 
-## Cloud Native Design
+## Cloud native design
 
 - **Azure-native managed services** - Azure-native managed services are prioritized due to their lower administrative and operational overhead as well as tight integration with consistent configuration and instrumentation across the application stack.
 
@@ -54,7 +54,7 @@ The AlwaysOn architectural framework presented within this repository is underpi
 
 - **Landing Zone alignment** - Deployable within an [Azure Landing Zone](https://docs.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/) and aligned to the Azure Landing Zone design methodology, but also fully functional and  deployable in a bare environment outside of a Landing Zone.
 
-## Always Secure
+## Always secure
 
 - **Monitor the security of the entire solution and plan incident responses** - Correlate security and audit events to model application health and identify active threats. Establish automated and manual procedures to respond to incidents leveraging Security Information and Event Management (SIEM) tooling for tracking.
 
@@ -68,7 +68,7 @@ The AlwaysOn architectural framework presented within this repository is underpi
 
 - **Classify and encrypt data** - Classify data according to risk and apply industry standard encryption at rest and in transit, ensuring keys and certificates are stored securely and managed properly.
 
-# Additional Project Principles
+# Additional project principles
 
 - **Production ready artifacts**: Every AlwaysOn technical artifact will be ready for use in production environments with all end-to-end operational aspects considered.
 

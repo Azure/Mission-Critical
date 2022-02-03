@@ -1,4 +1,4 @@
-# Data Platform
+# Data platform
 
 The selection of an effective application data platform is a further crucial decision area which has far-reaching implications across other AlwaysOn design areas. Azure ultimately offers a multitude of relational, non-relational, and analytical data platforms which differ greatly in capability. It is therefore essential that key non-functional requirements be fully considered alongside other decision factors such as consistency, operability, cost, and complexity. For example, the ability to operate in a multi-write configuration will have a critical bearing on suitability for a globally available platform.
 
@@ -226,7 +226,7 @@ The 'Four Vs of Big Data' provide a framework to better understand requisite cha
 > More specifically, to maximize reliability it is critical that individual data platform components appropriately respond to application health through operational actions which may include other application components. For example, in a scenario where additional data platform resources are needed, scaling the data platform along with other application components according to a capacity model will likely be required, potentially through the provision of additional scale units. This approach will ultimately be constrained if there is a hard dependency of a centralized operations team to address issues related to the data platform in isolation.
 > Ultimately, the use of centralized data services (i.e. Central IT DBaaS) introduces operational bottlenecks that significantly hinder agility through a largely uncontextualized management experience, and should be avoided in a mission-critical or business-critical context.
 
-### Additional References
+### Additional references
 
 Additional data-platform guidance is available within the Azure Application Architecture Guide.
 
@@ -235,7 +235,7 @@ Additional data-platform guidance is available within the Azure Application Arch
 - [Non-Relational Data Stores](https://docs.microsoft.com/azure/architecture/data-guide/big-data/non-relational-data)
 - [Relational OLTP Data Stores](https://docs.microsoft.com/azure/architecture/data-guide/relational-data/online-transaction-processing)
 
-## Globally Distributed Multi-Write Datastore
+## Globally distributed multi-write datastore
 
 To fully accommodate the globally distributed active-active aspirations of an AlwaysOn application design, it is strongly recommended to consider a distributed multi-write data platform, where changes to separate writeable replicas are synchronized and merged between all replicas, with conflict resolution where required.
 
@@ -243,7 +243,7 @@ To fully accommodate the globally distributed active-active aspirations of an Al
 
 Azure Cosmos DB provides a globally distributed and highly available NoSQL datastore, offering multi-region writes and tunable consistency out-of-the-box. The design considerations and recommendations within this section will therefore focus on optimal Cosmos DB usage.
 
-### Design Considerations
+### Design considerations
 
 **Azure Cosmos DB**
 
@@ -508,13 +508,13 @@ Azure Cosmos DB provides a globally distributed and highly available NoSQL datas
 
 - For analytical workloads requiring multi-region availability, leverage the Cosmos DB Analytical Store, which applies a column format for optimized analytical queries.
 
-## Relational Data Technologies
+## Relational data technologies
 
 For scenarios with a highly relational data model or dependencies on existing relational technologies, the use of Azure Cosmos DB in a multi-write configuration might not be directly applicable. In such cases, it is vital that leveraged relational technologies are designed and configured to uphold the multi-region active-active aspirations of an AlwaysOn application design.
 
 Azure provides a variety of managed relational data platforms, including Azure SQL Database and Azure Database for common OSS relational solutions, including MySQL, PostgreSQL, and MariaDB. The design considerations and recommendations within this section will therefore focus on the optimal usage of Azure SQL Database and Azure Database OSS flavors to maximize reliability and global availability.
 
-### Design Considerations
+### Design considerations
 
 - Whilst relational data technologies can be configured to easily scale read operations, writes are typically constrained to go through a single primary instance, which places a significant constraint on scalability and performance.
 

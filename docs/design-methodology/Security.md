@@ -24,7 +24,7 @@ The [Zero Trust](https://www.microsoft.com/security/business/zero-trust) securit
 
 > The AlwaysOn design methodology and foundational reference implementation adopt a Zero Trust model to structure and guide the security design and implementation approach.
 
-### Design Considerations
+### Design considerations
 
 - Continuous security testing to validate mitigations for key security vulnerabilities.
   - *Is security testing performed as a part of automated CI/CD processes?*
@@ -59,7 +59,7 @@ The [Zero Trust](https://www.microsoft.com/security/business/zero-trust) securit
   - When application resources are locked down within private networks, a private data-plane connectivity path is required so that CI/CD tooling can perform application level deployments and maintenance.
     - This introduces additional complexity and requires a sequence within the deployment process through requisite private build agents.
 
-### Design Recommendations
+### Design recommendations
 
 - Use Azure Policy to enforce security and reliability configurations for all service, ensuring that any deviation is either remediated or prohibited by the control plane at configuration-time, helping to mitigate threats associated with 'malicious admin' scenarios.
 
@@ -82,7 +82,7 @@ The [Zero Trust](https://www.microsoft.com/security/business/zero-trust) securit
   - Apply granular RBAC to production CD pipelines to mitigate 'malicious admin' risks.
   - Consider the use of manual approval gates within production deployment pipelines to further mitigate 'malicious admin' risks and provide additional technical assurance for all production changes.
     - Additional security gates may come at a trade-off in terms of agility and should be carefully evaluated, with consideration given to how agility can be maintained even with manual gates.
-    - 
+
 - Define an appropriate security posture for all lower environments to ensure key vulnerabilities are mitigated.
   - Do not apply the same security posture as production, particularly with regards to data exfiltration, unless regulatory requirements stipulate the need to do so, since this will significantly compromise developer agility.
 
@@ -97,12 +97,12 @@ The [Zero Trust](https://www.microsoft.com/security/business/zero-trust) securit
   
 - Limit public network access to the absolute minimum required for the application to fulfil its business purpose to reduce the external attack surface.
   - Use [Azure Private Link](https://docs.microsoft.com/azure/private-link/private-endpoint-overview#private-link-resource) to establish [private endpoints](https://docs.microsoft.com/azure/private-link/private-endpoint-overview) for Azure resources which require secure network integration.
-   - Use a secure network path and [hosted private build agents](https://docs.microsoft.com/azure/devops/pipelines/agents/agents#install) for CI/CD tooling to deploy and configure Azure resources protected by Azure Private Link.
-     - [Microsoft-hosted agents](https://docs.microsoft.com/azure/devops/pipelines/agents/agents#microsoft-hosted-agents) will not be able to directly connect to network integrated resources.
+  - Use a secure network path and [hosted private build agents](https://docs.microsoft.com/azure/devops/pipelines/agents/agents#install) for CI/CD tooling to deploy and configure Azure resources protected by Azure Private Link.
+    - [Microsoft-hosted agents](https://docs.microsoft.com/azure/devops/pipelines/agents/agents#microsoft-hosted-agents) will not be able to directly connect to network integrated resources.
 
 - Enable [secret scanning](https://github.blog/2020-08-27-secure-at-every-step-putting-devsecops-into-practice-with-code-scanning/) and dependency scanning within the source code repository.
 
-## Threat Modeling
+## Threat modeling
 
 Threat modeling provides a risk based approach to security design, using identified potential threats to develop appropriate security mitigations. There is ultimately a myriad of possible threats with varying probabilities of occurrence, and in many cases threats can chain in unexpected, unpredictable, and even chaotic ways. This complexity and uncertainty is precisely why traditional technology requirement based security approaches are largely unsuitable for mission-critical cloud applications, and unfortunately means that the process of threat modelling for an AlwaysOn application is complex and unyielding.
 
@@ -116,23 +116,23 @@ To help navigate these challenges, a layered defense-in-depth approach should be
 
 > In an Enterprise-Scale context, the foundational platform provides an additional threat mitigation layer through the provision of centralized security capabilities within the Enterprise-Scale architecture.
 
-### Design Considerations
+### Design considerations
 
 - [STRIDE](https://en.wikipedia.org/wiki/STRIDE_(security)) provides a lightweight risk framework for evaluating security threats across key threat vectors.
   - Spoofed Identity: Impersonation of individuals with authority. For example, an attacker impersonating another user by leveraging their -
     - Identity
     - Authentication
   - Tampering Input: Modification of input sent to the application, or the breach of trust boundaries to modify application code. For example, an attacker using SQL Injection to delete data in a database table.
-    - Data Integrity
+    - Data integrity
     - Validation
-    - Blacklisting/Whitelisting
+    - Blacklisting/allowlisting
   - Repudiation of Action: Ability to refute actions already taken, and the ability of the application to gather evidence and drive accountability. For example, the deletion of critical data without the ability to trace to a malicious admin.
-    - Audit/Logging
+    - Audit/logging
     - Signing
   - Information Disclosure: Gaining access to restricted information. An example would be an attacker gaining access to a restricted file.
     - Encryption
-    - Data Exfiltration
-    - Man-in-the-Middle Attacks
+    - Data exfiltration
+    - Man-in-the-middle attacks
   - Denial of Service: Malicious application disruption to degrade user experience. For example, a DDoS botnet attack such as Slowloris.
     - DDoS
     - Botnets
@@ -142,7 +142,7 @@ To help navigate these challenges, a layered defense-in-depth approach should be
     - Authorization
     - Isolation
 
-### Design Recommendations
+### Design recommendations
 
 - Allocate engineering budget within each sprint to evaluate potential new threats and implement mitigations.
 
@@ -150,11 +150,11 @@ To help navigate these challenges, a layered defense-in-depth approach should be
   
 - Start with a service by service level threat modeling and unify the model by consolidating the thread model on application level.
 
-## Network Intrusion Protection
+## Network intrusion protection
 
 Preventing unauthorized access to an AlwaysOn application and encompassed data is vital to maintain availability and safeguard data integrity. This section will therefore explore the platform capabilities required to secure network access to an AlwaysOn application.
 
-### Design Considerations
+### Design considerations
 
 - The zero trust model assumes a breached state and verifies each request as though it originates from an uncontrolled network.
   - An advanced zero-trust network implementation employs micro-segmentation and distributed ingress/egress micro-perimeters.
@@ -184,7 +184,7 @@ Preventing unauthorized access to an AlwaysOn application and encompassed data i
 
 - Packet capture in Azure Network Watcher is limited to a maximum period of five hours.
 
-### Design Recommendations
+### Design recommendations
 
 - To maximize network security, limit network access to the absolute minimum required for the application to fulfil its purpose.
   - Use internal network paths, such as Azure Bastion, or automatically managed temporary firewall rules to enable direct data-plane infrastructure access.
@@ -216,11 +216,11 @@ Preventing unauthorized access to an AlwaysOn application and encompassed data i
 
 > In an Enterprise-Scale context, the foundational platform will provide network connectivity to on-premises data centers using Express Route configured with private peering.
 
-## Data Integrity Protection
+## Data integrity protection
 
 Encryption is a vital step toward ensuring data integrity and is ultimately one of the most important security capabilities which can be applied to mitigate a wide array of threats. This section will therefore provide key considerations and recommendations related to encryption and key management in order to safeguard data without compromising application reliability.
 
-### Design Considerations
+### Design considerations
 
 - Azure Key Vault has transaction limits for keys and secrets, with throttling applied per vault within a certain period.
 
@@ -250,7 +250,7 @@ Encryption is a vital step toward ensuring data integrity and is ultimately one 
 
 - When traffic moves between Azure data centers, MACsec data-link layer encryption is used on the underlying network hardware to secure data in-transit outside of the physical boundaries not controlled by Microsoft or on behalf of Microsoft.
 
-### Design Recommendations
+### Design recommendations
 
 - Use Azure Key Vault to store all application secrets and certificates.
   - Deploy a separate collocated Azure Key Vault with every regional deployment stamp.
@@ -280,13 +280,13 @@ Encryption is a vital step toward ensuring data integrity and is ultimately one 
 
 - Enable firewall and Private Endpoints on all application Azure Key Vault to control access.
 
-## Policy Driven Governance
+## Policy driven governance
 
 Security conventions are ultimately only effective if consistently and holistically enforced across all application services and teams. Azure Policy provides a framework to enforce security and reliability baselines, ensuring continued compliance with a common engineering criteria for an AlwaysOn application. More specifically, Azure Policy forms a key part of the Azure Resource Manager (ARM) control plane, supplementing RBAC by restricting what actions authorized users can perform, and can be leveraged to enforce vital security and reliability conventions across utilized platform services.
 
 This section will therefore explore key considerations and recommendations surrounding the use of Azure Policy driven governance for an AlwaysOn application, ensuring security and reliability conventions are continuously enforced.
 
-### Design Considerations
+### Design considerations
 
 - Azure Policy provides a mechanism to drive compliance by enforcing security and reliability conventions, such as the use of Private Endpoints or the use of Availability Zones.
 
@@ -304,7 +304,7 @@ This section will therefore explore key considerations and recommendations surro
 
 - Azure Policy provides a critical input for compliance reporting and security auditing.
 
-### Design Recommendations
+### Design recommendations
 
 - Map regulatory and compliance requirements to Azure Policy definitions.
   - For example, if there are data residency requirements, a policy should be applied to restrict available deployment regions.

@@ -1,4 +1,4 @@
-# Health Modeling and Observability
+# Health modeling and observability
 
 Health modeling and observability are essential concepts to maximize reliability, which focus on robust and contextualized instrumentation and monitoring to gain critical insight into application health, promoting the swift identification and resolution of issues.
 
@@ -65,7 +65,7 @@ In order to build a health model it is first necessary to define what applicatio
 - Building and maintaining a health model is an iterative process and engineering investment should be aligned to drive continuous improvements.
   - Define a process to continually evaluate and fine-tune the accuracy of the model, and consider investing in machine learning models to further train the model.
 
-### Reference Layered Health Model
+### Reference layered health model
 
 > Please note that this section provides a simplified representation of a layered application health model to assist readers with the underlying concept. For a more comprehensive and contextualized health model reference please refer to the [foundational-online](https://github.com/azure/alwayson-foundational-online) and [foundational-connected](https://github.com/azure/alwayson-foundational-connected) reference implementations.
 
@@ -73,7 +73,7 @@ When implementing a health model it is critical to first define the health of in
 
 [![AlwaysOn Example Health Definitions](/docs/media/alwayson-example-health-definitions.png "AlwaysOn Example Health Definitions")](./Health-Modeling.md)
 
-This definition of health can subsequently be represented by a KQL query, as demonstrated by the example AKS query below that aggregates InsightsMetrics (AKS Container Insights) and AzureMetrics (Azure Diagnostics) and compares (inner join) against modelled health thresholds.
+This definition of health can subsequently be represented by a KQL query, as demonstrated by the example AKS query below that aggregates InsightsMetrics (AKS Container insights) and AzureMetrics (Azure diagnostics) and compares (inner join) against modelled health thresholds.
 
 ``` kql
 // ClusterHealthStatus
@@ -121,7 +121,7 @@ These aggregated scores can subsequently be represented as a dependency chart us
 
 [![AlwaysOn Example Health Model Visualization](/docs/media/alwayson-example-fault-states.png "AlwaysOn Example Health Model Visualization")](./Health-Modeling.md)
 
-## Unified Data Sink for Correlated Analysis
+## Unified data sink for correlated analysis
 
 Numerous operational datasets must be gathered from all system components to accurately represent a defined heath model, considering logs and metrics from both application components and underlying Azure resources. This vast amount of data ultimately needs to be stored in a format that allows for near-real time interpretation to facilitate swift operational action. Moreover, correlation across all encompassed data sets is required to ensure effective analysis is unbounded, allowing for the layered representation of health.
 
@@ -129,7 +129,7 @@ A unified data sink is therefore required to ensure all operational data is swif
 
 [![AlwaysOn Health Data Collection](/docs/media/alwayson-health-data-collection.png "AlwaysOn Health Data Collection")](./Health-Modeling.md)
 
-### Design Considerations
+### Design considerations
 
 **Azure Monitor**
 
@@ -205,7 +205,7 @@ A unified data sink is therefore required to ensure all operational data is swif
 
 - Log Analytics queries are saved as *functions* within Log Analytics (`savedSearches`).
 
-### Design Recommendations
+### Design recommendations
 
 - Use Azure Monitor for Logs (Log Analytics) as a unified data sink to provide a 'single pane' across all operational data sets.
   - Decentralize Log Analytics Workspaces across all leveraged deployment regions. Each Azure region with an application deployment should consider a Log Analytics Workspace to gather all operational data originating from that region. All global resources should leverage a separate dedicated Log Analytics Workspace which should be deployed within a primary deployment region.
@@ -276,7 +276,7 @@ This section will therefore focus on the use of Azure Dashboards and Grafana to 
 
 >Robust dashboarding is essential to diagnose issues that have already occurred, and support operational teams in detecting and responding to issues as they happen.
 
-### Design Considerations
+### Design considerations
 
 - When visualizing the health model using Log Analytics queries, note that there are [Log Analytics limits on concurrent and queued queries, as well as the overall query rate](https://docs.microsoft.com/azure/azure-monitor/service-limits#user-query-throttling), with subsequent queries queued and throttled.
 
@@ -290,7 +290,7 @@ This section will therefore focus on the use of Azure Dashboards and Grafana to 
 - If multiple users leverage dashboards within a tool like Grafana, the number of queries sent to Log Analytics multiplies quickly. 
   - Reaching the concurrent query limit on Log Analytics will queue subsequent queries, making the dashboard experience feel 'slow'. 
 
-### Design Recommendations
+### Design recommendations
 
 - Collect and present queried outputs from all regional Log Analytics Workspaces and the global Log Analytics Workspace to build a unified view of application health.
 
@@ -323,7 +323,7 @@ This section will therefore focus on the use of Azure Dashboards and Grafana to 
 
 - If the concurrent query limit of log analytics is being reached, consider optimizing the retrieval pattern by (temporarily) storing the data required for the dashboard in a high performance datastore such as Azure SQL.
 
-## Automated Incident Response
+## Automated incident response
 
 While the visual representations of application health provides invaluable operational and business insights to support issue detection and diagnosis, it relies on the readiness and interpretations of operational teams, as well as the effectiveness of subsequent human-triggered responses. Therefore, to maximize reliability it is necessary to implement extensive alerting to detect proactively respond to issues in near real-time.
 
@@ -331,7 +331,7 @@ While the visual representations of application health provides invaluable opera
 
 >Alerting and automated action is critical to effectively detect and swiftly respond to issues as they happen, before greater negative impact can occur. Alerting also provides a mechanism to interpret incoming signals and respond to prevent issues before they occur.
 
-### Design Considerations
+### Design considerations
 
 - Alert rules are defined to fire when a conditional criteria is satisfied for incoming signals, which can include a variety of [data sources](https://docs.microsoft.com/azure/azure-monitor/agents/data-sources), such as metrics, log search queries, or availability tests.
 
@@ -350,7 +350,7 @@ While the visual representations of application health provides invaluable opera
 - Alerts can be integrated within a layered health model by creating an Alert Rule for a saved log search query from the model's 'root' scoring function.
   - For example, using 'WebsiteHealthScore' and alerting on a numeric value that represents an 'Unhealthy' state.
 
-### Design Recommendations
+### Design recommendations
 
 - For resource-centric alerting, create alert rules within Azure Monitor to ensure all diagnostic data is available for the alert rule criteria.
 
@@ -370,7 +370,7 @@ While the visual representations of application health provides invaluable opera
 
 - Conduct operational readiness tests as part of CI/CD processes to validate key alert rules for deployment updates.
 
-## Predictive Action and AIOps
+## Predictive action and AIOps
 
 Machine learning models can be applied to correlate and prioritize operational data, helping to gather critical insights related to filtering excessive alert 'noise' and predicting issues before they cause impact, as well as accelerating incident response when they do.
 
@@ -382,7 +382,7 @@ There are multiple analytical technologies within Azure, such as Azure Synapse a
 
 >AIOps is used to drive predictive action, interpreting and correlating complex operational signals observed over a sustained period in order to better respond to and prevent issues before they occur.
 
-### Design Considerations
+### Design considerations
 
 - Azure Synapse Analytics offers multiple Machine Learning (ML) capabilities.
   - ML models can be trained and run on Synapse Spark Pools with libraries including MLLib, SparkML and MMLSpark, as well as popular open-source libraries, such as [Scikit Learn](https://scikit-learn.org/stable/).
@@ -411,7 +411,7 @@ There are multiple analytical technologies within Azure, such as Azure Synapse a
 - To fully incorporate AIOps it is necessary to feed near real-time observability data into real-time ML inference models on an ongoing basis.
   - Capabilities such as anomaly detection should be evaluated within the observability data stream.
 
-### Design Recommendations
+### Design recommendations
 
 - Ensure all Azure resources and application components are fully instrumented so that a complete operational dataset is available for AIOps model training.
 

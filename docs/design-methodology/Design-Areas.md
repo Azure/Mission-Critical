@@ -1,4 +1,4 @@
-# AlwaysOn Critical Design Areas
+# Critical design areas
 
 The 8 design areas below represent the architecturally significant topics which must be discussed and designed for when defining a target AlwaysOn application architecture. In this regard, this section of the repository is intended to provide prescriptive and opinionated guidance to support readers in designing an AlwaysOn solution.
 
@@ -11,7 +11,7 @@ The 8 design areas below represent the architecturally significant topics which 
 - [Security](./Security.md)
 - [Operational Procedures](./Operational-Procedures.md)
 
-These 8 critical design areas will be explored at length within ensuing pages, for which critical review considerations and design recommendations are provided along with their broader design impact across other areas. Ultimately, the design areas are interrelated and decisions made within one area can impact or influence decisions across the entire design, so readers are encouraged to use the provided design guidance to navigate the key design decisions.
+These eight critical design areas will be explored at length within ensuing pages, for which critical review considerations and design recommendations are provided along with their broader design impact across other areas. Ultimately, the design areas are interrelated and decisions made within one area can impact or influence decisions across the entire design, so readers are encouraged to use the provided design guidance to navigate the key design decisions.
 
 [![AlwaysOn Design Areas](/docs/media/alwayson-design-areas.png "AlwaysOn Design Areas")](./Design-Areas.md)
 
@@ -29,7 +29,7 @@ The image below represents a target technical state recommended for mission-crit
 
 There are several critical cross-cutting themes which traverse the 8 design areas and are contextualized below for subsequent consideration within each design area.
 
-### Scale Limits
+### Scale limits
 
 Various [limits and quotas within the Azure platform](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits) may have a significant bearing on large AlwaysOn application scenarios and must be appropriately considered by the target architecture.
 
@@ -49,7 +49,7 @@ Maximize reliability and operability through the holistic automation of all depl
 - Use declarative management semantics over imperative
 - Prioritize templating over scripting; only use scripting when it is not possible to use templates
 
-### Azure Roadmap Alignment & Regional Service Availability
+### Azure roadmap alignment and regional service availability
 
 Align the target architecture with the Azure platform roadmap to inform the application trajectory, and ensure that required services and features are available within the chosen deployment regions.
 
@@ -57,7 +57,7 @@ Align the target architecture with the Azure platform roadmap to inform the appl
 - Unblock with preview services or by taking dependencies on the Azure platform roadmap
 - Only take a dependency on committed services and features; validate roadmap dependencies with Microsoft engineering product groups
 
-### Azure Landing Zone Integration
+### Azure Landing Zone integration
 
 [Azure Landing Zones](https://github.com/azure/cloud-adoption-framework/ready/landing-zone/) provides prescriptive architectural guidance to define a reliable and scalable shared-service platform for enterprise Azure deployments with requisite centralised governance. 
 

@@ -1,4 +1,4 @@
-# Deployment and Testing
+# Deployment and testing
 
 Application outages are often caused by failed deployments or erroneous releases, which is precisely why the design of Continuous Integration and Continuous Deployment (CI/CD) pipelines to encompass deployment and testing methodologies plays such a critical role in the overall reliability of an AlwaysOn application.
 
@@ -317,11 +317,11 @@ This section will therefore examine the optimal configuration of container regis
 - Use Azure AD integrated authentication to push and pull images instead of relying on access keys.
   - For optimal security, fully disable the use of the admin access key.
 
-## Secret Management
+## Secret management
 
 Secret management is a key technical domain in the context of both security and reliability, since the secret management solution for an AlwaysOn application must provide requisite security and also offer an appropriate level of availability to align with maximum reliability aspirations.
 
-### Design Considerations
+### Design considerations
 
 - There are a multitude of key and secret management solutions available that can be leveraged on Azure.
 
@@ -346,7 +346,7 @@ There are three common approaches applied to define at what point secrets must b
 
 - Secret updates or rotation will require a full redeployment in order to take effect.
 
-**Application Start-Up Retrieval**
+**Application start-up retrieval**
 
 - Retrieving and inject secrets at application start up provides the benefit that secrets can more easily be updated or rotated.
   - A restart of the application is required to fetch the latest value.
@@ -358,7 +358,7 @@ There are three common approaches applied to define at what point secrets must b
 - The disadvantage of this approach is that it creates a runtime dependency to the secret management solution.
   - If the secret management solution experiences an outage, application components already running **may** be able to continue serving requests, however, any restart or scale-out operations will likely result in failure.
 
-**Runtime Retrieval**
+**Runtime retrieval**
 
 - Retrieving secrets at runtime from within the application itself serves as the most secure approach since even the application platform never has access to secrets.
 
@@ -368,7 +368,7 @@ There are three common approaches applied to define at what point secrets must b
 - The application itself needs to be able to authenticate to the secret management system.
   - For AKS the latter can be achieved using [Pod-managed Identities](https://docs.microsoft.com/azure/aks/use-azure-ad-pod-identity), but that is currently (as of August 2021) still in preview.
 
-### Design Recommendations
+### Design recommendations
 
 - Where possible, use Azure AD authentication to connect to other services instead of using connection strings or keys.
   - Use this in conjunction with Azure Managed Identities to remove the need for any secrets to be stored on the application platform.
@@ -395,7 +395,7 @@ Testing is ultimately a key concern for both the local developer experience ("[I
 
 The scope of this section focuses on testing conducted within the outer loop for a product release, considering a variety of test scenarios, such as unit, build, static, security, integration, regression, UX, performance, capacity and failure injection (chaos). The order of conducted tests is also a critical consideration due to various dependencies, such as the need to have a running application environment.
 
-### Design Considerations
+### Design considerations
 
 - With high degrees of deployment automation, automated testing is essential to validate application or infrastructure changes in a timely and repeatable manor.
 
@@ -453,7 +453,7 @@ The scope of this section focuses on testing conducted within the outer loop for
 
 - Performance testing combines aspects of *load* and *stress testing* to validate performance under load, and establish benchmark behaviors for application operation.
 
-**Failure Injection (Chaos) Testing**
+**Failure injection (chaos) testing**
 
 - Chaos testing introduces artificial failures to the system to validate how the system reacts and the effectiveness of resiliency measures, operational procedures and mitigations.
 
@@ -464,7 +464,7 @@ The scope of this section focuses on testing conducted within the outer loop for
   - Provides built-in chaos experiments for common fault scenarios, providing a growing set of 'behind the curtain' experiments for underlying and abstracted components of Azure services.
   - Supports custom experiments targeting infrastructure and application components.
 
-**Security (Penetration) Testing**
+**Security (penetration) testing**
 
 - Penetration testing is used to ensures that an application and its environment satisfies an expected security posture.
 
@@ -472,7 +472,7 @@ The scope of this section focuses on testing conducted within the outer loop for
 
 - Security testing can encompass the end-to-end software supply chain and package dependencies, with scanning and monitoring for known Common Vulnerabilities and Exposures (CVE).
 
-### Design Recommendations
+### Design recommendations
 
 - All testing of both infrastructure and application components should be fully automated to ensure consistency.
 

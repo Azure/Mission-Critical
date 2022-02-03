@@ -1,15 +1,15 @@
-# Operational Procedures
+# Operational procedures
 
 The AlwaysOn design methodology leans heavily on the principles *automation wherever possible* and *configuration as code* to drive reliable and effective operations through DevOps processes, with automated deployment pipelines used to execute versioned application and infrastructure code artifacts within a source repository. While this level of DevOps adoption requires substantial engineering investment to instantiate and discipline to maintain, it yields significant operational dividends, enabling consistent and accurate operational outcomes within minimal manual operational procedures.
 
 - [DevOps Processes](#devops-processes)
 - [Application Operations](#application-operations)
 
-## DevOps Processes
+## DevOps processes
 
 DevOps is a fundamental characteristic of the AlwaysOn design methodology, providing the engineering mindset, processes, and tooling to deliver application services in a fast, efficient, and reliable manner. More specifically, DevOps brings together development and operational processes as well as teams into a single engineering function that encompasses the entire application lifecycle, leveraging automation and DevOps tooling to conduct deployment operations swiftly and reliably. This section will therefore explore how the adoption of DevOps and related deployment methods is used to drive effective and consistent operational procedures.
 
-### Design Considerations
+### Design considerations
 
 - DevOps processes support and sustain the concepts of continuous integration and continuous deployment (CI/CD), while fostering a culture of continuous improvement.
 
@@ -28,7 +28,7 @@ DevOps is a fundamental characteristic of the AlwaysOn design methodology, provi
 - A DevOps engineering team can consider a variety of granular Azure RBAC roles for different technical personas, such as AppDataOps for database management.
   - A zero trust model can and should be applied across different application DevOps personas.
 
-### Design Recommendations
+### Design recommendations
 
 - Define configuration settings and updates for application components or underlying infrastructure as code.
   - Manage any changes to code through consistent release and update process, including tasks such as key or secret rotation and permission management.
@@ -63,7 +63,7 @@ Furthermore, there is a varied set of operational capabilities provided by diffe
 
 This section will therefore highlight key operational aspects associated with AlwaysOn application design and recommended platform services.
 
-### Design Considerations
+### Design considerations
 
 - Azure services provide a combination of built-in (enabled by default) and configurable platform capabilities, such as zonal redundancy or geo-replication. The service-level configuration of each service within an application must therefore be considered by operational procedures.
   - Many configurable capabilities incur an additional cost, such as the multi-write deployment configuration for Cosmos DB.
@@ -83,7 +83,7 @@ This section will therefore highlight key operational aspects associated with Al
   - Locks introduce management overhead within deployment pipelines which must remove locks, perform deployment steps, before subsequently re-enabling.
   - Generally, for most resource a robust RBAC process, with tight restrictions on who can perform write operations, should be preferred over locking resources.
 
-**Update Management**
+**Update management**
 
 - Key, secret, and certificate expiry are common causes of application outage.
 
@@ -100,7 +100,7 @@ This section will therefore highlight key operational aspects associated with Al
 
 - Azure Policy provides native support for a wide variety of Azure resources.
 
-### Design Recommendations
+### Design recommendations
 
 - Use an active-active deployment model, leveraging a health model and automated scale-operations to ensure no failover intervention is required.
   - If using an active-passive or active-standby model, ensure failover procedures are automated or at least codified within pipelines so that manual steps besides triggering is required during operational crises.
@@ -135,7 +135,7 @@ This section will therefore highlight key operational aspects associated with Al
 - Apply a resource lock to prevent the deletion of long-lived global resources, such as Azure Cosmos DB.
   - Avoid the use of resource locks on ephemeral regional resources, and instead rely on the appropriate use of Role Based Access Control (RBAC) and CI/CD pipelines to control operational updates.
 
-**Update Management**
+**Update management**
 
 - Update external libraries, SDKs, and runtimes frequently, treating it as any other change to the application. This will ensure the latest security vulnerabilities and performance optimizations are applied.
   - Ensure all updates are validated prior to production release.

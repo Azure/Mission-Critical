@@ -1,4 +1,4 @@
-# Networking and Connectivity
+# Networking and connectivity
 
 Networking is a fundamental design topic for an AlwaysOn application, particularly given the recommended globally distributed active-active design approach.
 
@@ -11,7 +11,7 @@ This section will therefore explore various network topology topics at an applic
 - [Inter-Zone and Inter-Region Connectivity](#inter-zone-and-inter-region-connectivity)
 - [Micro-Segmentation and Kubernetes Network Policies](#micro-segmentation-and-kubernetes-network-policies)
 
-## Global Traffic Routing
+## Global traffic routing
 
 The use of multiple active regional deployment stamps necessitates a global routing service to distribute traffic to each active stamp.
 
@@ -21,7 +21,7 @@ Within Azure, [Azure Front Door](https://azure.microsoft.com/services/frontdoor/
 
 This section will therefore explore key differences between Azure Front Door, Azure Traffic Manager, and Azure Standard Load Balancer to define how each can can be leveraged to optimize different scenarios.
 
-### Design Considerations
+### Design considerations
 
 - A routing service bound to a single region represents a single-point-of-failure and a significant risk with regards to regional outages.
 
@@ -126,7 +126,7 @@ This section will therefore explore key differences between Azure Front Door, Az
 - Cross-region load balancer is configured with a global frontend public IP address and uses health probes to monitor availability of regional load balancers.
   - If there is a regional failure, the affected load balancer is taken out of rotation until it becomes available again.
 
-### Design Recommendations
+### Design recommendations
 
 - Use Azure Front Door as the primary global traffic routing service for HTTP/S scenarios.
   - Azure Front Door is strongly advocated for HTTP/S workloads as it provides optimized traffic routing, transparent failover, private backend endpoints (with the Premium SKU), edge caching and integration with Web Application Firewall (WAF).
@@ -190,13 +190,13 @@ Following diagram illustrates a redundant global load balancer configuration wit
 - Consideration should be given to third-party CDN providers in order to achieve edge caching when using Azure Traffic Manager as a primary global routing service.
   - Where edge WAF capabilities are also offered by the third-party service, consideration should be given to simplify the ingress path and potentially remove the need for Application Gateway.
 
-## Application Delivery Services
+## Application delivery services
 
 In addition to redundant global traffic routing, the network ingress path for an AlwaysOn application must also consider requisite application delivery services to ensure secure, reliable, and scalable ingress traffic.
 
 This section will therefore build on recommendations from the previous global routing section by exploring key application delivery capabilities, considering relevant services such as Azure Standard Load Balancer, Azure Application Gateway, and Azure API Management.
 
-### Design Considerations
+### Design considerations
 
 - TLS encryption is critical to ensure the integrity of inbound user traffic to an AlwaysOn application, with **TLS Offloading** applied only at the point of a stamp's ingress to decrypt incoming traffic.
   - TLS Offloading Requires the private key of the TLS certificate to decrypt traffic.
