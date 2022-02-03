@@ -92,9 +92,8 @@ For web and API based workload scenarios Azure App Services offers a feasible al
   - Kubernetes as well as managed Kubernetes offerings like AKS are widely available and can address concerns reg. vendor lock-in.
 
 - AKS provides a [control plane](https://kubernetes.io/docs/concepts/overview/components/) that is managed by Microsoft.
-  - Kubernetes master servers are managed by Microsoft.
-    - By default the control plane of AKS is provided free of charge, but without any guaranteed SLA.
-    - Customers only manage and pay for the worker nodes which form the cluster.
+  - By default the control plane of AKS is provided free of charge, but without any guaranteed SLA.
+  - Customers only manage and pay for the worker nodes which form the cluster.
 
 - The optional [AKS Uptime SLA](https://docs.microsoft.com/azure/aks/uptime-sla) provides availability guarantees for the Kubernetes control plane.
   - 99.95% availability of the Kubernetes API server endpoint for AKS Clusters that use Azure Availability Zones.
