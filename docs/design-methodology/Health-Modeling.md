@@ -451,4 +451,4 @@ There are multiple analytical technologies within Azure, such as Azure Synapse a
 
 ---
 
-[AlwaysOn - Full List of Documentation](/docs/README.md)
+[AlwaysOn | Documentation Inventory](/docs/README.md)

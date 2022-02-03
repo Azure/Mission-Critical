@@ -483,4 +483,4 @@ Previous Page|Next Page|
 
 ---
 
-[AlwaysOn - Full List of Documentation](/docs/README.md)
+[AlwaysOn | Documentation Inventory](/docs/README.md)

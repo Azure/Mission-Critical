@@ -99,4 +99,4 @@ It is crucial to understand and identify in which connectivity scenario an Alway
 
 ---
 
-[AlwaysOn - Full List of Documentation](/docs/README.md)
+[AlwaysOn | Documentation Inventory](/docs/README.md)

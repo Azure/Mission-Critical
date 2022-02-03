@@ -548,4 +548,4 @@ AIOps methodologies can be applied within CI/CD pipelines to supplement traditio
 
 ---
 
-[AlwaysOn - Full List of Documentation](/docs/README.md)
+[AlwaysOn | Documentation Inventory](/docs/README.md)

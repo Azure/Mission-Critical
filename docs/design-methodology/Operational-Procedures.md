@@ -172,4 +172,4 @@ This section will therefore highlight key operational aspects associated with Al
 
 ---
 
-[AlwaysOn - Full List of Documentation](/docs/README.md)
+[AlwaysOn | Documentation Inventory](/docs/README.md)

@@ -100,4 +100,4 @@ The AlwaysOn architectural framework presented within this repository is underpi
 
 ---
 
-[AlwaysOn - Full List of Documentation](/docs/README.md)
+[AlwaysOn | Documentation Inventory](/docs/README.md)
