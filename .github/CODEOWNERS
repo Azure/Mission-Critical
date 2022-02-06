@@ -1,0 +1,6 @@
+# Owners of repository
+/.github/CODEOWNERS @calcof
+/README.md @calcof
+
+# Owners of docs
+/docs/  @calcof @hjscherer @sebader @msimecek @heoelri @nielsams
