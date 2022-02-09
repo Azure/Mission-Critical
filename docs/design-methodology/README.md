@@ -34,7 +34,7 @@ The image below demonstrates how the different reliability tiers and underlying 
 
 [![AlwaysOn Reliability Tiers](/docs/media/alwayson-reliability-tiers.png "AlwaysOn Reliability Tiers")](./README.md)
 
-[![AlwaysOn Availability Targets](/docs/media/alwayson-slo.gif "AlwaysOn Availability Targets")](./README.md)
+[![AlwaysOn Availability Targets](/docs/media/AlwaysOn-SLO.gif "AlwaysOn Availability Targets")](./README.md)
 
 ### Opportunity cost
 
