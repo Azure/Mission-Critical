@@ -23,8 +23,8 @@ AlwaysOn is an open source project that provides a **prescriptive architectural 
 ## Helpful Information
 
 The foundational reference implementations are separated within dedicated repositories containing all relevant documentation and technical artifacts, along with a *getting started guide*:
-  - [Foundational-Online Reference Implementation](https://github.com/Azure/AlwaysOn-foundational-online/blob/main/docs/reference-implementation/Getting-Started.md)
-  - [Foundational-Connected Reference Implementation](https://github.com/Azure/AlwaysOn-foundational-connected/blob/main/docs/reference-implementation/Getting-Started.md)
+  - [Foundational-Online Reference Implementation](https://github.com/Azure/AlwaysOn-foundational-online)
+  - [Foundational-Connected Reference Implementation](https://github.com/Azure/AlwaysOn-foundational-connected)
 
 [![AlwaysOn Repo Structure](/docs/media/alwayson-repo-structure.png "AlwaysOn Repo Structure")](./CONTRIBUTE.md)
 
