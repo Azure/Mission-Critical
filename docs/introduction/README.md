@@ -18,7 +18,7 @@ AlwaysOn is an open source architectural approach to building highly-reliable cl
 
 The 'AlwaysOn' project name refers to the highly-reliable and mission-critical nature of the architectural pattern it represents, where for given set of business requirements, an application should always be operational and available.
 
-Because of the focus on reliability, the AlwaysOn design methodology presented within this section of Azure Architecture Center adopts a globally distributed and highly scalable approach to building applications on Azure. However, this globally distributed approach to achieve high reliability comes at a development cost which may not be justifiable for every workload scenario. It is therefore strongly advocated that design decisions are driven by business requirements but informed by the opinionated guidance provided within this section.
+Because of the focus on reliability, the AlwaysOn design methodology presented within this repository adopts a globally distributed and highly scalable approach to building applications on Azure. However, this globally distributed approach to achieve high reliability comes at a development cost which may not be justifiable for every workload scenario. It is therefore strongly advocated that design decisions are driven by business requirements but informed by the opinionated guidance provided within this section.
 
 ## What Problem Does AlwaysOn Solve?
 
