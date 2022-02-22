@@ -354,7 +354,7 @@ This section will therefore explore these network integration scenarios, layerin
   - Do not create unnecessarily large application virtual networks to ensure that IP address space is not wasted.
 
 - Prioritize the use Azure CNI for AKS network integration, since it [supports a richer feature set](https://docs.microsoft.com/azure/aks/concepts-network#compare-network-models).
-  - Consider Kubenet for scenarios with a limited rage available IP addresses to fit the application within a constrained address space.
+  - Consider Kubenet for scenarios with a limited range of available IP addresses to fit the application within a constrained address space.
 
 - For scenarios requiring on-premises network integration, prioritize the use Express Route to ensure secure and scalable connectivity.
   - Ensure the reliability level applied to the Express Route or VPN fully satisfies application requirements.
@@ -382,7 +382,7 @@ This section will therefore explore how internet egress can be achieved while en
 
 - Azure provides different direct internet outbound [connectivity methods](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections#scenarios), such as Azure NAT gateway or Azure Load Balancer, for virtual machines or compute instances on a virtual network. 
 
-- When traffic from inside a virtual network travels out to the Internet, Network Address Translation (NAT) must take place. 
+- When traffic from inside a virtual network travels out to the Internet, Network Address Translation (NAT) must take place.
   - This is a compute operation that occurs within the networking stack and that can therefore impact system performance.
 
 - When NAT takes place at a small scale the performance impact should be negligible, however, if there are a large number of outbound requests network issues may occur.
@@ -487,12 +487,14 @@ An AlwaysOn application can enforce application-level network security using Net
 ### Design Considerations
 
 - AKS can be deployed in two different [networking models](https://docs.microsoft.com/azure/aks/concepts-network#azure-cni-advanced-networking).
-  - Kubenet networking: AKS nodes are integrated within an existing virtual network, but pods exist within a virtual overlay network on each node.
-  - Azure Container Networking Interface (CNI) networking: the AKS cluster is integrated within an existing virtual network resources and treated as a single large network, with pods attributed their own IP address.
+  - **Kubenet networking:** AKS nodes are integrated within an existing virtual network, but pods exist within a virtual overlay network on each node. Traffic between pods on different nodes is routed through kube-proxy.
+  - **Azure Container Networking Interface (CNI) networking:** The AKS cluster is integrated within an existing virtual network and its nodes, pods and services received IP addresses from a single large network. Different node pools can be deployed into different subnets ([in preview](https://github.com/Azure/AKS/issues/1338), February 2022).
+
+  > **Note!** Azure CNI requires, compared to Kubenet, more IP address space. Proper upfront planning and sizing of the network is required. For more information, see [Azure CNI](https://docs.microsoft.com/azure/aks/concepts-network#azure-cni-advanced-networking).
 
 - By default, pods are non-isolated and accept traffic from any source and can send traffic to any destination; a pod can communicate with every other pod in a given Kubernetes cluster; Kubernetes does not ensure any network level isolation, and does not isolate namespaces at the cluster level.
 
-- Pods can be isolated using [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
+- Communication between Pods and Namespaces can be isolated using [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
   - AKS provides two ways to implement Network Policy, and both implementations use Linux IPTables to enforce specified policies.
     - _Azure Network Policies_
     - _Calico Network Policies_
@@ -502,16 +504,16 @@ An AlwaysOn application can enforce application-level network security using Net
     - It is not possible to enable network policy on an existing AKS cluster.
 
 The delivery of network policies is consistent regardless of whether Azure or Calico is used.
-  - Calico provides a [richer feature set](https://docs.microsoft.com/azure/aks/use-network-policies#differences-between-azure-and-calico-policies-and-their-capabilities), including support for windows-nodes.
+  - Calico provides a [richer feature set](https://docs.microsoft.com/azure/aks/use-network-policies#differences-between-azure-and-calico-policies-and-their-capabilities), including support for windows-nodes and supports Azure CNI as well as Kubenet.
   - Calico introduces another party within the support ecosystem; either Calico community or paid support.
     - 1st-party Azure support is provided for Azure network policies.
 
-> Network Policy is a Kubernetes specification that defines access policies for communication between Pods. Using Network Policies, an ordered set of rules can be defined to control how traffic is sent/received, and applied to a collection of pods that match one or more label selectors.
+    > **Note!** Network Policy is a Kubernetes specification that defines access policies for communication between Pods. Using Network Policies, an ordered set of rules can be defined to control how traffic is sent/received, and applied to a collection of pods that match one or more label selectors.
 
 - AKS supports the creation of different node pools to separate different workloads using nodes with different hardware and software characteristics, such as nodes with and without GPU capabilities.
   - Using node pools does not provide any network-level isolation.
   - All node pools must reside within the same virtual network and separating node pools in different subnets is [currently in preview](https://github.com/Azure/AKS/issues/1338).
-    - NSGs at the subnet can be applied to implement micro-segmentation between node pools.
+    - NSGs can be applied at the subnet-level to implement micro-segmentation between node pools.
 
 ### Design Recommendations
 
@@ -520,11 +522,13 @@ The delivery of network policies is consistent regardless of whether Azure or Ca
     - This will ensure traffic flows through Azure Front Door at a service level, but header based filtering will still be required to ensure the use of a particular Front Door instance and to also mitigate 'IP spoofing' security risks.
   - Public internet traffic should be disabled on RDP and SSH ports across all applicable NSGs.
 
+- Decide between Azure CNI and Kubenet at deployment time based on requirements and capabilities like the amount of IP addresses consumed, the connectivity requirements of the application, and other aspects.
+  - For example, if the application requires a high amount of IP addresses, consider using Kubenet.
+
 - Enable [Network Policy](https://docs.microsoft.com/azure/aks/use-network-policies) for Azure Kubernetes Service at deployment time.
   - The Network Policy feature in Kubernetes should be used to define rules for ingress and egress traffic between pods in a cluster.
     - Define granular Network Policies to restrict and limit cross-pod communication.
-
-- Prioritize the use of _Calico Network Policies_ because it provides a richer feature set with broader community adoption and support.
+  - Prioritize the use of _Calico Network Policies_ because it provides a richer feature set with broader community adoption and support.
 
 ---
 
