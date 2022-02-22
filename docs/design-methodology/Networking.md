@@ -168,11 +168,11 @@ Following diagram illustrates a redundant global load balancer configuration wit
 
 - Ensure health probe responses are logged and ingest all operational data exposed by Azure Front Door into the global Log Analytics workspace to facilitate a unified data synch and single operational view across the entire application.
 
-- Unless the workload is extremely latency sensitive, spread traffic evenly across all considered regional stamps to most effectively use deployed resources. 
+- Unless the workload is extremely latency sensitive, spread traffic evenly across all considered regional stamps to most effectively use deployed resources.
   - To achieve this, set the ["Latency Sensitivity (Additional Latency)"](https://docs.microsoft.com/azure/frontdoor/front-door-backend-pool#load-balancing-settings) parameter to a value that is high enough to cater for latency differences between the different regions of the backends.
     - Ensure a tolerance that is acceptable to the application workload regarding overall client request latency.
 
-- Do not enable Session Affinity unless it is required by the application, since it can have a negative impact the balance of traffic distribution. 
+- Do not enable Session Affinity unless it is required by the application, since it can have a negative impact the balance of traffic distribution.
   - With a fully stateless application, if the recommended AlwaysOn application design approach is followed, any request could be handled by any of the regional deployments.
 
 **Azure Traffic Manager**
@@ -495,20 +495,18 @@ An AlwaysOn application can enforce application-level network security using Net
 - By default, pods are non-isolated and accept traffic from any source and can send traffic to any destination; a pod can communicate with every other pod in a given Kubernetes cluster; Kubernetes does not ensure any network level isolation, and does not isolate namespaces at the cluster level.
 
 - Communication between Pods and Namespaces can be isolated using [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
-  - AKS provides two ways to implement Network Policy, and both implementations use Linux IPTables to enforce specified policies.
-    - _Azure Network Policies_
-    - _Calico Network Policies_
   - Network policies do not conflict since they are additive.
-  - For a network flow between two pods to be allowed, both the egress policy on the source pod and the ingress policy on the destination pod need to allow the traffic.
-  - The network policy feature can only be enabled at cluster instantiation time.
-    - It is not possible to enable network policy on an existing AKS cluster.
+  - To allow a network flow between two pods, both the egress policy on the source pod and the ingress policy on the destination pod need to allow the traffic.
+  - AKS provides two options to implement Network Policy, **Azure Network Policies** and **Calico Network Policies**. Both implementations use Linux IPTables to enforce specified policies. See [Differences between Azure and Calico policies and their capabilities](https://docs.microsoft.com/en-gb/azure/aks/use-network-policies#differences-between-azure-and-calico-policies-and-their-capabilities) for more details.
+  - The network policy feature can only be enabled at cluster instantiation time. It is not possible to enable network policy or change the implementation on an existing AKS cluster.
 
 The delivery of network policies is consistent regardless of whether Azure or Calico is used.
-  - Calico provides a [richer feature set](https://docs.microsoft.com/azure/aks/use-network-policies#differences-between-azure-and-calico-policies-and-their-capabilities), including support for windows-nodes and supports Azure CNI as well as Kubenet.
-  - Calico introduces another party within the support ecosystem; either Calico community or paid support.
-    - 1st-party Azure support is provided for Azure network policies.
 
-    > **Note!** Network Policy is a Kubernetes specification that defines access policies for communication between Pods. Using Network Policies, an ordered set of rules can be defined to control how traffic is sent/received, and applied to a collection of pods that match one or more label selectors.
+- Calico provides a [richer feature set](https://docs.microsoft.com/azure/aks/use-network-policies#differences-between-azure-and-calico-policies-and-their-capabilities), including support for windows-nodes and supports Azure CNI as well as Kubenet.
+- Calico introduces another party within the support ecosystem; either Calico community or paid support.
+  - 1st-party Azure support is provided for Azure network policies.
+
+  > **Note!** Network Policy is a Kubernetes specification that defines access policies for communication between Pods. Using Network Policies, an ordered set of rules can be defined to control how traffic is sent/received, and applied to a collection of pods that match one or more label selectors.
 
 - AKS supports the creation of different node pools to separate different workloads using nodes with different hardware and software characteristics, such as nodes with and without GPU capabilities.
   - Using node pools does not provide any network-level isolation.
