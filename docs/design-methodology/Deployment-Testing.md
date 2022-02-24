@@ -162,7 +162,7 @@ The recommended infrastructure-level blue/green deployment approach is underpinn
 
 - Typically an AlwaysOn IaC repository has two resource definitions:
   - Global Resources: those that are deployed once within the solution, such as Azure Front Door and Azure Cosmos DB.
-  - Regional (*Stamp*) Resources: those that are deployed
+  - Regional (*Stamp*) Resources: those that are deployed multiple times and into different regions, such as AKS, EventHub and Storage.
 
 ### Design Recommendations
 
@@ -233,9 +233,7 @@ Branching strategies are a fundamental aspect of application source control, and
 
 - Restrictions can be applied to branches as part of the branching strategy, such as only allowing administrators to create release branches, or enforcing naming conventions for branches.
 
-- There might be rare occasions where a hotfix is urgently required and applied directly into an existing production environment. Examples of potential hotfixes includes critical security updates or remediation of issues breaking the user experience.
-
-release branch with a subsequently deployment to the Production environment. Examples of hotfixes may include critical security updates or issues breaking the user experience. Typically, these hotfixes are created on a _fix/*_ branch and merged into the release branch. It is essential that the change is brought into _main_ as soon as practical so that is part of future releases and also avoids any reoccurrence of the issue. This process must only be used for small changes addressing urgent issues and with restraint.
+- There might be rare occasions where a hotfix is urgently required and applied directly into an existing production environment. Examples of potential hotfixes includes critical security updates or remediation of issues breaking the user experience. Typically, these hotfixes are created on a _fix/*_ branch and merged into the release branch. It is essential that the change is brought into _main_ as soon as practical so that is part of future releases and also avoids any reoccurrence of the issue. This process must only be used for small changes addressing urgent issues and with restraint.
 
 ### Design Recommendations
 
