@@ -28,7 +28,7 @@ The foundational reference implementations are separated within dedicated reposi
 
 [![AlwaysOn Repo Structure](/docs/media/alwayson-repo-structure.png "AlwaysOn Repo Structure")](./CONTRIBUTE.md)
 
-> A list of [Frequently Asked Questions](./docs/FAQ.md) is provided to capture common issues and challenges associated with using the AlwaysOn project.
+> A list of [Frequently Asked Questions](./FAQ.md) is provided to capture common issues and challenges associated with using the AlwaysOn project.
 
 ## Contributing
 
