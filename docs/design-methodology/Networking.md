@@ -353,8 +353,8 @@ This section will therefore explore these network integration scenarios, layerin
   - Align with organization plans for IP addressing in Azure to ensure that application network IP address space does not overlap with other networks across on-premises locations or Azure regions.
   - Do not create unnecessarily large application virtual networks to ensure that IP address space is not wasted.
 
-- Prioritize the use Azure CNI for AKS network integration, since it [supports a richer feature set](https://docs.microsoft.com/azure/aks/concepts-network#compare-network-models).
-  - Consider Kubenet for scenarios with a limited range of available IP addresses to fit the application within a constrained address space.
+- Prioritize the use Azure CNI Network plugin for AKS network integration and consider Kubenet for scenarios with a limited range of available IP addresses. See [Micro-Segmentation and Kubernetes Network Policies
+](#micro-segmentation-and-kubernetes-network-policies) further down below for more details.
 
 - For scenarios requiring on-premises network integration, prioritize the use Express Route to ensure secure and scalable connectivity.
   - Ensure the reliability level applied to the Express Route or VPN fully satisfies application requirements.
@@ -380,7 +380,7 @@ This section will therefore explore how internet egress can be achieved while en
 
 - Many Azure services require access to public endpoints for various management and control plane functions to operate as intended.
 
-- Azure provides different direct internet outbound [connectivity methods](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections#scenarios), such as Azure NAT gateway or Azure Load Balancer, for virtual machines or compute instances on a virtual network. 
+- Azure provides different direct internet outbound [connectivity methods](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections#scenarios), such as Azure NAT gateway or Azure Load Balancer, for virtual machines or compute instances on a virtual network.
 
 - When traffic from inside a virtual network travels out to the Internet, Network Address Translation (NAT) must take place.
   - This is a compute operation that occurs within the networking stack and that can therefore impact system performance.
@@ -388,7 +388,7 @@ This section will therefore explore how internet egress can be achieved while en
 - When NAT takes place at a small scale the performance impact should be negligible, however, if there are a large number of outbound requests network issues may occur.
   - These issues typically come in the form of 'Source NAT (or SNAT) port exhaustion'.
 
-- In a multi-tenant environment, such as Azure App Service, there is a limited number of outbound ports available to each instance. If these ports run out, no new outbound connections can be initiated. 
+- In a multi-tenant environment, such as Azure App Service, there is a limited number of outbound ports available to each instance. If these ports run out, no new outbound connections can be initiated.
   - This issue can be mitigated by reducing the number of private/public edge traversals or by using a more scalable NAT solution such as the [Azure NAT Gateway](https://docs.microsoft.com/azure/virtual-network/nat-gateway/nat-overview).
 
 - In addition to NAT limitations, outbound traffic may also be subject to requisite security inspections.
