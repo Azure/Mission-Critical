@@ -353,7 +353,7 @@ This section will therefore explore these network integration scenarios, layerin
   - Align with organization plans for IP addressing in Azure to ensure that application network IP address space does not overlap with other networks across on-premises locations or Azure regions.
   - Do not create unnecessarily large application virtual networks to ensure that IP address space is not wasted.
 
-- Prioritize the use Azure CNI Network plugin for AKS network integration and consider Kubenet for scenarios with a limited range of available IP addresses. See [Micro-Segmentation and Kubernetes Network Policies
+- Prioritize the use of the Azure CNI network plugin for AKS network integration and consider Kubenet for scenarios with a limited range of available IP addresses. See [Micro-Segmentation and Kubernetes Network Policies
 ](#micro-segmentation-and-kubernetes-network-policies) further down below for more details.
 
 - For scenarios requiring on-premises network integration, prioritize the use Express Route to ensure secure and scalable connectivity.
