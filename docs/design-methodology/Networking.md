@@ -520,8 +520,11 @@ The delivery of network policies is consistent regardless of whether Azure or Ca
     - This will ensure traffic flows through Azure Front Door at a service level, but header based filtering will still be required to ensure the use of a particular Front Door instance and to also mitigate 'IP spoofing' security risks.
   - Public internet traffic should be disabled on RDP and SSH ports across all applicable NSGs.
 
-- Decide between Azure CNI and Kubenet at deployment time based on requirements and capabilities like the amount of IP addresses consumed, the connectivity requirements of the application, and other aspects.
-  - For example, if the application requires a high amount of IP addresses, consider using Kubenet.
+- Prioritize the use of the Azure CNI network plugin and consider Kubenet for scenarios with a limited range of available IP addresses to fit the application within a constrained address space.
+    - AKS supports the use of both Azure CNI and Kubenet. It is selected at deployment time.
+    - The Azure CNI network plugin is a more robust and scalable network plugin, and is recommended for most scenarios.
+    - Kubenet is a more lightweight network plugin, and is recommended for scenarios with a limited range of available IP addresses.
+    - See [Azure CNI](https://docs.microsoft.com/azure/aks/concepts-network#azure-cni-advanced-networking) for more details.
 
 - Enable [Network Policy](https://docs.microsoft.com/azure/aks/use-network-policies) for Azure Kubernetes Service at deployment time.
   - The Network Policy feature in Kubernetes should be used to define rules for ingress and egress traffic between pods in a cluster.
