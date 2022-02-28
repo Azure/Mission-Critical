@@ -10,7 +10,7 @@ Azure Mission-Critical is an open source project that provides a **prescriptive 
     - Design and implementation guidance to help readers understand and use the AlwaysOn design methodology in the context of a particular scenario.
     - Production-ready technical artifacts including Infrastructure-as-Code (IaC) resources and Continuous-Integration/Continuous-Deployment (CI/CD) pipelines (GitHub and Azure DevOps) to deploy an AlwaysOn application with mature end-to-end operational wrappers.
 
-## Mission-Critical | Navigation
+## Azure Mission-Critical | Navigation
 
 - [Introduction | What is Mission-Critical?](./docs/introduction/README.md) - Detailed introduction into Mission-Critical, the problem it is intended to solve and the value it can provide.
 
