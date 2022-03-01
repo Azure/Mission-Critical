@@ -71,7 +71,7 @@ In order to build a health model it is first necessary to define what applicatio
 
 When implementing a health model it is critical to first define the health of individual components through the aggregation and interpretation of key resource-level metrics. An example of how resource metrics can used is the image below:
 
-[![Azure Mission-Critical Example Health Definitions](/docs/media/alwayson-example-health-definitions.png "Azure Mission-Critical Example Health Definitions")](./Health-Modeling.md)
+[![Azure Mission-Critical Example Health Definitions](/docs/media/example-health-definitions.png "Azure Mission-Critical Example Health Definitions")](./Health-Modeling.md)
 
 This definition of health can subsequently be represented by a KQL query, as demonstrated by the example AKS query below that aggregates InsightsMetrics (AKS Container insights) and AzureMetrics (Azure diagnostics) and compares (inner join) against modelled health thresholds.
 
@@ -119,7 +119,7 @@ ClusterHealthStatus
 
 These aggregated scores can subsequently be represented as a dependency chart using visualization tools like Grafana to illustrate the health model. The image below depicts an example layered health model from the [foundational-online](https://github.com/azure/alwayson-foundational-online) reference implementation, and demonstrates how a change in health state for a foundational component can have a cascading impact to user flows and overall application health (the example values correspond to the table in the previous image).
 
-[![Azure Mission-Critical Example Health Model Visualization](/docs/media/alwayson-example-fault-states.png "Azure Mission-Critical Example Health Model Visualization")](./Health-Modeling.md)
+[![Azure Mission-Critical Example Health Model Visualization](/docs/media/example-fault-states.png "Azure Mission-Critical Example Health Model Visualization")](./Health-Modeling.md)
 
 ## Unified data sink for correlated analysis
 
@@ -127,7 +127,7 @@ Numerous operational datasets must be gathered from all system components to acc
 
 A unified data sink is therefore required to ensure all operational data is swiftly stored and made available for correlated analysis to build a 'single pane' representation of application health. Azure provides several different operational technologies under the umbrella of [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview#overview), and Azure Monitor Log Analytics serves as the core Azure-native data sink to store and analyze operational data.
 
-[![Azure Mission-Critical Health Data Collection](/docs/media/alwayson-health-data-collection.png "Azure Mission-Critical Health Data Collection")](./Health-Modeling.md)
+[![Azure Mission-Critical Health Data Collection](/docs/media/health-data-collection.png "Azure Mission-Critical Health Data Collection")](./Health-Modeling.md)
 
 ### Design considerations
 
@@ -376,7 +376,7 @@ Machine learning models can be applied to correlate and prioritize operational d
 
 More specifically, an AIOps methodology can be applied to distil critical insights about the behavior of the system, users, and DevOps processes. These insights can include identifying a problem happening now (*detect*), quantifying why the problem is happening (*diagnose*), or signaling what will happen in the future (*predict*). Such insights can be used to drive actions which adjust and optimize the application to mitigate active or potential issues, leveraging key business metrics, system quality metrics, and DevOps productivity metrics, to prioritize according to business impact. Conducted actions can themselves be infused into the system though a feedback loop which further trains the underlying model to drive additional efficiencies.
 
-[![Azure Mission-Critical AIOps Methodologies](/docs/media/alwayson-aiops-methodology.png "Azure Mission-Critical AIOps Methodologies")](./Health-Modeling.md)
+[![Azure Mission-Critical AIOps Methodologies](/docs/media/aiops-methodology.png "Azure Mission-Critical AIOps Methodologies")](./Health-Modeling.md)
 
 There are multiple analytical technologies within Azure, such as Azure Synapse and Azure Databricks, which can be leveraged to build and train analytical models for AIOps. This section will therefore focus on how these technologies can be positioned within a Mission-Critical application design to accommodate AIOps and drive predictive action, focusing on Azure Synapse which reduces friction by bringing together the best of Azure's data services along with powerful new features.
 

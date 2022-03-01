@@ -27,7 +27,7 @@ The reference implementations are separated within dedicated repositories contai
 - [Online Reference Implementation](https://github.com/Azure/AlwaysOn-foundational-online)
 - [Connected Reference Implementation](https://github.com/Azure/AlwaysOn-foundational-connected)
 
-[![Azure Mission-Critical Repo Structure](/docs/media/alwayson-repo-structure.png "Azure Mission-Critical Repo Structure")](./CONTRIBUTE.md)
+[![Azure Mission-Critical Repo Structure](/docs/media/repo-structure.png "Azure Mission-Critical Repo Structure")](./CONTRIBUTE.md)
 
 > A list of [Frequently Asked Questions](./FAQ.md) is provided to capture common issues and challenges associated with using the Azure Mission-Critical project.
 

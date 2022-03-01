@@ -8,7 +8,7 @@ To add or edit content within the Azure Mission-Critical repositories, please ta
 
 ## Content Structure
 
-[![Mission-critical repo structure](/docs/media/alwayson-repo-structure.png "Mission-critical repo structure")](./CONTRIBUTE.md)
+[![Mission-critical repo structure](/docs/media/repo-structure.png "Mission-critical repo structure")](./CONTRIBUTE.md)
 
 The Azure Mission-Critical project is separated into **3** different repositories:
 

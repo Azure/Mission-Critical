@@ -8,7 +8,7 @@ The Azure Mission-Critical architectural framework presented within this reposit
 1. **Cloud-Native Design** - Focus on using native platforms services to minimize operational burdens, while mitigating known gaps.
 1. **Always Secure** - Design for end-to-end security to maintain application stability and ensure availability.
 
-[![Azure Mission-Critical Design Principles](/docs/media/alwayson-design-principles.png "Azure Mission-Critical Design Principles")](./Principles.md)
+[![Azure Mission-Critical Design Principles](/docs/media/design-principles.png "Azure Mission-Critical Design Principles")](./Principles.md)
 
 ## Maximum reliability
 

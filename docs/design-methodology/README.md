@@ -32,9 +32,9 @@ The pursuit of a particular reliability tier ultimately has a significant bearin
 
 The image below demonstrates how the different reliability tiers and underlying business requirements influence the target architecture for the foundational reference implementation, particularly concerning the number of regional deployments and utilised global technologies.
 
-[![Azure Mission-Critical Reliability Tiers](/docs/media/alwayson-reliability-tiers.png "Azure Mission-Critical Reliability Tiers")](./README.md)
+[![Azure Mission-Critical Reliability Tiers](/docs/media/reliability-tiers.png "Azure Mission-Critical Reliability Tiers")](./README.md)
 
-[![Azure Mission-Critical Availability Targets](/docs/media/AlwaysOn-SLO.gif "Azure Mission-Critical Availability Targets")](./README.md)
+[![Azure Mission-Critical Availability Targets](/docs/media/SLO-visualization.gif "Azure Mission-Critical Availability Targets")](./README.md)
 
 ### Opportunity cost
 
