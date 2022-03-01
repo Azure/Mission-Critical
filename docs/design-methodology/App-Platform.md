@@ -249,7 +249,7 @@ For web and API based workload scenarios Azure App Services offers a feasible al
 
   > When deploying into an Azure Landing Zone, requisite Azure Policy to ensure the consistent reliability and security should be delivered by the Enterprise Scale platform through policy assignments within the Landing Zone definition.
 
-  > The [foundational reference implementation](https://github.com/Azure/AlwaysOn/blob/main/docs/reference-implementation/README.md) provides a suite of baseline Mission-Critical policies to drive recommended reliability and security configurations.
+  > The foundational reference implementations provides a suite of baseline Mission-Critical policies to drive recommended reliability and security configurations.
 
 **Azure App Service**
 
