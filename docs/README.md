@@ -1,14 +1,14 @@
-# AlwaysOn | Documentation Inventory
+# Azure Mission-Critical | Documentation Inventory
 
 - [Landing Page](/README.md)
 
 ## Introduction
 
-- [What is AlwaysOn?](./introduction/README.md)
+- [What is Azure Mission-Critical?](./introduction/README.md)
 
 ## Design Methodology
 
-- [How to use the AlwaysOn Design Methodology](./design-methodology/README.md)
+- [How to use the Mission-Critical Design Methodology](./design-methodology/README.md)
 - [Design Principles](./design-methodology/Principles.md)
 - [Design Areas](./design-methodology/Design-Areas.md)
   - [Reference Architecture](./design-methodology/Design-Areas.md#reference-architecture)
@@ -24,11 +24,11 @@
 
 ## Reference Implementations
 
-- [AlwaysOn-Foundational-Online](http://github.com/azure/alwayson-foundational-online)
-- [AlwaysOn-Foundational-Connected](http://github.com/azure/alwayson-foundational-connected)
+- [Online Reference Implementation](http://github.com/azure/alwayson-foundational-online)
+- [Connected Reference Implementation](http://github.com/azure/alwayson-foundational-connected)
 
 ---
 
 ## Documentation Conventions
 
-- Overarching topics concerning the AlwaysOn architecture, design principles, design decisions, and cross-component integration are documented as separate markdown documents within the `/docs/` folder.
+- Overarching topics concerning the Azure Mission-Critical architecture, design principles, design decisions, and cross-component integration are documented as separate markdown documents within the `/docs/` folder.

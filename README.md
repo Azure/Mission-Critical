@@ -1,4 +1,4 @@
-[![Azure AlwaysOn](./icon.png "Azure AlwaysOn")](./README.md)
+[![Azure Mission-Critical](./icon.png "Azure Mission-Critical")](./README.md)
 
 ## Welcome to Azure Mission-Critical
 
@@ -7,8 +7,8 @@ Azure Mission-Critical is an open source project that provides a **prescriptive 
 1. **Architectural Guidelines**: cloud-native design methodology to guide readers through the architectural process of building a mature mission-critical application on Microsoft Azure, articulating key design considerations and requisite design decisions along with associated trade-offs.
 
 2. **Fully Functional Reference Implementations**: end-to-end reference implementations intended to provide a solution orientated basis to showcase mission-critical application development on Microsoft Azure, leveraging Azure-native platform capabilities to maximize reliability and operational effectiveness.
-    - Design and implementation guidance to help readers understand and use the AlwaysOn design methodology in the context of a particular scenario.
-    - Production-ready technical artifacts including Infrastructure-as-Code (IaC) resources and Continuous-Integration/Continuous-Deployment (CI/CD) pipelines (GitHub and Azure DevOps) to deploy an AlwaysOn application with mature end-to-end operational wrappers.
+    - Design and implementation guidance to help readers understand and use the Azure Mission-Critical design methodology in the context of a particular scenario.
+    - Production-ready technical artifacts including Infrastructure-as-Code (IaC) resources and Continuous-Integration/Continuous-Deployment (CI/CD) pipelines (GitHub and Azure DevOps) to deploy an Azure Mission-Critical application with mature end-to-end operational wrappers.
 
 ## Azure Mission-Critical | Navigation
 
@@ -23,10 +23,11 @@ Azure Mission-Critical is an open source project that provides a **prescriptive 
 ## Helpful Information
 
 The reference implementations are separated within dedicated repositories containing all relevant documentation and technical artifacts, along with a *getting started guide*:
-  - [Online Reference Implementation](https://github.com/Azure/AlwaysOn-foundational-online)
-  - [Connected Reference Implementation](https://github.com/Azure/AlwaysOn-foundational-connected)
 
-[![AlwaysOn Repo Structure](/docs/media/alwayson-repo-structure.png "AlwaysOn Repo Structure")](./CONTRIBUTE.md)
+- [Online Reference Implementation](https://github.com/Azure/AlwaysOn-foundational-online)
+- [Connected Reference Implementation](https://github.com/Azure/AlwaysOn-foundational-connected)
+
+[![Azure Mission-Critical Repo Structure](/docs/media/alwayson-repo-structure.png "Azure Mission-Critical Repo Structure")](./CONTRIBUTE.md)
 
 > A list of [Frequently Asked Questions](./FAQ.md) is provided to capture common issues and challenges associated with using the Azure Mission-Critical project.
 

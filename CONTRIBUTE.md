@@ -2,7 +2,7 @@
 
 ## Content Changes and Pull Requests
 
-To add or edit content within the Azure Mission-Critical repositories, please take a fork of a repository to iterate on changes before subsequently opening a Pull Request (PR) to get your forked branch merged into the main branch for that AlwaysOn repository. Your PR will be reviewed by core engineers working on the project, and once approved, your content accessible to everybody.
+To add or edit content within the Azure Mission-Critical repositories, please take a fork of a repository to iterate on changes before subsequently opening a Pull Request (PR) to get your forked branch merged into the main branch for the Azure Mission-Critical repository. Your PR will be reviewed by core engineers working on the project, and once approved, your content accessible to everybody.
 
 > **Important!** Please make sure that your PR is focused on a specific area of Azure Mission-Critical to facilitate a targeted review, as this will speed up the process to get your changes merged into our repository.
 
@@ -12,7 +12,7 @@ To add or edit content within the Azure Mission-Critical repositories, please ta
 
 The Azure Mission-Critical project is separated into **3** different repositories:
 
-- [Mission-Critical](/docs/README.md): contains the AlwaysOn design methodology, covering the design pattern ad approach to guide readers to defining a target AlwaysOn architecture.
+- [Mission-Critical](/docs/README.md): contains the Azure Mission-Critical design methodology, covering the design pattern ad approach to guide readers to defining a target Mission-Critical architecture.
   - Overarching topics are documented as separate markdown documents within the `/docs/` directory.
 
 - [Mission-Critical Online](http://github.com/azure/alwayson-foundational-online): contains the mission-critical reference implementation intended for online scenarios that are public-facing and do not require private network connectivity to a surrounding organizational technical estate.

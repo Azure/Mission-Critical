@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea for the AlwaysOn project
+about: Suggest an idea for the Azure Mission-Critical project
 title: ''
 labels: triage
 assignees: CalCof, hjscherer, sebader

@@ -1,13 +1,13 @@
 # Operational procedures
 
-The AlwaysOn design methodology leans heavily on the principles *automation wherever possible* and *configuration as code* to drive reliable and effective operations through DevOps processes, with automated deployment pipelines used to execute versioned application and infrastructure code artifacts within a source repository. While this level of DevOps adoption requires substantial engineering investment to instantiate and discipline to maintain, it yields significant operational dividends, enabling consistent and accurate operational outcomes within minimal manual operational procedures.
+The Azure Mission-Critical design methodology leans heavily on the principles *automation wherever possible* and *configuration as code* to drive reliable and effective operations through DevOps processes, with automated deployment pipelines used to execute versioned application and infrastructure code artifacts within a source repository. While this level of DevOps adoption requires substantial engineering investment to instantiate and discipline to maintain, it yields significant operational dividends, enabling consistent and accurate operational outcomes within minimal manual operational procedures.
 
 - [DevOps Processes](#devops-processes)
 - [Application Operations](#application-operations)
 
 ## DevOps processes
 
-DevOps is a fundamental characteristic of the AlwaysOn design methodology, providing the engineering mindset, processes, and tooling to deliver application services in a fast, efficient, and reliable manner. More specifically, DevOps brings together development and operational processes as well as teams into a single engineering function that encompasses the entire application lifecycle, leveraging automation and DevOps tooling to conduct deployment operations swiftly and reliably. This section will therefore explore how the adoption of DevOps and related deployment methods is used to drive effective and consistent operational procedures.
+DevOps is a fundamental characteristic of the Azure Mission-Critical design methodology, providing the engineering mindset, processes, and tooling to deliver application services in a fast, efficient, and reliable manner. More specifically, DevOps brings together development and operational processes as well as teams into a single engineering function that encompasses the entire application lifecycle, leveraging automation and DevOps tooling to conduct deployment operations swiftly and reliably. This section will therefore explore how the adoption of DevOps and related deployment methods is used to drive effective and consistent operational procedures.
 
 ### Design considerations
 
@@ -15,7 +15,7 @@ DevOps is a fundamental characteristic of the AlwaysOn design methodology, provi
 
 - DevOps can be difficult to apply when there are hard dependencies on central IT functions since it prevents end-to-end operational action.
 
-- Key responsibilities of the DevOps team for an AlwaysOn application include:
+- Key responsibilities of the DevOps team for an Mission-Critical application include:
   - Create and manage application and infrastructure resources through CI/CD automation.
   - Application monitoring and observability.
   - Azure RBAC and identity for application components.
@@ -34,13 +34,13 @@ DevOps is a fundamental characteristic of the AlwaysOn design methodology, provi
   - Manage any changes to code through consistent release and update process, including tasks such as key or secret rotation and permission management.
   - Prioritize pipeline-managed update processes, such as with scheduled pipeline runs, over built-in auto-update mechanisms.
 
-- Do not use central processes or provisioning pipelines for the instantiation or management of AlwaysOn application resources, since this introduces external application dependencies and additional risk vectors, such as those associated with 'noisy neighbor' scenarios.
+- Do not use central processes or provisioning pipelines for the instantiation or management of Mission-Critical application resources, since this introduces external application dependencies and additional risk vectors, such as those associated with 'noisy neighbor' scenarios.
   - If centralized provisioning processes are mandated, ensure the availability requirements of leveraged dependencies are fully in-line with application requirements, and ensure operational transparency is provided to allow for holistic operationalization of the end-to-end application.
 
 - Embrace continuous improvement and allocate a proportion of engineering capacity within each sprint to optimize platform fundamentals.
   - Consider allocating 20-40% of capacity within each sprint to drive fundamental platform improvements and bolster reliability.
 
-- To accelerate the development of new services, consider the creation of a common engineering criteria and reference architectures/libraries for service teams to leverage, ensuring consistent alignment with core AlwaysOn principles.
+- To accelerate the development of new services, consider the creation of a common engineering criteria and reference architectures/libraries for service teams to leverage, ensuring consistent alignment with core Mission-Critical principles.
   - Enforce a consistent baseline configurations for reliability, security, and operations through a policy-driven approach using Azure Policy.
 
 > This common engineering criteria and associated artifacts, such as Azure Policies and Terraform for common design patterns, can also be leveraged across other workloads within the broader application ecosystem for an organization.
@@ -57,18 +57,18 @@ DevOps is a fundamental characteristic of the AlwaysOn design methodology, provi
 
 ## Application Operations
 
-The application design and platform recommendations provided within the AlwaysOn design methodology have a significant bearing on effective operations, and the extent to which these recommendations are adhered to will therefore greatly influence an optimal operational procedures.
+The application design and platform recommendations provided within the Azure Mission-Critical design methodology have a significant bearing on effective operations, and the extent to which these recommendations are adhered to will therefore greatly influence an optimal operational procedures.
 
 Furthermore, there is a varied set of operational capabilities provided by different Azure services, particularly when it comes to high availability and recovery. It is therefore also important to understand and leverage the operational capabilities of leveraged services.
 
-This section will therefore highlight key operational aspects associated with AlwaysOn application design and recommended platform services.
+This section will therefore highlight key operational aspects associated with Azure Mission-Critical application design and recommended platform services.
 
 ### Design considerations
 
 - Azure services provide a combination of built-in (enabled by default) and configurable platform capabilities, such as zonal redundancy or geo-replication. The service-level configuration of each service within an application must therefore be considered by operational procedures.
   - Many configurable capabilities incur an additional cost, such as the multi-write deployment configuration for Cosmos DB.
 
-- AlwaysOn strongly endorses the principle of ephemeral stateless application resources, meaning that updates can typically be performed through a new deployment and standard delivery pipelines.
+- Azure Mission-Critical strongly endorses the principle of ephemeral stateless application resources, meaning that updates can typically be performed through a new deployment and standard delivery pipelines.
 
 - The vast majority of the required operations are exposed and accessible via the Azure ARM management APIs or through the Azure Portal.
 
@@ -76,7 +76,7 @@ This section will therefore highlight key operational aspects associated with Al
 
 - For stateless resources and resources which can be entirely configured from deployment, such as Azure Front Door and associated backends/origins, re-deployment will faster generally result in an operational resource than a Support process to attempt recovery of the deleted resource.
 
-- Azure Policy provides a framework to enforce and audit security and reliability baselines, ensuring continued compliance with a common engineering criteria for an AlwaysOn application. More specifically, Azure Policy forms a key part of the Azure Resource Manager (ARM) control plane, supplementing RBAC by restricting what actions authorized users can perform, and can be leveraged to enforce vital security and reliability conventions across utilized platform services.
+- Azure Policy provides a framework to enforce and audit security and reliability baselines, ensuring continued compliance with a common engineering criteria for a Mission-Critical application. More specifically, Azure Policy forms a key part of the Azure Resource Manager (ARM) control plane, supplementing RBAC by restricting what actions authorized users can perform, and can be leveraged to enforce vital security and reliability conventions across utilized platform services.
   - Azure Policy can be extended within Azure Kubernetes Service (AKS) via [Azure Policy for Kubernetes](https://docs.microsoft.com/azure/governance/policy/concepts/policy-for-kubernetes) which provides visibility of components deployed within clusters.
 
 - Azure [resources can be locked](https://docs.microsoft.com/azure/azure-resource-manager/management/lock-resources) to prevent them from being modified or deleted.
@@ -109,7 +109,7 @@ This section will therefore highlight key operational aspects associated with Al
   - Establish automated operational processes to scale services which do not offer auto-scale.
   - Leverage scale-units composed of multiple services to provide requisite scalability under relevant circumstances.
 
-- Identify operational procedures and tasks required by global (long-lived) application resources, such as Cosmos DB or ACR in the AlwaysOn reference implementation.
+- Identify operational procedures and tasks required by global (long-lived) application resources, such as Cosmos DB or ACR in the Azure Mission-Critical reference implementation.
   - For example, in the event that a Cosmos DB resource or encompassed data is incorrectly modified or deleted, the possible ways of recovery should be well understood and a recovery process should exist.
   - Similarly, establish procedures to manage decommissioned container images in the registry.
 
@@ -158,9 +158,9 @@ This section will therefore highlight key operational aspects associated with Al
 
 |Design Methodology|
 |--|
-|[How to use the AlwaysOn Design Methodology](./README.md)
-|[AlwaysOn Design Principles](./Principles.md)
-|[AlwaysOn Design Areas](./Design-Areas.md)
+|[How to use the Azure Mission-Critical Design Methodology](./README.md)
+|[Azure Mission-Critical Design Principles](./Principles.md)
+|[Azure Mission-Critical Design Areas](./Design-Areas.md)
 |[Application Design](./App-Design.md)
 |[Application Platform](./App-Platform.md)
 |[Data Platform](./Data-Platform.md)
@@ -172,4 +172,4 @@ This section will therefore highlight key operational aspects associated with Al
 
 ---
 
-[AlwaysOn | Documentation Inventory](/docs/README.md)
+[Azure Mission-Critical | Documentation Inventory](/docs/README.md)
