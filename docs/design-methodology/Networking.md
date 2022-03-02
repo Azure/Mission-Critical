@@ -488,9 +488,10 @@ A Mission-Critical application can enforce application-level network security us
 
 - AKS can be deployed in two different [networking models](https://docs.microsoft.com/azure/aks/concepts-network#azure-cni-advanced-networking).
   - **Kubenet networking:** AKS nodes are integrated within an existing virtual network, but pods exist within a virtual overlay network on each node. Traffic between pods on different nodes is routed through kube-proxy.
-  - **Azure Container Networking Interface (CNI) networking:** The AKS cluster is integrated within an existing virtual network and its nodes, pods and services received IP addresses from the same virtual network the cluster nodes are attached to. This is relevant for various networking scenarios requiring direct connectivity from and to pods. Different node pools can be deployed into different subnets ([in preview](https://github.com/Azure/AKS/issues/1338), February 2022).
+  - **Azure Container Networking Interface (CNI) networking:** The AKS cluster is integrated within an existing virtual network and its nodes, pods and services received IP addresses from the same virtual network the cluster nodes are attached to. This is relevant for various networking scenarios requiring direct connectivity from and to pods. Different node pools can be deployed into different subnets [in preview](https://github.com/Azure/AKS/issues/1338).
 
-  > **Note!** Azure CNI requires, compared to Kubenet, more IP address space. Proper upfront planning and sizing of the network is required. For more information, see [Azure CNI](https://docs.microsoft.com/azure/aks/concepts-network#azure-cni-advanced-networking).
+  > [!NOTE]
+  > Azure CNI requires more IP address space compared to Kubenet. Proper upfront planning and sizing of the network is required. For more information, refer to the [Azure CNI documentation](https://docs.microsoft.com/azure/aks/concepts-network#azure-cni-advanced-networking).
 
 - By default, pods are non-isolated and accept traffic from any source and can send traffic to any destination; a pod can communicate with every other pod in a given Kubernetes cluster; Kubernetes does not ensure any network level isolation, and does not isolate namespaces at the cluster level.
 
