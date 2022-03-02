@@ -85,7 +85,7 @@ This section will therefore explore key considerations and recommendations for a
 - Ensure at least one staging environment is fully reflective of production to enable production-like testing and validation.
   - Capacity within this pre-production environment can flex based on the execution of test activities.
   - Use of a constant synthetic user load generation is required to provide a realistic test bed for changes on one of the pre-production environments.
-    - The Azure Mission-Critical [foundational-online](https://github.com/Azure/AlwaysOn-Foundational-Online) reference implementation provides an example [user load generator](https://github.com/Azure/AlwaysOn-Foundational-Online/src/testing/userload-generator/README.md).
+    - The Azure Mission-Critical [foundational-online](https://github.com/Azure/Mission-Critical-Online) reference implementation provides an example [user load generator](https://github.com/Azure/Mission-Critical-Online/src/testing/userload-generator/README.md).
 
 [![Azure Mission-Critical Azure Subscription Organization](/docs/media/subscription-organization.png)](./Deployment-Testing.md)
 
@@ -147,7 +147,7 @@ To achieve zero interruptions while performing deployments to a Mission-Critical
 
 Achieving zero-downtime deployments is a fundamental goal of a Mission-Critical application, but is ultimately a complex issue which requires significant engineering investment and greatly influences the overall design. It is therefore critical to invest effort up-front to define and plan deployment processes, to drive key design decisions such as whether to treat resources as ephemeral.
 
-The [foundational-online](https://github.com/Azure/AlwaysOn-Foundational-Online) and [foundational-connected](https://github.com/Azure/AlwaysOn-Foundational-Connected) reference implementations serve as practical examples for these concepts and recommendations, to establish an optimized zero-downtime deployment approach as represented in the illustration below.
+The [foundational-online](https://github.com/Azure/Mission-Critical-Online) and [foundational-connected](https://github.com/Azure/AlwaysOn-Foundational-Connected) reference implementations serve as practical examples for these concepts and recommendations, to establish an optimized zero-downtime deployment approach as represented in the illustration below.
 
 [![Zero-Downtime DevOps Pipeline Reference](/docs/media/zero-downtime-pipeline.png "Zero-Downtime DevOps Pipeline Reference")](./Deployment-Testing.md)
 

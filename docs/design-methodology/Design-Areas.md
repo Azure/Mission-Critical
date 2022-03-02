@@ -23,7 +23,7 @@ The image below represents a target technical state recommended for mission-crit
 
 [![Azure Mission-Critical Online Foundational Reference Architecture](/docs/media/architecture-foundational-online.png "Azure Mission-Critical Online Foundational Reference Architecture")](./Design-Areas.md)
 
-> The [foundational-online](https://github.com/Azure/AlwaysOn-Foundational-Online) and [foundational-connected](https://github.com/Azure/AlwaysOn-Foundational-Connected) reference implementations provide solution orientated showcases for the Azure Mission-Critical design methodology, demonstrating how this architecture pattern can be implemented alongside the operational wrappers required to maximize reliability and operational effectiveness.
+> The [foundational-online](https://github.com/Azure/Mission-Critical-Online) and [foundational-connected](https://github.com/Azure/AlwaysOn-Foundational-Connected) reference implementations provide solution orientated showcases for the Azure Mission-Critical design methodology, demonstrating how this architecture pattern can be implemented alongside the operational wrappers required to maximize reliability and operational effectiveness.
 
 ## Cross Cutting Concerns
 

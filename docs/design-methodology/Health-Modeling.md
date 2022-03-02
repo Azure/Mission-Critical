@@ -67,7 +67,7 @@ In order to build a health model it is first necessary to define what applicatio
 
 ### Reference layered health model
 
-> Please note that this section provides a simplified representation of a layered application health model to assist readers with the underlying concept. For a more comprehensive and contextualized health model reference please refer to the [foundational-online](https://github.com/azure/alwayson-foundational-online) and [foundational-connected](https://github.com/azure/alwayson-foundational-connected) reference implementations.
+> Please note that this section provides a simplified representation of a layered application health model to assist readers with the underlying concept. For a more comprehensive and contextualized health model reference please refer to the [foundational-online](https://github.com/azure/Mission-Critical-Online) and [foundational-connected](https://github.com/azure/alwayson-foundational-connected) reference implementations.
 
 When implementing a health model it is critical to first define the health of individual components through the aggregation and interpretation of key resource-level metrics. An example of how resource metrics can used is the image below:
 
@@ -117,7 +117,7 @@ ClusterHealthStatus
 | extend HealthScore = 1-(YellowScore*0.25)-(RedScore*0.5)
 ```
 
-These aggregated scores can subsequently be represented as a dependency chart using visualization tools like Grafana to illustrate the health model. The image below depicts an example layered health model from the [foundational-online](https://github.com/azure/alwayson-foundational-online) reference implementation, and demonstrates how a change in health state for a foundational component can have a cascading impact to user flows and overall application health (the example values correspond to the table in the previous image).
+These aggregated scores can subsequently be represented as a dependency chart using visualization tools like Grafana to illustrate the health model. The image below depicts an example layered health model from the [foundational-online](https://github.com/azure/Mission-Critical-Online) reference implementation, and demonstrates how a change in health state for a foundational component can have a cascading impact to user flows and overall application health (the example values correspond to the table in the previous image).
 
 [![Azure Mission-Critical Example Health Model Visualization](/docs/media/example-fault-states.png "Azure Mission-Critical Example Health Model Visualization")](./Health-Modeling.md)
 

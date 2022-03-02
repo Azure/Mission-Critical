@@ -9,7 +9,7 @@ There are ultimately a myriad of design patterns which can be applied to build r
 - [Loose Coupled Event-Driven Architecture](#loose-coupled-event-driven-architecture)
 - [Application-Level Resiliency Patterns and Error Handling](#application-level-resiliency-patterns-and-error-handling)
 
-> The [foundational-online](https://github.com/Azure/AlwaysOn-Foundational-Online) and [foundational-connected](https://github.com/Azure/AlwaysOn-Foundational-Connected) reference implementations provide solution orientated showcases for how these foundational design concepts can be leveraged alongside Azure-native capabilities to maximize reliability.
+> The [foundational-online](https://github.com/Azure/Mission-Critical-Online) and [foundational-connected](https://github.com/Azure/AlwaysOn-Foundational-Connected) reference implementations provide solution orientated showcases for how these foundational design concepts can be leveraged alongside Azure-native capabilities to maximize reliability.
 
 ## Scale-Unit Architecture
 
@@ -100,7 +100,7 @@ It's important to note that some Azure services are deployable or configurable a
 
 [![Azure Mission-Critical Foundational-Online Architecture](/docs/media/high-level-architecture.png "Azure Mission-Critical Foundational-Online Architecture")](./App-Design.md)
 
-The previous image depicts the high-level active-active design for the [foundational-online reference implementation](https://github.com/azure/alwayson-foundational-online), where a user accesses the application via a central global entry point that then redirects requests to a suitable regional deployment stamp.
+The previous image depicts the high-level active-active design for the [foundational-online reference implementation](https://github.com/azure/Mission-Critical-Online), where a user accesses the application via a central global entry point that then redirects requests to a suitable regional deployment stamp.
 
 ### Design Considerations
 
