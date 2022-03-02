@@ -23,7 +23,7 @@ The image below represents a target technical state recommended for mission-crit
 
 [![Azure Mission-Critical Online Foundational Reference Architecture](/docs/media/architecture-foundational-online.png "Azure Mission-Critical Online Foundational Reference Architecture")](./Design-Areas.md)
 
-> The [foundational-online](https://github.com/Azure/Mission-Critical-Online) and [foundational-connected](https://github.com/Azure/AlwaysOn-Foundational-Connected) reference implementations provide solution orientated showcases for the Azure Mission-Critical design methodology, demonstrating how this architecture pattern can be implemented alongside the operational wrappers required to maximize reliability and operational effectiveness.
+> The [foundational-online](https://github.com/Azure/Mission-Critical-Online) and [foundational-connected](https://github.com/Azure/Mission-Critical-Connected) reference implementations provide solution orientated showcases for the Azure Mission-Critical design methodology, demonstrating how this architecture pattern can be implemented alongside the operational wrappers required to maximize reliability and operational effectiveness.
 
 ## Cross Cutting Concerns
 
@@ -59,7 +59,7 @@ Align the target architecture with the Azure platform roadmap to inform the appl
 
 ### Azure Landing Zone integration
 
-[Azure Landing Zones](https://github.com/azure/cloud-adoption-framework/ready/landing-zone/) provides prescriptive architectural guidance to define a reliable and scalable shared-service platform for enterprise Azure deployments with requisite centralised governance.
+[Azure Landing Zones](https://github.com/Azure/cloud-adoption-framework/ready/landing-zone/) provides prescriptive architectural guidance to define a reliable and scalable shared-service platform for enterprise Azure deployments with requisite centralised governance.
 
 Azure Mission-Critical can integrate seamlessly within an Azure Landing Zone, and is deployable within both the *Online* or *Corp. Connected* Landing Zone formats as demonstrated within the image below.
 

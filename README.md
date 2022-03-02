@@ -16,16 +16,16 @@ Azure Mission-Critical is an open source project that provides a **prescriptive 
 
 - [Design Methodology | Mission-Critical Architectural Approach](./docs/design-methodology/README.md) - Prescriptive guidance aligned to 8 critical design areas guides users to design and build an mission-critical application, outlining a recommended decision process.
 
-- [Reference Implementation | Online](https://github.com/azure/Mission-Critical-Online) - Everything required to understand and build a copy of the reference implementation intended for online scenarios that are public-facing and do not require private network connectivity to a surrounding organizational technical estate.
+- [Reference Implementation | Online](https://github.com/Azure/Mission-Critical-Online) - Everything required to understand and build a copy of the reference implementation intended for online scenarios that are public-facing and do not require private network connectivity to a surrounding organizational technical estate.
 
-- [Reference Implementation | Connected](https://github.com/azure/alwayson-foundational-connected) - Everything required to understand and build a copy of the reference implementation intended for private scenarios that require integration with an organizational technical estate for either public-facing or internal-facing workloads.
+- [Reference Implementation | Connected](https://github.com/Azure/Mission-Critical-Connected) - Everything required to understand and build a copy of the reference implementation intended for private scenarios that require integration with an organizational technical estate for either public-facing or internal-facing workloads.
 
 ## Helpful Information
 
 The reference implementations are separated within dedicated repositories containing all relevant documentation and technical artifacts, along with a *getting started guide*:
 
 - [Online Reference Implementation](https://github.com/Azure/Mission-Critical-Online)
-- [Connected Reference Implementation](https://github.com/Azure/AlwaysOn-foundational-connected)
+- [Connected Reference Implementation](https://github.com/Azure/Mission-Critical-Connected)
 
 [![Azure Mission-Critical Repo Structure](/docs/media/repo-structure.png "Azure Mission-Critical Repo Structure")](./CONTRIBUTE.md)
 

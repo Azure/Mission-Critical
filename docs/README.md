@@ -24,8 +24,8 @@
 
 ## Reference Implementations
 
-- [Online Reference Implementation](http://github.com/azure/Mission-Critical-Online)
-- [Connected Reference Implementation](http://github.com/azure/alwayson-foundational-connected)
+- [Online Reference Implementation](http://github.com/Azure/Mission-Critical-Online)
+- [Connected Reference Implementation](http://github.com/Azure/Mission-Critical-Connected)
 
 ---
 

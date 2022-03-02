@@ -44,7 +44,7 @@ Furthermore, maximizing reliability with a Mission-Critical application design c
 
 ## Synthetic application construction
 
-In parallel to design activities, it is highly recommended that a synthetic Mission-Critical application environment be established using the [foundational-online](https://github.com/Azure/Mission-Critical-Online) and [foundational-connected](https://github.com/Azure/AlwaysOn-Foundational-Connected) reference implementations.
+In parallel to design activities, it is highly recommended that a synthetic Mission-Critical application environment be established using the [foundational-online](https://github.com/Azure/Mission-Critical-Online) and [foundational-connected](https://github.com/Azure/Mission-Critical-Connected) reference implementations.
 
 This provides hands-on opportunities to validate design decisions by replicating the target architecture, allowing for design uncertainty to be swiftly assessed. If applied correctly with representative requirement coverage, most problematic issues likely to hinder progress can be uncovered and subsequently addressed.
 

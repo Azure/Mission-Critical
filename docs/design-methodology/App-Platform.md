@@ -222,7 +222,7 @@ For web and API based workload scenarios Azure App Services offers a feasible al
   - Enable and review [Kubernetes master node logs](https://docs.microsoft.com/azure/aks/view-master-logs).
   - Configure the [scraping of Prometheus metrics](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-prometheus-integration) with Azure Monitor for containers.
 
-- Subscribe to the public [AKS Roadmap and Release Notes](https://github.com/azure/aks) on GitHub to stay up-to-date on upcoming changes, improvements, and most importantly Kubernetes version releases or the deprecation of old releases.
+- Subscribe to the public [AKS Roadmap and Release Notes](https://github.com/Azure/aks) on GitHub to stay up-to-date on upcoming changes, improvements, and most importantly Kubernetes version releases or the deprecation of old releases.
 
 - Regularly upgrade to a supported version of Kubernetes.
   - Establish a governance process to check and upgrade as needed to not fall out of support.

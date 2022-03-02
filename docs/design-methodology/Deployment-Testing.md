@@ -147,7 +147,7 @@ To achieve zero interruptions while performing deployments to a Mission-Critical
 
 Achieving zero-downtime deployments is a fundamental goal of a Mission-Critical application, but is ultimately a complex issue which requires significant engineering investment and greatly influences the overall design. It is therefore critical to invest effort up-front to define and plan deployment processes, to drive key design decisions such as whether to treat resources as ephemeral.
 
-The [foundational-online](https://github.com/Azure/Mission-Critical-Online) and [foundational-connected](https://github.com/Azure/AlwaysOn-Foundational-Connected) reference implementations serve as practical examples for these concepts and recommendations, to establish an optimized zero-downtime deployment approach as represented in the illustration below.
+The [foundational-online](https://github.com/Azure/Mission-Critical-Online) and [foundational-connected](https://github.com/Azure/Mission-Critical-Connected) reference implementations serve as practical examples for these concepts and recommendations, to establish an optimized zero-downtime deployment approach as represented in the illustration below.
 
 [![Zero-Downtime DevOps Pipeline Reference](/docs/media/zero-downtime-pipeline.png "Zero-Downtime DevOps Pipeline Reference")](./Deployment-Testing.md)
 
