@@ -1,6 +1,6 @@
 # Design principles
 
-The AlwaysOn architectural framework presented within this repository is underpinned by 5 key design principles which serve as a compass for subsequent design decisions across technical domains and the critical design areas. Readers are strongly advised to familiarize themselves with these principles to better understand their impact and the trade-offs associated with non-adherence.
+The Azure Mission-Critical architectural framework presented within this repository is underpinned by 5 key design principles which serve as a compass for subsequent design decisions across technical domains and the critical design areas. Readers are strongly advised to familiarize themselves with these principles to better understand their impact and the trade-offs associated with non-adherence.
 
 1. **Maximum Reliability** - Fundamental pursuit of the most reliable solution, ensuring trade-offs are properly understood.
 1. **Sustainable Performance and Scalability** - Design for scalability across the end-to-end solution without performance bottlenecks.
@@ -8,7 +8,7 @@ The AlwaysOn architectural framework presented within this repository is underpi
 1. **Cloud-Native Design** - Focus on using native platforms services to minimize operational burdens, while mitigating known gaps.
 1. **Always Secure** - Design for end-to-end security to maintain application stability and ensure availability.
 
-[![AlwaysOn Design Principles](/docs/media/alwayson-design-principles.png "AlwaysOn Design Principles")](./Principles.md)
+[![Azure Mission-Critical Design Principles](/docs/media/design-principles.png "Azure Mission-Critical Design Principles")](./Principles.md)
 
 ## Maximum reliability
 
@@ -70,25 +70,25 @@ The AlwaysOn architectural framework presented within this repository is underpi
 
 # Additional project principles
 
-- **Production ready artifacts**: Every AlwaysOn technical artifact will be ready for use in production environments with all end-to-end operational aspects considered.
+- **Production ready artifacts**: Every Azure Mission-Critical technical artifact will be ready for use in production environments with all end-to-end operational aspects considered.
 
 - **Rooted in 'customer truth'** - All technical decisions will be guided by the experience customers have on the platform and the feedback they share.
 
-- **Azure roadmap alignment** - The AlwaysOn architecture will have its own roadmap that is aligned with Azure product roadmaps.
+- **Azure roadmap alignment** - The Azure Mission-Critical architecture will have its own roadmap that is aligned with Azure product roadmaps.
 
 ---
 
 |Previous Page|Next Page|
 |--|--|
-|[How to use the AlwaysOn Design Guidelines](./README.md)|[AlwaysOn Design Areas](./Design-Areas.md)
+|[How to use the Azure Mission-Critical Design Guidelines](./README.md)|[Azure Mission-Critical Design Areas](./Design-Areas.md)
 
 ---
 
 |Design Methodology|
 |--|
-|[How to use the AlwaysOn Design Methodology](./README.md)
-|[AlwaysOn Design Principles](./Principles.md)
-|[AlwaysOn Design Areas](./Design-Areas.md)
+|[How to use the Azure Mission-Critical Design Methodology](./README.md)
+|[Azure Mission-Critical Design Principles](./Principles.md)
+|[Azure Mission-Critical Design Areas](./Design-Areas.md)
 |[Application Design](./App-Design.md)
 |[Application Platform](./App-Platform.md)
 |[Data Platform](./Data-Platform.md)
@@ -100,4 +100,4 @@ The AlwaysOn architectural framework presented within this repository is underpi
 
 ---
 
-[AlwaysOn | Documentation Inventory](/docs/README.md)
+[Azure Mission-Critical | Documentation Inventory](/docs/README.md)

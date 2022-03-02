@@ -1,8 +1,8 @@
 # Application Platform
 
-The selection of an appropriate application hosting platform is a critical decision which has reverberations across the AlwaysOn design areas and encompassed design decisions. Azure ultimately provides several highly available [computational platforms](https://docs.microsoft.com/azure/architecture/guide/technology-choices/compute-decision-tree) that differ in capability and complexity. It is therefore essential that key non-functional requirements surrounding reliability, availability, performance, and security are fully considered alongside other decision factors such as scalability, cost, operability, and complexity. For example, the scale-limits of a particular technology will have a key bearing on suitability as well as the overall AlwaysOn application design in terms of scale-unit definitions.
+The selection of an appropriate application hosting platform is a critical decision which has reverberations across the Azure Mission-Critical design areas and encompassed design decisions. Azure ultimately provides several highly available [computational platforms](https://docs.microsoft.com/azure/architecture/guide/technology-choices/compute-decision-tree) that differ in capability and complexity. It is therefore essential that key non-functional requirements surrounding reliability, availability, performance, and security are fully considered alongside other decision factors such as scalability, cost, operability, and complexity. For example, the scale-limits of a particular technology will have a key bearing on suitability as well as the overall Mission-Critical application design in terms of scale-unit definitions.
 
-This design area will therefore explore requisite decision factors and provide recommendations related to the selection, design, and configuration of an appropriate application hosting platform for an AlwaysOn application on Azure.
+This design area will therefore explore requisite decision factors and provide recommendations related to the selection, design, and configuration of an appropriate application hosting platform for a Mission-Critical application on Azure.
 
 - [Programming Language Selection](#programming-language-selection)
 - [Containerization](#containerization)
@@ -10,11 +10,11 @@ This design area will therefore explore requisite decision factors and provide r
 - [Serverless Compute](#serverless-compute)
 - [Asynchronous Messaging](#asynchronous-messaging)
 
-> An AlwaysOn application can use more than one application platform in parallel to support multiple composite workloads and microservices with distinct platform requirements.
+> A Mission-Critical application can use more than one application platform in parallel to support multiple composite workloads and microservices with distinct platform requirements.
 
 ## Programming Language Selection
 
-Selecting the right programming languages and frameworks is a critical design decision for an AlwaysOn solution. Typically this decision is driven by the availability of development skills or by the use of standardized technologies within an organization. However, given the reliable aspirations of an AlwaysOn application, it is essential to also evaluate the performance and resilience aspects of different languages/frameworks as well as the capability differences within required Azure SDKs.
+Selecting the right programming languages and frameworks is a critical design decision for a Mission-Critical solution. Typically this decision is driven by the availability of development skills or by the use of standardized technologies within an organization. However, given the reliable aspirations of a Mission-Critical application, it is essential to also evaluate the performance and resilience aspects of different languages/frameworks as well as the capability differences within required Azure SDKs.
 
 ### Design Considerations
 
@@ -23,7 +23,7 @@ Selecting the right programming languages and frameworks is a critical design de
 
 - New features are typically added to the .NET and Java libraries first, and there can be a delay in feature availability for other [supported languages](https://azure.github.io/azure-sdk/).
 
-- An AlwaysOn application can use multiple programming languages or frameworks in parallel to support multiple composite workloads with distinct requirements.
+- A Mission-Critical application can use multiple programming languages or frameworks in parallel to support multiple composite workloads with distinct requirements.
   - However, significant technology sprawl should be avoided since it introduces management complexity and operational challenges.
 
 ### Design Recommendations
@@ -74,7 +74,7 @@ There are several Azure application platforms capable of effectively hosting con
 - [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/)
 - [Azure Red Hat OpenShift](https://azure.microsoft.com/services/openshift/)
 
-There are advantages and disadvantages associated with each of these Azure container platforms which should be analyzed in the context of business requirements to inform an optimal technical choice; each platform serves an optimal choice for certain scenarios. However, given the principles underpinning the AlwaysOn design methodology strive to optimize reliability, scalability, and performance, it is strongly recommended to prioritize the use of Azure Kubernetes Service.
+There are advantages and disadvantages associated with each of these Azure container platforms which should be analyzed in the context of business requirements to inform an optimal technical choice; each platform serves an optimal choice for certain scenarios. However, given the principles underpinning the Azure Mission-Critical design methodology strive to optimize reliability, scalability, and performance, it is strongly recommended to prioritize the use of Azure Kubernetes Service.
 
 Azure Kubernetes Service (AKS) is Microsoft Azure's native managed Kubernetes service which allows for rapid Kubernetes cluster provisioning without complex cluster administration activities, and enhances standard Kubernetes with a rich feature set that includes advanced networking and identity capabilities. It is important to note that AKS is the target application compute platform across Azure engineering teams within Microsoft, as well other Microsoft engineering organizations, such as Xbox and LinkedIn.
 
@@ -222,7 +222,7 @@ For web and API based workload scenarios Azure App Services offers a feasible al
   - Enable and review [Kubernetes master node logs](https://docs.microsoft.com/azure/aks/view-master-logs).
   - Configure the [scraping of Prometheus metrics](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-prometheus-integration) with Azure Monitor for containers.
 
-- Subscribe to the public [AKS Roadmap and Release Notes](https://github.com/azure/aks) on GitHub to stay up-to-date on upcoming changes, improvements, and most importantly Kubernetes version releases or the deprecation of old releases.
+- Subscribe to the public [AKS Roadmap and Release Notes](https://github.com/Azure/aks) on GitHub to stay up-to-date on upcoming changes, improvements, and most importantly Kubernetes version releases or the deprecation of old releases.
 
 - Regularly upgrade to a supported version of Kubernetes.
   - Establish a governance process to check and upgrade as needed to not fall out of support.
@@ -249,7 +249,7 @@ For web and API based workload scenarios Azure App Services offers a feasible al
 
   > When deploying into an Azure Landing Zone, requisite Azure Policy to ensure the consistent reliability and security should be delivered by the Enterprise Scale platform through policy assignments within the Landing Zone definition.
 
-  > The [foundational reference implementation](https://github.com/Azure/AlwaysOn/blob/main/docs/reference-implementation/README.md) provides a suite of baseline AlwaysOn policies to drive recommended reliability and security configurations.
+  > The foundational reference implementations provides a suite of baseline Mission-Critical policies to drive recommended reliability and security configurations.
 
 **Azure App Service**
 
@@ -305,9 +305,9 @@ Microsoft Azure provides several serverless compute platforms:
 - [Azure API Management](https://azure.microsoft.com/services/api-management/): Publish, secure, transform, maintain, and monitor APIs using the Consumption tier.
 - [Power Apps & Power Automate](https://docs.microsoft.com/powerapps/powerapps-overview): Provides a 'low-code/no-code' development experience, with simple workflow logic and integrations configurable through connections in a user interface. Developed Power Apps can subsequently be deployed to a Microsoft 365 tenant and consumed from either a web browser or the Power Apps mobile client.
 
-In the context of a reliable AlwaysOn application platform, serverless technologies provide a near-zero friction development and operational experience, which can be highly valuable for simple business process scenarios. However, this relative simplicity comes at the cost of flexibility in terms of scalability, reliability, and performance, which is likely unacceptable for most business-critical application scenarios.
+In the context of a reliable Mission-Critical application platform, serverless technologies provide a near-zero friction development and operational experience, which can be highly valuable for simple business process scenarios. However, this relative simplicity comes at the cost of flexibility in terms of scalability, reliability, and performance, which is likely unacceptable for most business-critical application scenarios.
 
-The AlwaysOn design methodology therefore positions serverless technologies as an alternative platform for simple business process scenarios which do not share the same stringent business requirements as critical system flows.
+The Azure Mission-Critical design methodology therefore positions serverless technologies as an alternative platform for simple business process scenarios which do not share the same stringent business requirements as critical system flows.
 
 > The design considerations and recommendations within this section will focus on optimal Azure Function and Azure Logic Apps usage as alternative platforms for non-critical workflow scenarios.
 
@@ -362,7 +362,7 @@ The AlwaysOn design methodology therefore positions serverless technologies as a
 - For internal workloads, consider the use of Service Endpoints or Private Endpoints to restrict access to private Virtual Networks.
   - If required, use Private Endpoints to mitigate data exfiltration risks, such as malicious admin scenarios.
 
-- Treat Azure Functions code just like any other code; subject it to code scanning tools that are integrate it with AlwaysOn CI/CD pipelines.
+- Treat Azure Functions code just like any other code; subject it to code scanning tools that are integrate it with Mission-Critical CI/CD pipelines.
 
 **Azure Logic Apps**
 
@@ -468,9 +468,9 @@ Previous Page|Next Page|
 
 |Design Methodology|
 |--|
-|[How to use the AlwaysOn Design Methodology](./README.md)
-|[AlwaysOn Design Principles](./Principles.md)
-|[AlwaysOn Design Areas](./Design-Areas.md)
+|[How to use the Azure Mission-Critical Design Methodology](./README.md)
+|[Azure Mission-Critical Design Principles](./Principles.md)
+|[Azure Mission-Critical Design Areas](./Design-Areas.md)
 |[Application Design](./App-Design.md)
 |[Application Platform](./App-Platform.md)
 |[Data Platform](./Data-Platform.md)
@@ -482,4 +482,4 @@ Previous Page|Next Page|
 
 ---
 
-[AlwaysOn | Documentation Inventory](/docs/README.md)
+[Azure Mission-Critical | Documentation Inventory](/docs/README.md)

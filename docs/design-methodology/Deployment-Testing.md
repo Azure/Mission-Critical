@@ -1,8 +1,8 @@
 # Deployment and testing
 
-Application outages are often caused by failed deployments or erroneous releases, which is precisely why the design of Continuous Integration and Continuous Deployment (CI/CD) pipelines to encompass deployment and testing methodologies plays such a critical role in the overall reliability of an AlwaysOn application.
+Application outages are often caused by failed deployments or erroneous releases, which is precisely why the design of Continuous Integration and Continuous Deployment (CI/CD) pipelines to encompass deployment and testing methodologies plays such a critical role in the overall reliability of a Mission-Critical application.
 
-Moreover, deployment and testing should not be constrained to the delivery of planned application updates, but instead should form the basis for how all application and infrastructure operations are conducted to ensure consistent outcomes for mission-critical workloads. This variety of deployment contexts covering a wide gamut of activities results in a frequent, and often daily, deployment cadence. There is therefore a clear need for the design of CI/CD pipelines to exhibit maximum reliability, since they perform a critical operational function for an AlwaysOn application through:
+Moreover, deployment and testing should not be constrained to the delivery of planned application updates, but instead should form the basis for how all application and infrastructure operations are conducted to ensure consistent outcomes for mission-critical workloads. This variety of deployment contexts covering a wide gamut of activities results in a frequent, and often daily, deployment cadence. There is therefore a clear need for the design of CI/CD pipelines to exhibit maximum reliability, since they perform a critical operational function for a Mission-Critical application through:
 
 - Rigorous Pre-Release Testing: updates should not introduce defects, vulnerabilities, or anything that will jeopardize application health.
 - Transparent Deployments: all clients and users should be able to continue application interaction without interruption using a zero-downtime deployment approach.
@@ -10,7 +10,7 @@ Moreover, deployment and testing should not be constrained to the delivery of pl
 - End-to-End Automation: manual intervention in the technical execution of deployment and testing operations represents a significant reliability risk.
 - Consistent deployment process: Same application artifacts and processes are used to deploy the infrastructure  and  application code across different environments.
 
-This section will therefore focus on how to eradicate downtime and maintain application health for deployment operations, providing key considerations and recommendations intended to inform the design of optimal CI/CD pipelines for an AlwaysOn application.
+This section will therefore focus on how to eradicate downtime and maintain application health for deployment operations, providing key considerations and recommendations intended to inform the design of optimal CI/CD pipelines for a Mission-Critical application.
 
 - [Application Environments](#application-environments)
 - [Ephemeral Blue/Green Deployments](#ephemeral-bluegreen-deployments)
@@ -32,7 +32,7 @@ This section will therefore explore key considerations and recommendations for a
 
 **Development Environments**
 
-- Development environments will typically not share the same reliability, capacity, and security requirements as the production AlwaysOn environment.
+- Development environments will typically not share the same reliability, capacity, and security requirements as the production Mission-Critical environment.
 
 - Given the reduced scale, reliability, and security requirements of a development environment, they can more easily coexist within a single subscription.
 
@@ -85,13 +85,13 @@ This section will therefore explore key considerations and recommendations for a
 - Ensure at least one staging environment is fully reflective of production to enable production-like testing and validation.
   - Capacity within this pre-production environment can flex based on the execution of test activities.
   - Use of a constant synthetic user load generation is required to provide a realistic test bed for changes on one of the pre-production environments.
-    - The AlwaysOn [foundational-online](https://github.com/Azure/AlwaysOn-Foundational-Online) reference implementation provides an example [user load generator](https://github.com/Azure/AlwaysOn-Foundational-Online/src/testing/userload-generator/README.md).
+    - The Azure Mission-Critical [foundational-online](https://github.com/Azure/Mission-Critical-Online) reference implementation provides an example [user load generator](https://github.com/Azure/Mission-Critical-Online/src/testing/userload-generator/README.md).
 
-[![AlwaysOn Azure Subscription Organization](/docs/media/alwayson-subscription-organization.png)](./Deployment-Testing.md)
+[![Azure Mission-Critical Azure Subscription Organization](/docs/media/subscription-organization.png)](./Deployment-Testing.md)
 
 ## Ephemeral Blue/Green Deployments
 
-To achieve zero interruptions while performing deployments to an AlwaysOn application, it is strongly recommended to adopt a blue/green deployment approach for production environments in conjunction with ephemeral resources. This allows new application code or resources to be deployed and tested in a new parallel environment, with traffic only transitioned once ready in a phased process before subsequently decommissioning the old environment.
+To achieve zero interruptions while performing deployments to a Mission-Critical application, it is strongly recommended to adopt a blue/green deployment approach for production environments in conjunction with ephemeral resources. This allows new application code or resources to be deployed and tested in a new parallel environment, with traffic only transitioned once ready in a phased process before subsequently decommissioning the old environment.
 
 ### Design Considerations
 
@@ -145,11 +145,11 @@ To achieve zero interruptions while performing deployments to an AlwaysOn applic
 
 #### Zero-Downtime Deployment Reference
 
-Achieving zero-downtime deployments is a fundamental goal of an AlwaysOn application, but is ultimately a complex issue which requires significant engineering investment and greatly influences the overall design. It is therefore critical to invest effort up-front to define and plan deployment processes, to drive key design decisions such as whether to treat resources as ephemeral.
+Achieving zero-downtime deployments is a fundamental goal of a Mission-Critical application, but is ultimately a complex issue which requires significant engineering investment and greatly influences the overall design. It is therefore critical to invest effort up-front to define and plan deployment processes, to drive key design decisions such as whether to treat resources as ephemeral.
 
-The [foundational-online](https://github.com/Azure/AlwaysOn-Foundational-Online) and [foundational-connected](https://github.com/Azure/AlwaysOn-Foundational-Connected) reference implementations serve as practical examples for these concepts and recommendations, to establish an optimized zero-downtime deployment approach as represented in the illustration below.
+The [foundational-online](https://github.com/Azure/Mission-Critical-Online) and [foundational-connected](https://github.com/Azure/Mission-Critical-Connected) reference implementations serve as practical examples for these concepts and recommendations, to establish an optimized zero-downtime deployment approach as represented in the illustration below.
 
-[![Zero-Downtime DevOps Pipeline Reference](/docs/media/alwayson-zero-downtime-pipeline.png "Zero-Downtime DevOps Pipeline Reference")](./Deployment-Testing.md)
+[![Zero-Downtime DevOps Pipeline Reference](/docs/media/zero-downtime-pipeline.png "Zero-Downtime DevOps Pipeline Reference")](./Deployment-Testing.md)
 
 ## Infrastructure-As-Code Deployments
 
@@ -160,7 +160,7 @@ The recommended infrastructure-level blue/green deployment approach is underpinn
 - The principle of Infrastructure-as-Code (IaC) treats infrastructure definitions as source code that is version controlled alongside other application artifacts.
   - Utilizing IaC ensures code consistency across environments and eliminates the risk of human error during automated deployments, as well as providing traceability and rollback.
 
-- Typically an AlwaysOn IaC repository has two resource definitions:
+- Typically a Mission-Critical IaC repository has two resource definitions:
   - Global Resources: those that are deployed once within the solution, such as Azure Front Door and Azure Cosmos DB.
   - Regional (*Stamp*) Resources: those that are deployed multiple times and into different regions, such as AKS, EventHub and Storage.
 
@@ -176,9 +176,9 @@ The recommended infrastructure-level blue/green deployment approach is underpinn
 
 ## DevOps Tooling
 
-There are a myriad of different products and services which can provide the necessary DevOps capabilities to effectively deploy and manage an AlwaysOn application; Microsoft provides two Azure-native toolsets through GitHub _Actions_ and Azure DevOps (ADO) _Pipelines_.
+There are a myriad of different products and services which can provide the necessary DevOps capabilities to effectively deploy and manage a Mission-Critical application; Microsoft provides two Azure-native toolsets through GitHub _Actions_ and Azure DevOps (ADO) _Pipelines_.
 
-The appropriate and effective use of leveraged deployment tooling is critical to ensure overall reliability for an AlwaysOn application, particularly since DevOps processes provide such a significant function within the overall application design. For example, failover and scale operations may depend on automation provided by DevOps tooling. Deployment tooling must therefore be implemented in a reliable and highly available manner, with engineering teams understanding the application impact if the deployment service, or parts of it, become unavailable.
+The appropriate and effective use of leveraged deployment tooling is critical to ensure overall reliability for a Mission-Critical application, particularly since DevOps processes provide such a significant function within the overall application design. For example, failover and scale operations may depend on automation provided by DevOps tooling. Deployment tooling must therefore be implemented in a reliable and highly available manner, with engineering teams understanding the application impact if the deployment service, or parts of it, become unavailable.
 
 This section will therefore focus on the optimal use of GitHub Actions and Azure DevOps Pipelines and decision factors influencing the optimal selection of DevOps tooling.
 
@@ -198,7 +198,7 @@ This section will therefore focus on the optimal use of GitHub Actions and Azure
   - Data is replicated across regions but only for Disaster Recovery purposes.
   - Hosted build agents are utilized from the same region as the ADO instance.
 
-- In the context of the AlwaysOn aspiration for maximum reliability, the dependency on a single Azure region represents an operational risk.
+- In the context of the Azure Mission-Critical aspiration for maximum reliability, the dependency on a single Azure region represents an operational risk.
   - For example, consider a scenario where traffic is spread over West Europe and North Europe, with West Europe hosting the ADO instance. If West Europe experiences an outage, the ADO instance would also be effected. While North Europe would automatically now handle all application traffic, the ability to deploy additional scale-units to North Europe, in order to provide a consistent failover experience, would be prohibited which may result in a severely degraded application experience until the issue is resolved.
 
 **GitHub Actions**
@@ -225,7 +225,7 @@ This section will therefore focus on the optimal use of GitHub Actions and Azure
 
 ## Branching Strategy
 
-Branching strategies are a fundamental aspect of application source control, and while there are many valid approaches to apply branching, there are several key aspects that should be considered in the context of an AlwaysOn application scenario to ensure maximum reliability for mission-critical workloads.
+Branching strategies are a fundamental aspect of application source control, and while there are many valid approaches to apply branching, there are several key aspects that should be considered in the context of a Mission-Critical application scenario to ensure maximum reliability for mission-critical workloads.
 
 ### Design Considerations
 
@@ -295,7 +295,7 @@ This section will therefore examine the optimal configuration of container regis
 
 ### Design Recommendations
 
-- For AlwaysOn application scenarios, employ container registry instances that are dedicated to the application workload.
+- For Mission-Critical application scenarios, employ container registry instances that are dedicated to the application workload.
   - Avoid taking a dependency on a centralized service unless availability and reliability requirements are in full alignment with the application.
 
 - When using container registries outside Azure, ensure that the provided SLA is aligned with the reliability and security targets.
@@ -317,7 +317,7 @@ This section will therefore examine the optimal configuration of container regis
 
 ## Secret management
 
-Secret management is a key technical domain in the context of both security and reliability, since the secret management solution for an AlwaysOn application must provide requisite security and also offer an appropriate level of availability to align with maximum reliability aspirations.
+Secret management is a key technical domain in the context of both security and reliability, since the secret management solution for a Mission-Critical application must provide requisite security and also offer an appropriate level of availability to align with maximum reliability aspirations.
 
 ### Design considerations
 
@@ -374,7 +374,7 @@ There are three common approaches applied to define at what point secrets must b
 - Use Azure Key Vault to store all application secrets.
 
 - Azure Key Vault instances should be deployed as part of a regional stamp to mitigate the potential impact of a failure to a single deployment stamp.
-  - AlwaysOn 'global' resources, such as Front Door (for certificate storage, if required), should leverage a separate Azure Key Vault instance dedicated to global resources, rather than using one of the regional Key Vault instances.
+  - Azure Mission-Critical 'global' resources, such as Front Door (for certificate storage, if required), should leverage a separate Azure Key Vault instance dedicated to global resources, rather than using one of the regional Key Vault instances.
 
 - Use Managed identities instead of service principals to access Key Vault whenever possible.
 
@@ -387,7 +387,7 @@ There are three common approaches applied to define at what point secrets must b
 
 ## Testing
 
-As previously stated, testing is a fundamental activity for any an AlwaysOn solution, to fully validate the health of both the application code and infrastructure. More specifically, to satisfy desired standards for reliability, performance, availability, security, quality, and scale, testing must be well defined and applied as a core component of the application design and DevOps methodologies.
+As previously stated, testing is a fundamental activity for any a Mission-Critical solution, to fully validate the health of both the application code and infrastructure. More specifically, to satisfy desired standards for reliability, performance, availability, security, quality, and scale, testing must be well defined and applied as a core component of the application design and DevOps methodologies.
 
 Testing is ultimately a key concern for both the local developer experience ("[Inner Loop](https://docs.microsoft.com/dotnet/architecture/containerized-lifecycle/design-develop-containerized-apps/docker-apps-inner-loop-workflow)") and the complete DevOps lifecycle ("[Outer Loop](https://docs.microsoft.com/dotnet/architecture/containerized-lifecycle/docker-devops-workflow/docker-application-outer-loop-devops-workflow)"), which captures when developed code begins release pipeline processes on its journey to a production environment.
 
@@ -455,7 +455,7 @@ The scope of this section focuses on testing conducted within the outer loop for
 
 - Chaos testing introduces artificial failures to the system to validate how the system reacts and the effectiveness of resiliency measures, operational procedures and mitigations.
 
-- An AlwaysOn application should be resilient to infrastructure and application failures, so introducing faults in the application and underlying infrastructure and observing how the application behaves is essential to achieve confidence in the solutions redundancy mechanisms and validate that it can indeed operate as an 'always on' application.
+- A Mission-Critical application should be resilient to infrastructure and application failures, so introducing faults in the application and underlying infrastructure and observing how the application behaves is essential to achieve confidence in the solutions redundancy mechanisms and validate that it can indeed operate as an 'always on' application.
   - Shutting down infrastructure components, purposely degrading performance, or introducing application faults are examples of test scenarios which can be used to verify that the application is going to react as expected in situations when they occur for real.
 
 - [Azure Chaos Studio](https://azure.microsoft.com/services/chaos-studio/) provides an Azure-native chaos experimentation suite of tools to easily conduct chaos experiments and inject faults within Azure services and application components.
@@ -532,9 +532,9 @@ AIOps methodologies can be applied within CI/CD pipelines to supplement traditio
 
 |Design Methodology|
 |--|
-|[How to use the AlwaysOn Design Methodology](./README.md)
-|[AlwaysOn Design Principles](./Principles.md)
-|[AlwaysOn Design Areas](./Design-Areas.md)
+|[How to use the Azure Mission-Critical Design Methodology](./README.md)
+|[Azure Mission-Critical Design Principles](./Principles.md)
+|[Azure Mission-Critical Design Areas](./Design-Areas.md)
 |[Application Design](./App-Design.md)
 |[Application Platform](./App-Platform.md)
 |[Data Platform](./Data-Platform.md)
@@ -546,4 +546,4 @@ AIOps methodologies can be applied within CI/CD pipelines to supplement traditio
 
 ---
 
-[AlwaysOn | Documentation Inventory](/docs/README.md)
+[Azure Mission-Critical | Documentation Inventory](/docs/README.md)
