@@ -1,8 +1,8 @@
 # Networking and connectivity
 
-Networking is a fundamental design topic for an AlwaysOn application, particularly given the recommended globally distributed active-active design approach.
+Networking is a fundamental design topic for a Mission-Critical application, particularly given the recommended globally distributed active-active design approach.
 
-This section will therefore explore various network topology topics at an application level, considering requisite connectivity and redundant traffic management. More specifically, it will highlight critical considerations and recommendations intended to inform the design of a secure and scalable global network topology for an AlwaysOn application.
+This section will therefore explore various network topology topics at an application level, considering requisite connectivity and redundant traffic management. More specifically, it will highlight critical considerations and recommendations intended to inform the design of a secure and scalable global network topology for a Mission-Critical application.
 
 - [Global Traffic Routing](#global-traffic-routing)
 - [Application Delivery Services](#application-delivery-services)
@@ -54,7 +54,7 @@ This section will therefore explore key differences between Azure Front Door, Az
   - While these services provide financial reparations for unavailability, it comes of little significance when the impact of unavailability is significant, such as with safety-critical scenarios where human life is ultimately at stake.
     - Technology redundancy or sufficient operational mitigations should therefore still be considered even when the advertised legal SLA is 100%.
 
-**Azure Front Door** 
+**Azure Front Door**
 
 - Azure Front Door provides global HTTP/S load balancing and optimized connectivity using the Anycast protocol with split TCP to take advantage of the Microsoft global backbone network.
   - A number of connections are maintained for each of the backend endpoints.
@@ -89,7 +89,7 @@ This section will therefore explore key differences between Azure Front Door, Az
 - Azure Front Door supports various [load distribution configurations](https://docs.microsoft.com/azure/frontdoor/front-door-routing-methods):
   - Latency-based: the default setting which routes traffic to the "closest" backend from the client; based on request latency.
   - Priority-based: useful for active-passive setups, where traffic must always be sent to a primary backend unless it is not available.
-  - Weighted: applicable for canary deployments in which a certain percentage of traffic is sent to a specific backend. 
+  - Weighted: applicable for canary deployments in which a certain percentage of traffic is sent to a specific backend.
     - If multiple backends have the same weights assigned, latency-based routing is used.
 
 - By default Azure Front Door uses latency-based routing which can lead to situations where some backends get a lot more incoming traffic then others, depending on where clients originate from.
@@ -115,7 +115,7 @@ This section will therefore explore key differences between Azure Front Door, Az
 
 **Azure Standard Load Balancer**
 
-> As of December 2021, the Cross-Region Standard Load Balancer is available in preview with [technical limitations](https://docs.microsoft.com/azure/load-balancer/cross-region-overview#limitations) that prevent consideration in an AlwaysOn context.
+> As of December 2021, the Cross-Region Standard Load Balancer is available in preview with [technical limitations](https://docs.microsoft.com/azure/load-balancer/cross-region-overview#limitations) that prevent consideration in a Mission-Critical context.
 
 > - Integration with AKS is no available: loss of connectivity will occur when deploying a cross-region load balancer with an AKS cluster as a backend.
 > - Frontend IP configurations have to be public: internal frontend endpoints are not supported.
@@ -139,7 +139,7 @@ This section will therefore explore key differences between Azure Front Door, Az
 
 Following diagram illustrates a redundant global load balancer configuration with client failover using Azure Front Door as primary global load balancer.
 
-[![AlwaysOn Global Load Balancer Configuration](/docs/media/alwayson-global-routing.gif "AlwaysOn Global Load Balancer Configuration")](./Networking.md)
+[![Azure Mission-Critical Global Load Balancer Configuration](/docs/media/global-routing.gif "Azure Mission-Critical Global Load Balancer Configuration")](./Networking.md)
 
 > To truly mitigate the risk of global failures within the Azure platform, a multi-cloud active-active deployment approach should be considered, with active deployment stamps hosted across two or more cloud providers and redundant third-party routing technologies used for global routing.
 > However, it is strongly recommended not to apply a multi-cloud approach since it introduces significant operational complexity, with different deployment stamp definitions and representations of operational health across the different cloud platforms. This complexity in-turn introduces numerous resiliency risks within the normal operation of the application, which far outweigh the hypothetical risks of a global platform outage.
@@ -173,7 +173,7 @@ Following diagram illustrates a redundant global load balancer configuration wit
     - Ensure a tolerance that is acceptable to the application workload regarding overall client request latency.
 
 - Do not enable Session Affinity unless it is required by the application, since it can have a negative impact the balance of traffic distribution.
-  - With a fully stateless application, if the recommended AlwaysOn application design approach is followed, any request could be handled by any of the regional deployments.
+  - With a fully stateless application, if the recommended Mission-Critical application design approach is followed, any request could be handled by any of the regional deployments.
 
 **Azure Traffic Manager**
 
@@ -192,16 +192,16 @@ Following diagram illustrates a redundant global load balancer configuration wit
 
 ## Application delivery services
 
-In addition to redundant global traffic routing, the network ingress path for an AlwaysOn application must also consider requisite application delivery services to ensure secure, reliable, and scalable ingress traffic.
+In addition to redundant global traffic routing, the network ingress path for a Mission-Critical application must also consider requisite application delivery services to ensure secure, reliable, and scalable ingress traffic.
 
 This section will therefore build on recommendations from the previous global routing section by exploring key application delivery capabilities, considering relevant services such as Azure Standard Load Balancer, Azure Application Gateway, and Azure API Management.
 
 ### Design considerations
 
-- TLS encryption is critical to ensure the integrity of inbound user traffic to an AlwaysOn application, with **TLS Offloading** applied only at the point of a stamp's ingress to decrypt incoming traffic.
+- TLS encryption is critical to ensure the integrity of inbound user traffic to an Mission-Critical application, with **TLS Offloading** applied only at the point of a stamp's ingress to decrypt incoming traffic.
   - TLS Offloading Requires the private key of the TLS certificate to decrypt traffic.
 
-- A **Web Application Firewall** provides protection against common web exploits and vulnerabilities, such as SQL injection or cross site scripting, and is essential to achieve the maximum reliability aspirations of an AlwaysOn application.
+- A **Web Application Firewall** provides protection against common web exploits and vulnerabilities, such as SQL injection or cross site scripting, and is essential to achieve the maximum reliability aspirations of a Mission-Critical application.
 
 - Azure WAF provides out-of-the-box protection against the top 10 OWASP vulnerabilities using managed rule sets.
   - Custom rules can also be added to extend the managed rule set.
@@ -267,9 +267,9 @@ This section will therefore build on recommendations from the previous global ro
 
 ## Virtual Network Integration
 
-An AlwaysOn application will typically encompass requirements for integration with other applications or dependent systems, which could be hosted on Azure, another public cloud, or on-premises data centers. This application integration can be accomplished using public-facing endpoints and the internet, or private networks through network-level integration. Ultimately, the method by which application integration is achieved will have a significant impact on the security, performance, and reliability of the solution, as well as strongly impacting design decisions within other AlwaysOn design areas.
+A Mission-Critical application will typically encompass requirements for integration with other applications or dependent systems, which could be hosted on Azure, another public cloud, or on-premises data centers. This application integration can be accomplished using public-facing endpoints and the internet, or private networks through network-level integration. Ultimately, the method by which application integration is achieved will have a significant impact on the security, performance, and reliability of the solution, as well as strongly impacting design decisions within other Mission-Critical design areas.
 
-An AlwaysOn application can be deployed within one of three overarching network configurations, which determines how application integration can occur at a network level.
+A Mission-Critical application can be deployed within one of three overarching network configurations, which determines how application integration can occur at a network level.
 
 1. **Public** application **without** corporate network connectivity.
 1. **Public** application **with** corporate network connectivity.
@@ -295,7 +295,7 @@ This section will therefore explore these network integration scenarios, layerin
 
 **Isolated Virtual Networks**
 
-- To mitigate the risks associated with unnecessary public endpoints, an AlwaysOn solution can be deployed within a standalone network that is not connected to other networks.
+- To mitigate the risks associated with unnecessary public endpoints, a Mission-Critical solution can be deployed within a standalone network that is not connected to other networks.
 
 - Incoming client requests will still require a public endpoint to be exposed to the internet, however, all subsequent communication can be within the virtual network using private endpoints.
   - When using Azure Front Door Premium, it is possible to route directly from edge nodes to private application endpoints.
@@ -333,11 +333,11 @@ This section will therefore explore these network integration scenarios, layerin
 
 > In an Enterprise-Scale environment, the foundational platform will provide requisite connectivity to on-premises networks using ExpressRoute as well as other virtual networks in Azure using either Virtual WAN or a hub-and-spoke network design.
 
-- The inclusion of additional network paths and resources introduces additional reliability and operational considerations for the AlwaysOn application to ensure health is maintained.
+- The inclusion of additional network paths and resources introduces additional reliability and operational considerations for the Mission-Critical application to ensure health is maintained.
 
 ### Design Recommendations
 
-- It is recommended that AlwaysOn solutions be deployed within Azure virtual networks where possible to remove unnecessary public endpoints, limiting the application attack surface to maximize security and reliability.
+- It is recommended that Mission-Critical solutions be deployed within Azure virtual networks where possible to remove unnecessary public endpoints, limiting the application attack surface to maximize security and reliability.
   - Use Private Endpoints for connectivity to Azure platform services.
     - Service Endpoints can be considered for services which do not support Private Link, provided data exfiltration risks are acceptable or mitigated through alternative controls.
 
@@ -368,13 +368,13 @@ This section will therefore explore these network integration scenarios, layerin
 
 ## Internet Egress
 
-Internet egress is a foundational network requirement for an AlwaysOn application to facilitate external communication in the context of:
+Internet egress is a foundational network requirement for a Mission-Critical application to facilitate external communication in the context of:
 
 1. Direct application user interaction.
 1. Application integration with external dependencies outside Azure.
 1. Access to external dependencies required by the Azure services leveraged by the application.
 
-This section will therefore explore how internet egress can be achieved while ensuring security, reliability, and sustainable performance are maintained, highlighting key egress requirements for services recommended in an AlwaysOn mission-critical context.
+This section will therefore explore how internet egress can be achieved while ensuring security, reliability, and sustainable performance are maintained, highlighting key egress requirements for services recommended in a Mission-Critical context.
 
 ### Design Considerations
 
@@ -419,17 +419,17 @@ This section will therefore explore how internet egress can be achieved while en
 > In an Enterprise-Scale context, consider using the foundational platform Azure Firewall resource (or equivalent NVA).
 > - If a dependency is taken on a central platform resource for internet egress, then the reliability level of that resource and associated network path should be closely aligned with application requirements. Operational data from the resource should also be made available to the application in order to inform potential operational action in failure scenarios.
 
-> If there are high-scale requirements associated with outbound traffic, consideration should be given to a dedicated Azure Firewall resource for a mission-critical AlwaysOn application, to mitigate risks associated with using a centrally shared resource, such as noisy neighbor scenarios.
+> If there are high-scale requirements associated with outbound traffic, consideration should be given to a dedicated Azure Firewall resource for a Mission-Critical application, to mitigate risks associated with using a centrally shared resource, such as noisy neighbor scenarios.
 > - When deployed within a Virtual WAN environment, consideration should be given to Firewall Manager to provide centralized management of dedicated application Azure Firewall instances to ensure organizational security postures are observed through global firewall policies.
 >   - Ensure incremental firewall policies are delegated to application security teams via role-based access control to allow for application policy autonomy.
 
 ## Inter-Zone and Inter-Region Connectivity
 
-While the AlwaysOn application design strongly advocates independent regional deployment stamps, many application scenarios may still require network integration between application components deployed within different zones or Azure regions, even if only under degraded service circumstances. The method by which inter-zone and inter-region communication is achieved has a significant bearing on overall performance and reliability, which will be explored through the considerations and recommendations within this section.
+While the Azure Mission-Critical application design strongly advocates independent regional deployment stamps, many application scenarios may still require network integration between application components deployed within different zones or Azure regions, even if only under degraded service circumstances. The method by which inter-zone and inter-region communication is achieved has a significant bearing on overall performance and reliability, which will be explored through the considerations and recommendations within this section.
 
 ### Design Considerations
 
-- The application design approach for an AlwaysOn application endorses the use of independent regional deployments with zonal redundancy applied at all component levels within a single region.
+- The application design approach for a Mission-Critical application endorses the use of independent regional deployments with zonal redundancy applied at all component levels within a single region.
 
 - An [Availability Zone (AZ)](https://docs.microsoft.com/azure/availability-zones/az-overview#availability-zones) is a physically separate data center location within an Azure region, providing physical and logical fault isolation up to the level of a single data center.
   - A round-trip latency of less than 2ms is guaranteed for inter-zone communication.
@@ -482,7 +482,7 @@ While the AlwaysOn application design strongly advocates independent regional de
 
 Micro-segmentation is a network security design pattern used to isolate and secure individual application workloads, with policies applied to limit network traffic between workloads based on a Zero Trust model. It is typically applied to reduce network attack surface, improve breach containment, and strengthen security through policy-driven application-level network controls.
 
-An AlwaysOn application can enforce application-level network security using Network Security Groups (NSG) at either a subnet or network interface level, service Access Control Lists (ACL), and network policies when using Azure Kubernetes Service (AKS). This section will therefore explore the optimal use of these capabilities, providing key considerations and recommendations to achieve application-level micro-segmentation.
+A Mission-Critical application can enforce application-level network security using Network Security Groups (NSG) at either a subnet or network interface level, service Access Control Lists (ACL), and network policies when using Azure Kubernetes Service (AKS). This section will therefore explore the optimal use of these capabilities, providing key considerations and recommendations to achieve application-level micro-segmentation.
 
 ### Design Considerations
 
@@ -540,9 +540,9 @@ The delivery of network policies is consistent regardless of whether Azure or Ca
 
 |Design Methodology|
 |--|
-|[How to use the AlwaysOn Design Methodology](./README.md)
-|[AlwaysOn Design Principles](./Principles.md)
-|[AlwaysOn Design Areas](./Design-Areas.md)
+|[How to use the Azure Mission-Critical Design Methodology](./README.md)
+|[Azure Mission-Critical Design Principles](./Principles.md)
+|[Azure Mission-Critical Design Areas](./Design-Areas.md)
 |[Application Design](./App-Design.md)
 |[Application Platform](./App-Platform.md)
 |[Data Platform](./Data-Platform.md)
@@ -554,4 +554,4 @@ The delivery of network policies is consistent regardless of whether Azure or Ca
 
 ---
 
-[AlwaysOn | Documentation Inventory](/docs/README.md)
+[Azure Mission-Critical | Documentation Inventory](/docs/README.md)

@@ -67,11 +67,11 @@ In order to build a health model it is first necessary to define what applicatio
 
 ### Reference layered health model
 
-> Please note that this section provides a simplified representation of a layered application health model to assist readers with the underlying concept. For a more comprehensive and contextualized health model reference please refer to the [foundational-online](https://github.com/azure/alwayson-foundational-online) and [foundational-connected](https://github.com/azure/alwayson-foundational-connected) reference implementations.
+> Please note that this section provides a simplified representation of a layered application health model to assist readers with the underlying concept. For a more comprehensive and contextualized health model reference please refer to the [foundational-online](https://github.com/Azure/Mission-Critical-Online) and [foundational-connected](https://github.com/Azure/Mission-Critical-Connected) reference implementations.
 
 When implementing a health model it is critical to first define the health of individual components through the aggregation and interpretation of key resource-level metrics. An example of how resource metrics can used is the image below:
 
-[![AlwaysOn Example Health Definitions](/docs/media/alwayson-example-health-definitions.png "AlwaysOn Example Health Definitions")](./Health-Modeling.md)
+[![Azure Mission-Critical Example Health Definitions](/docs/media/example-health-definitions.png "Azure Mission-Critical Example Health Definitions")](./Health-Modeling.md)
 
 This definition of health can subsequently be represented by a KQL query, as demonstrated by the example AKS query below that aggregates InsightsMetrics (AKS Container insights) and AzureMetrics (Azure diagnostics) and compares (inner join) against modelled health thresholds.
 
@@ -117,9 +117,9 @@ ClusterHealthStatus
 | extend HealthScore = 1-(YellowScore*0.25)-(RedScore*0.5)
 ```
 
-These aggregated scores can subsequently be represented as a dependency chart using visualization tools like Grafana to illustrate the health model. The image below depicts an example layered health model from the [foundational-online](https://github.com/azure/alwayson-foundational-online) reference implementation, and demonstrates how a change in health state for a foundational component can have a cascading impact to user flows and overall application health (the example values correspond to the table in the previous image).
+These aggregated scores can subsequently be represented as a dependency chart using visualization tools like Grafana to illustrate the health model. The image below depicts an example layered health model from the [foundational-online](https://github.com/Azure/Mission-Critical-Online) reference implementation, and demonstrates how a change in health state for a foundational component can have a cascading impact to user flows and overall application health (the example values correspond to the table in the previous image).
 
-[![AlwaysOn Example Health Model Visualization](/docs/media/alwayson-example-fault-states.png "AlwaysOn Example Health Model Visualization")](./Health-Modeling.md)
+[![Azure Mission-Critical Example Health Model Visualization](/docs/media/example-fault-states.png "Azure Mission-Critical Example Health Model Visualization")](./Health-Modeling.md)
 
 ## Unified data sink for correlated analysis
 
@@ -127,7 +127,7 @@ Numerous operational datasets must be gathered from all system components to acc
 
 A unified data sink is therefore required to ensure all operational data is swiftly stored and made available for correlated analysis to build a 'single pane' representation of application health. Azure provides several different operational technologies under the umbrella of [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview#overview), and Azure Monitor Log Analytics serves as the core Azure-native data sink to store and analyze operational data.
 
-[![AlwaysOn Health Data Collection](/docs/media/alwayson-health-data-collection.png "AlwaysOn Health Data Collection")](./Health-Modeling.md)
+[![Azure Mission-Critical Health Data Collection](/docs/media/health-data-collection.png "Azure Mission-Critical Health Data Collection")](./Health-Modeling.md)
 
 ### Design considerations
 
@@ -270,7 +270,7 @@ A unified data sink is therefore required to ensure all operational data is swif
 
 Visually representing the health model alongside critical operational data is essential to achieve effective operations and maximize reliability. Dashboards should ultimately be utilized to provide near-real time insights into application health for DevOps teams, facilitating the swift diagnosis of deviations from steady state.
 
-Microsoft provides several data visualization technologies, including Azure Dashboards, PowerBI, and Azure Managed Grafana (currently in-preview). Azure Dashboards is positioned to provide a tightly integrated out-of-the-box visualization solution for operational data within Azure Monitor. It therefore has a fundamental role to play in the visual representation of operational data and application health for an AlwaysOn solution. However, there are several limitations in terms of the positioning of Azure Dashboards as a holistic observability platform, and as a result consideration should be given to the supplemental use of market-leading observability solutions, such as Grafana which is also provided as a managed solution within Azure.
+Microsoft provides several data visualization technologies, including Azure Dashboards, PowerBI, and Azure Managed Grafana (currently in-preview). Azure Dashboards is positioned to provide a tightly integrated out-of-the-box visualization solution for operational data within Azure Monitor. It therefore has a fundamental role to play in the visual representation of operational data and application health for a Mission-Critical solution. However, there are several limitations in terms of the positioning of Azure Dashboards as a holistic observability platform, and as a result consideration should be given to the supplemental use of market-leading observability solutions, such as Grafana which is also provided as a managed solution within Azure.
 
 This section will therefore focus on the use of Azure Dashboards and Grafana to build a robust dashboarding experience capable of providing technical and business lenses into application health, enabling DevOps teams and effective operation.
 
@@ -287,8 +287,8 @@ This section will therefore focus on the use of Azure Dashboards and Grafana to 
 
 - The visualization of raw resource metrics, such as CPU utilization or network throughput, requires manual evaluation by operations teams to determine health status impacts, and this can be challenging during an active incident.
 
-- If multiple users leverage dashboards within a tool like Grafana, the number of queries sent to Log Analytics multiplies quickly. 
-  - Reaching the concurrent query limit on Log Analytics will queue subsequent queries, making the dashboard experience feel 'slow'. 
+- If multiple users leverage dashboards within a tool like Grafana, the number of queries sent to Log Analytics multiplies quickly.
+  - Reaching the concurrent query limit on Log Analytics will queue subsequent queries, making the dashboard experience feel 'slow'.
 
 ### Design recommendations
 
@@ -376,9 +376,9 @@ Machine learning models can be applied to correlate and prioritize operational d
 
 More specifically, an AIOps methodology can be applied to distil critical insights about the behavior of the system, users, and DevOps processes. These insights can include identifying a problem happening now (*detect*), quantifying why the problem is happening (*diagnose*), or signaling what will happen in the future (*predict*). Such insights can be used to drive actions which adjust and optimize the application to mitigate active or potential issues, leveraging key business metrics, system quality metrics, and DevOps productivity metrics, to prioritize according to business impact. Conducted actions can themselves be infused into the system though a feedback loop which further trains the underlying model to drive additional efficiencies.
 
-[![AlwaysOn AIOps Methodologies](/docs/media/alwayson-aiops-methodology.png "AlwaysOn AIOps Methodologies")](./Health-Modeling.md)
+[![Azure Mission-Critical AIOps Methodologies](/docs/media/aiops-methodology.png "Azure Mission-Critical AIOps Methodologies")](./Health-Modeling.md)
 
-There are multiple analytical technologies within Azure, such as Azure Synapse and Azure Databricks, which can be leveraged to build and train analytical models for AIOps. This section will therefore focus on how these technologies can be positioned within an AlwaysOn application design to accommodate AIOps and drive predictive action, focusing on Azure Synapse which reduces friction by bringing together the best of Azure's data services along with powerful new features.
+There are multiple analytical technologies within Azure, such as Azure Synapse and Azure Databricks, which can be leveraged to build and train analytical models for AIOps. This section will therefore focus on how these technologies can be positioned within a Mission-Critical application design to accommodate AIOps and drive predictive action, focusing on Azure Synapse which reduces friction by bringing together the best of Azure's data services along with powerful new features.
 
 >AIOps is used to drive predictive action, interpreting and correlating complex operational signals observed over a sustained period in order to better respond to and prevent issues before they occur.
 
@@ -437,9 +437,9 @@ There are multiple analytical technologies within Azure, such as Azure Synapse a
 
 |Design Methodology|
 |--|
-|[How to use the AlwaysOn Design Methodology](./README.md)
-|[AlwaysOn Design Principles](./Principles.md)
-|[AlwaysOn Design Areas](./Design-Areas.md)
+|[How to use the Azure Mission-Critical Design Methodology](./README.md)
+|[Azure Mission-Critical Design Principles](./Principles.md)
+|[Azure Mission-Critical Design Areas](./Design-Areas.md)
 |[Application Design](./App-Design.md)
 |[Application Platform](./App-Platform.md)
 |[Data Platform](./Data-Platform.md)
@@ -451,4 +451,4 @@ There are multiple analytical technologies within Azure, such as Azure Synapse a
 
 ---
 
-[AlwaysOn | Documentation Inventory](/docs/README.md)
+[Azure Mission-Critical | Documentation Inventory](/docs/README.md)

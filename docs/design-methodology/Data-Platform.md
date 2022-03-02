@@ -1,8 +1,8 @@
 # Data platform
 
-The selection of an effective application data platform is a further crucial decision area which has far-reaching implications across other AlwaysOn design areas. Azure ultimately offers a multitude of relational, non-relational, and analytical data platforms which differ greatly in capability. It is therefore essential that key non-functional requirements be fully considered alongside other decision factors such as consistency, operability, cost, and complexity. For example, the ability to operate in a multi-write configuration will have a critical bearing on suitability for a globally available platform.
+The selection of an effective application data platform is a further crucial decision area which has far-reaching implications across other Azure Mission-Critical design areas. Azure ultimately offers a multitude of relational, non-relational, and analytical data platforms which differ greatly in capability. It is therefore essential that key non-functional requirements be fully considered alongside other decision factors such as consistency, operability, cost, and complexity. For example, the ability to operate in a multi-write configuration will have a critical bearing on suitability for a globally available platform.
 
-This section will therefore expand on the AlwaysOn application design, providing key considerations and recommendations aligned with critical design themes to inform the selection of an optimal data platform.
+This section will therefore expand on the Azure Mission-Critical application design, providing key considerations and recommendations aligned with critical design themes to inform the selection of an optimal data platform.
 
 - [The Four Vs of Big Data](#the-four-vs-of-big-data)
 - [Globally Distributed Multi-Write Datastore](#globally-distributed-multi-write-datastore)
@@ -12,7 +12,7 @@ This section will therefore expand on the AlwaysOn application design, providing
 
 ## The Four Vs of Big Data
 
-The 'Four Vs of Big Data' provide a framework to better understand requisite characteristics for an AlwaysOn data platform, and how data can be used to maximize business value. This section will therefore explore how the Volume, Velocity, Variety, and Veracity characteristics can be applied at a conceptual level to help design an AlwaysOn data platform using appropriate data technologies.
+The 'Four Vs of Big Data' provide a framework to better understand requisite characteristics for a Mission-Critical data platform, and how data can be used to maximize business value. This section will therefore explore how the Volume, Velocity, Variety, and Veracity characteristics can be applied at a conceptual level to help design a Mission-Critical data platform using appropriate data technologies.
 
 - **V**olume: how much data is coming in to inform storage capacity and tiering requirements - i.e., the size of the dataset.
 - **V**elocity: the speed at which data is processed, either as batches or continuous streams - i.e., the rate of flow.
@@ -62,7 +62,7 @@ The 'Four Vs of Big Data' provide a framework to better understand requisite cha
   - *Will individual operations return failure codes while the control plane continues to operate?*
   - *Will the data platform activate throttling, and if so for how long?*
 
-- The fundamental AlwaysOn application design recommendation to use an active-active geographical distribution introduces challenges where data consistency is concerned.
+- The fundamental Azure Mission-Critical application design recommendation to use an active-active geographical distribution introduces challenges where data consistency is concerned.
   - There is a trade-off between consistency and performance with regards to full ACID transactional semantics and traditional locking behavior.
     - Minimizing write latency will come at the cost of data consistency.
 
@@ -104,7 +104,7 @@ The 'Four Vs of Big Data' provide a framework to better understand requisite cha
 
 **Veracity**
 
-- Several factors must be considered to validate the accuracy of data within an AlwaysOn application, and the management of these factors can have a significant bearing on the design of the data platform.
+- Several factors must be considered to validate the accuracy of data within a Mission-Critical application, and the management of these factors can have a significant bearing on the design of the data platform.
   - Data consistency.
   - Platform security features.
   - Data governance.
@@ -222,7 +222,7 @@ The 'Four Vs of Big Data' provide a framework to better understand requisite cha
 - When applying encryption, it is strongly recommended to use service-managed encryption keys as a way of reducing management complexity.
   - If there is a specific security requirement for customer-managed keys, ensure appropriate key management procedures are applied to ensure availability, backup, and rotation of all considered keys.
 
-> In an Enterprise Scale context, it is critical that an application centric approach be applied for the provisioning and operation of data platform components in an AlwaysOn application design.
+> In an Enterprise Scale context, it is critical that an application centric approach be applied for the provisioning and operation of data platform components in an Azure Mission-Critical application design.
 > More specifically, to maximize reliability it is critical that individual data platform components appropriately respond to application health through operational actions which may include other application components. For example, in a scenario where additional data platform resources are needed, scaling the data platform along with other application components according to a capacity model will likely be required, potentially through the provision of additional scale units. This approach will ultimately be constrained if there is a hard dependency of a centralized operations team to address issues related to the data platform in isolation.
 > Ultimately, the use of centralized data services (i.e. Central IT DBaaS) introduces operational bottlenecks that significantly hinder agility through a largely uncontextualized management experience, and should be avoided in a mission-critical or business-critical context.
 
@@ -237,7 +237,7 @@ Additional data-platform guidance is available within the Azure Application Arch
 
 ## Globally distributed multi-write datastore
 
-To fully accommodate the globally distributed active-active aspirations of an AlwaysOn application design, it is strongly recommended to consider a distributed multi-write data platform, where changes to separate writeable replicas are synchronized and merged between all replicas, with conflict resolution where required.
+To fully accommodate the globally distributed active-active aspirations of an Azure Mission-Critical application design, it is strongly recommended to consider a distributed multi-write data platform, where changes to separate writeable replicas are synchronized and merged between all replicas, with conflict resolution where required.
 
 > It is important to note that encompassed microservices may not all require a distributed multi-write datastore, so consideration should be given to the architectural context and business requirements of each workload scenario.
 
@@ -433,7 +433,7 @@ Azure Cosmos DB provides a globally distributed and highly available NoSQL datas
 
 **Azure Cosmos DB**
 
-- Use Azure Cosmos DB as the primary AlwaysOn data platform where requirements allow.
+- Use Azure Cosmos DB as the primary Mission-Critical data platform where requirements allow.
 
 - For mission-critical workload scenarios, configure Cosmos DB with a write replica inside each deployment region to reduce latency and provide maximum redundancy.
   - Configure the application to [prioritize the use of the local Cosmos DB replica](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.applicationregion) for writes and reads to optimize application load, performance, and regional RU/s consumption.
@@ -478,7 +478,7 @@ Azure Cosmos DB provides a globally distributed and highly available NoSQL datas
 - Disable [Cosmos DB key based metadata write access](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F4750c32b-89c0-46af-bfcb-2e4541a818d5) by applying the built-in Azure Policy.
 
 - Enable [Azure Monitor](https://docs.microsoft.com/azure/cosmos-db/monitor-cosmos-db) to gather key metrics and diagnostic logs, such as provisioned throughput (RU/s).
-  - Route Azure Monitor operational data into a Log Analytics workspace dedicated to Cosmos DB and other global resources within the AlwaysOn application design.
+  - Route Azure Monitor operational data into a Log Analytics workspace dedicated to Cosmos DB and other global resources within the Mission-Critical application design.
   - Use Azure Monitor metrics to determine if application traffic pattern are suitable for autoscale.
 
 - Evaluate application traffic patterns to select an optimal option for [provisioned throughput types](https://docs.microsoft.com/azure/cosmos-db/how-to-choose-offer).
@@ -510,7 +510,7 @@ Azure Cosmos DB provides a globally distributed and highly available NoSQL datas
 
 ## Relational data technologies
 
-For scenarios with a highly relational data model or dependencies on existing relational technologies, the use of Azure Cosmos DB in a multi-write configuration might not be directly applicable. In such cases, it is vital that leveraged relational technologies are designed and configured to uphold the multi-region active-active aspirations of an AlwaysOn application design.
+For scenarios with a highly relational data model or dependencies on existing relational technologies, the use of Azure Cosmos DB in a multi-write configuration might not be directly applicable. In such cases, it is vital that leveraged relational technologies are designed and configured to uphold the multi-region active-active aspirations of a Mission-Critical application design.
 
 Azure provides a variety of managed relational data platforms, including Azure SQL Database and Azure Database for common OSS relational solutions, including MySQL, PostgreSQL, and MariaDB. The design considerations and recommendations within this section will therefore focus on the optimal usage of Azure SQL Database and Azure Database OSS flavors to maximize reliability and global availability.
 
@@ -585,7 +585,7 @@ Azure provides a variety of managed relational data platforms, including Azure S
 - When using Hyperscale (Citus) for business critical workloads, enable High Availability mode to receive the 99.95% SLA guarantee.
 
 - Consider sharding to partition relational databases based on different application and data contexts, helping to navigate platform constraints, maximize scalability and availability, as well as fault isolation.
-  - This recommendation is particularly prevalent when the AlwaysOn application design considers 3 or more Azure regions since relational technology constraints can significantly hinder globally distributed data platforms.
+  - This recommendation is particularly prevalent when the Azure Mission-Critical application design considers 3 or more Azure regions since relational technology constraints can significantly hinder globally distributed data platforms.
   - Sharding is not appropriate for all application scenarios, so a contextualized evaluation is required.
 
 - Prioritize the use of Azure SQL Database where relational requirements exist due to its maturity on the Azure platform and wide array of relaibility capabilities.
@@ -607,7 +607,7 @@ Azure provides a variety of managed relational data platforms, including Azure S
 
 - Consider automated operational triggers, based on alerting aligned to the application health model, to conduct failovers to geo-replicated instances in the event of a failure impacting the primary and secondary within the Auto Failover Group.
 
-> For AlwaysOn applications considering more than 4 deployment regions, serious consideration should be given to application scoped sharding or refactoring the application to support multi-region write technologies, such as Azure Cosmos DB. However, if this is not feasible within the application workload scenario, it is advised to elevate a region within a single geography to a primary status encompassing a geo-replicated instance to more evenly distribute read access.
+> For Mission-Critical applications considering more than 4 deployment regions, serious consideration should be given to application scoped sharding or refactoring the application to support multi-region write technologies, such as Azure Cosmos DB. However, if this is not feasible within the application workload scenario, it is advised to elevate a region within a single geography to a primary status encompassing a geo-replicated instance to more evenly distribute read access.
 
 - Configure the application to query replica instances for read queries to optimize read performance.
 
@@ -637,7 +637,7 @@ Azure provides a variety of managed relational data platforms, including Azure S
 
 ## Caching for Hot Tier Data
 
-An in-memory caching layer can be applied to enhance an AlwaysOn data platform by significantly increasing read throughput and improving end-to-end client response times for hot tier data scenarios.
+An in-memory caching layer can be applied to enhance a Mission-Critical data platform by significantly increasing read throughput and improving end-to-end client response times for hot tier data scenarios.
 
 Azure provides several services with applicable capabilities for caching key data structures, with Azure Cache for Redis positioned to abstract and optimize data platform read access. This section will therefore focus on the optimal usage of Azure Cache for Redis in scenarios where additional read performance and data access durability is required.
 
@@ -690,7 +690,7 @@ Azure provides several services with applicable capabilities for caching key dat
 
 ## Analytical Scenarios
 
-It is increasingly common for mission-critical applications to consider analytical scenarios as a means to drive additional value from encompassed data flows. Application and operational (AIOps) analytical scenarios therefore form a crucial aspect of an AlwaysOn data platform.
+It is increasingly common for mission-critical applications to consider analytical scenarios as a means to drive additional value from encompassed data flows. Application and operational (AIOps) analytical scenarios therefore form a crucial aspect of a Mission-Critical data platform.
 
 Analytical and transactional workloads require different data platform capabilities and optimizations for acceptable performance within their respective contexts.
 
@@ -700,7 +700,7 @@ Analytical and transactional workloads require different data platform capabilit
 | Optimized for | Read queries and aggregations over very many records | Near real-time Create/Read/Update/Delete (CRUD) queries over few records |
 | Key Characteristics | - Consolidate from data sources of record<br />- Column-based storage<br />- Distributed storage<br />- Parallel processing<br />- Denormalized<br />- Low concurrency reads and writes<br />- Optimize for storage volume with compression | - Data source of record for application<br />- Row-based Storage<br />- Contiguous storage<br />- Symmetrical processing<br />- Normalized<br />- High concurrency reads and writes, index updates<br />- Optimize for fast data access with in-memory storage
 
-Azure Synapse provides an enterprise analytical platform that brings together relational and non-relational data with Spark technologies, leveraging built-in integration with Azure services such as Azure Cosmos DB to facilitate big data analytics. The design considerations and recommendations within this section will therefore focus on optimal Azure Synapse and Azure Cosmos DB usage for AlwaysOn analytical scenarios.
+Azure Synapse provides an enterprise analytical platform that brings together relational and non-relational data with Spark technologies, leveraging built-in integration with Azure services such as Azure Cosmos DB to facilitate big data analytics. The design considerations and recommendations within this section will therefore focus on optimal Azure Synapse and Azure Cosmos DB usage for Mission-Critical analytical scenarios.
 
 ### Design Considerations
 
@@ -770,7 +770,7 @@ Azure Synapse provides an enterprise analytical platform that brings together re
 
 **AIOps and Operational Analytics**
 
-- Create a single Azure Synapse workspace with linked services and data sets for each source Azure Storage account to which operational data from AlwaysOn resources are sent to.
+- Create a single Azure Synapse workspace with linked services and data sets for each source Azure Storage account to which operational data from Mission-Critical resources are sent to.
 
 - Create a dedicated Azure Storage account and use it as the workspace primary storage account to store the Synapse workspace catalog data and metadata. Configure it with hierarchical namespace to enable Azure Data Lake Gen2.
   - Maintain separation between the source analytical data and Synapse workspace data and metadata.
@@ -786,9 +786,9 @@ Azure Synapse provides an enterprise analytical platform that brings together re
 
 |Design Methodology|
 |--|
-|[How to use the AlwaysOn Design Methodology](./README.md)
-|[AlwaysOn Design Principles](./Principles.md)
-|[AlwaysOn Design Areas](./Design-Areas.md)
+|[How to use the Azure Mission-Critical Design Methodology](./README.md)
+|[Azure Mission-Critical Design Principles](./Principles.md)
+|[Azure Mission-Critical Design Areas](./Design-Areas.md)
 |[Application Design](./App-Design.md)
 |[Application Platform](./App-Platform.md)
 |[Data Platform](./Data-Platform.md)
@@ -800,4 +800,4 @@ Azure Synapse provides an enterprise analytical platform that brings together re
 
 ---
 
-[AlwaysOn | Documentation Inventory](/docs/README.md)
+[Azure Mission-Critical | Documentation Inventory](/docs/README.md)
