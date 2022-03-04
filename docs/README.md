@@ -9,18 +9,18 @@
 ## Design Methodology
 
 - [How to use the Mission-Critical Design Methodology](./design-methodology/README.md)
-- [Design Principles](./design-methodology/Principles.md)
+- [Design Principles](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-principles)
 - [Design Areas](./design-methodology/Design-Areas.md)
   - [Reference Architecture](./design-methodology/Design-Areas.md#reference-architecture)
-  - [Cross Cutting Concerns](./design-methodology/Design-Areas.md#cross-cutting-concerns)
-  - [Application Design](./design-methodology/App-Design.md)
-  - [Application Platform](./design-methodology/App-Platform.md)
-  - [Data Platform](./design-methodology/Data-Platform.md)
-  - [Health Modeling and Observability](./design-methodology/Health-Modeling.md)
-  - [Deployment and Testing](./design-methodology/Deployment-Testing.md)
-  - [Networking and Connectivity](./design-methodology/Networking.md)
-  - [Security](./design-methodology/Security.md)
-  - [Operational Procedures](./design-methodology/Operational-Procedures.md)
+  - [Cross Cutting Concerns](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-cross-cutting-issues)
+  - [Application Design](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-application-design)
+  - [Application Platform](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-application-platform)
+  - [Data Platform](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-data-platform)
+  - [Health Modeling and Observability](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-health-modeling)
+  - [Deployment and Testing](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-deployment-testing)
+  - [Networking and Connectivity](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-networking-connectivity)
+  - [Security](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-security)
+  - [Operational Procedures](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-operational-procedures)
 
 ## Reference Implementations
 
