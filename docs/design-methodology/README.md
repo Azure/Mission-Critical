@@ -4,7 +4,7 @@ The Azure Mission-Critical design methodology is intended to define easy to foll
 
 ## Critical design path
 
-At the heart of a Mission-Critical target architecture definition lies a critical design path, comprised of 5 foundational [design principles](./Principles.md) and 8 [fundamental design areas](./Design-Areas.md) with heavily interrelated and dependent design decisions.
+At the heart of a Mission-Critical target architecture definition lies a critical design path, comprised of 5 foundational [design principles](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-principles) and 8 [fundamental design areas](./Design-Areas.md) with heavily interrelated and dependent design decisions.
 
 Ultimately, the impact of decisions made within each area will reverberate across other design areas and design decisions. Readers are strongly advised to familiarize themselves with these 8 critical design areas, reviewing provided considerations and recommendations to better understand the consequences of encompassed decisions, which may later produce trade-offs or unforeseen consequences within related areas. For example, to define a target architecture it is critical to determine how best to monitor application health across key components. In this instance, the reader should review the Health Modelling design area, using the outlined recommendations to help drive decisions.
 
@@ -44,7 +44,7 @@ Furthermore, maximizing reliability with a Mission-Critical application design c
 
 ## Synthetic application construction
 
-In parallel to design activities, it is highly recommended that a synthetic Mission-Critical application environment be established using the [foundational-online](https://github.com/Azure/Mission-Critical-Online) and [foundational-connected](https://github.com/Azure/Mission-Critical-Connected) reference implementations.
+In parallel to design activities, it is highly recommended that a synthetic Mission-Critical application environment be established using the [Mission-Critical-Online](https://github.com/Azure/Mission-Critical-Online) and [Mission-Critical-Connected](https://github.com/Azure/Mission-Critical-Connected) reference implementations.
 
 This provides hands-on opportunities to validate design decisions by replicating the target architecture, allowing for design uncertainty to be swiftly assessed. If applied correctly with representative requirement coverage, most problematic issues likely to hinder progress can be uncovered and subsequently addressed.
 
@@ -56,23 +56,23 @@ Application architectures established using the Azure Mission-Critical design me
 
 |Previous Page|Next Page|
 |--|--|
-|[Introduction to Azure Mission-Critical](../introduction/README.md)|[Azure Mission-Critical Design Principles](./Principles.md)
+|[Introduction to Azure Mission-Critical](../introduction/README.md)|[Azure Mission-Critical Design Principles](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-principles)
 
 ---
 
 |Design Methodology|
 |--|
 |[How to use the Azure Mission-Critical Design Methodology](./README.md)
-|[Azure Mission-Critical Design Principles](./Principles.md)
+|[Azure Mission-Critical Design Principles](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-principles)
 |[Azure Mission-Critical Design Areas](./Design-Areas.md)
-|[Application Design](./App-Design.md)
-|[Application Platform](./App-Platform.md)
-|[Data Platform](./Data-Platform.md)
-|[Health Modeling and Observability](./Health-Modeling.md)
-|[Deployment and Testing](./Deployment-Testing.md)
-|[Networking and Connectivity](./Networking.md)
-|[Security](./Security.md)
-|[Operational Procedures](./Operational-Procedures.md)
+|[Application Design](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-application-design)
+|[Application Platform](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-application-platform)
+|[Data Platform](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-data-platform)
+|[Health Modeling and Observability](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-health-modeling)
+|[Deployment and Testing](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-deployment-testing)
+|[Networking and Connectivity](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-networking-connectivity)
+|[Security](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-security)
+|[Operational Procedures](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-operational-procedures)
 
 ---
 
