@@ -4,14 +4,14 @@
 
 ## Introduction
 
-- [What is Azure Mission-Critical?](./introduction/README.md)
+- [What is Azure Mission-Critical?](./Introduction.md)
 
 ## Design Methodology
 
 - [How to use the Mission-Critical Design Methodology](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-methodology)
 - [Design Principles](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-principles)
-- [Design Areas](./design-methodology/Design-Areas.md)
-  - [Reference Architecture](./design-methodology/Design-Areas.md#reference-architecture)
+- [Design Areas](./Design-Areas.md)
+  - [Reference Architecture](./Design-Areas.md#reference-architecture)
   - [Cross Cutting Concerns](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-cross-cutting-issues)
   - [Application Design](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-application-design)
   - [Application Platform](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-application-platform)
