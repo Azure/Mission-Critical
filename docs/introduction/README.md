@@ -40,7 +40,7 @@ The Azure Mission-Critical project strives to address this complex consumption e
 
 |Previous Page|Next Page|
 |--|--|
-|[Home](/README.md)|[How to use the Azure Mission-Critical Design Methodology](../design-methodology/README.md)
+|[Home](/README.md)|[How to use the Azure Mission-Critical Design Methodology](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-methodology)
 
 ---
 

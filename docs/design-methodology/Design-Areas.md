@@ -85,7 +85,7 @@ It is crucial to understand and identify in which connectivity scenario a Missio
 
 |Design Methodology|
 |--|
-|[How to use the Azure Mission-Critical Design Methodology](./README.md)
+|[How to use the Azure Mission-Critical Design Methodology](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-methodology)
 |[Azure Mission-Critical Design Principles](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-principles)
 |[Azure Mission-Critical Design Areas](./Design-Areas.md)
 |[Application Design](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-application-design)
