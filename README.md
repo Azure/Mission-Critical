@@ -1,4 +1,5 @@
-[![Azure Mission-Critical](./icon.png "Azure Mission-Critical")](./README.md)
+![Azure Mission-Critical](./icon-light.png#gh-light-mode-only "Azure Mission-Critical")
+![Azure Mission-Critical](./icon-dark.png#gh-dark-mode-only "Azure Mission-Critical")
 
 ## Welcome to Azure Mission-Critical
 
@@ -12,9 +13,9 @@ Azure Mission-Critical is an open source project that provides a **prescriptive 
 
 ## Azure Mission-Critical | Navigation
 
-- [Introduction | What is Mission-Critical?](./docs/introduction/README.md) - Detailed introduction into Mission-Critical, the problem it is intended to solve and the value it can provide.
+- [Introduction | What is Mission-Critical?](/docs/README.md) - Detailed introduction into Mission-Critical, the problem it is intended to solve and the value it can provide.
 
-- [Design Methodology | Mission-Critical Architectural Approach](./docs/design-methodology/README.md) - Prescriptive guidance aligned to 8 critical design areas guides users to design and build an mission-critical application, outlining a recommended decision process.
+- [Design Methodology | Mission-Critical Architectural Approach](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-methodology) - Prescriptive guidance aligned to 8 critical design areas guides users to design and build an mission-critical application, outlining a recommended decision process.
 
 - [Reference Implementation | Online](https://github.com/Azure/Mission-Critical-Online) - Everything required to understand and build a copy of the reference implementation intended for online scenarios that are public-facing and do not require private network connectivity to a surrounding organizational technical estate.
 
