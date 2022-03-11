@@ -13,7 +13,7 @@ Azure Mission-Critical is an open source project that provides a **prescriptive 
 
 ## Azure Mission-Critical | Navigation
 
-- [Introduction | What is Mission-Critical?](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-overview) - Detailed introduction into Mission-Critical, the problem it is intended to solve and the value it can provide.
+- [Introduction | What is Mission-Critical?](/docs/README.md) - Detailed introduction into Mission-Critical, the problem it is intended to solve and the value it can provide.
 
 - [Design Methodology | Mission-Critical Architectural Approach](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-methodology) - Prescriptive guidance aligned to 8 critical design areas guides users to design and build an mission-critical application, outlining a recommended decision process.
 
