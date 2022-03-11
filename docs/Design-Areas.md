@@ -21,7 +21,7 @@ An Azure Mission-Critical application architecture is defined by the various des
 
 The image below represents a target technical state recommended for mission-critical applications on Azure. It leverages a reference set of business requirements to achieve an optimized architecture for different target reliability tiers.
 
-[![Azure Mission-Critical Online Foundational Reference Architecture](/docs/media/architecture-foundational-online.png "Azure Mission-Critical Online Foundational Reference Architecture")](./Design-Areas.md)
+[![Azure Mission-Critical Online Foundational Reference Architecture](/docs/media/mission-critical-architecture-online.svg "Azure Mission-Critical Online Foundational Reference Architecture")](./Design-Areas.md)
 
 > The [foundational-online](https://github.com/Azure/Mission-Critical-Online) and [foundational-connected](https://github.com/Azure/Mission-Critical-Connected) reference implementations provide solution orientated showcases for the Azure Mission-Critical design methodology, demonstrating how this architecture pattern can be implemented alongside the operational wrappers required to maximize reliability and operational effectiveness.
 

@@ -1,4 +1,5 @@
-[![Azure Mission-Critical](./icon.png "Azure Mission-Critical")](./README.md)
+![Azure Mission-Critical](./icon-light.png#gh-light-mode-only "Azure Mission-Critical")
+![Azure Mission-Critical](./icon-dark.png#gh-dark-mode-only "Azure Mission-Critical")
 
 ## Welcome to Azure Mission-Critical
 
