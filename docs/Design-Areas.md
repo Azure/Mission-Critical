@@ -13,7 +13,7 @@ The 8 design areas below represent the architecturally significant topics which 
 
 These eight critical design areas will be explored at length within ensuing pages, for which critical review considerations and design recommendations are provided along with their broader design impact across other areas. Ultimately, the design areas are interrelated and decisions made within one area can impact or influence decisions across the entire design, so readers are encouraged to use the provided design guidance to navigate the key design decisions.
 
-[![Azure Mission-Critical Design Areas](/docs/media/design-areas.png "Azure Mission-Critical Design Areas")](./Design-Areas.md)
+[![Azure Mission-Critical Design Areas](/docs/media/mission-critical-design-areas.png "Azure Mission-Critical Design Areas")](./Design-Areas.md)
 
 ## Reference Architecture
 
@@ -63,7 +63,7 @@ Align the target architecture with the Azure platform roadmap to inform the appl
 
 Azure Mission-Critical can integrate seamlessly within an Azure Landing Zone, and is deployable within both the *Online* or *Corp. Connected* Landing Zone formats as demonstrated within the image below.
 
-[![Azure Mission-Critical and Landing Zone Integration](/docs/media/landing-zones.gif "Azure Mission-Critical Landing Zone Integration")](./Design-Areas.md)
+[![Azure Mission-Critical and Landing Zone Integration](/docs/media/mission-critical-landing-zones.gif "Azure Mission-Critical Landing Zone Integration")](./Design-Areas.md)
 
 It is crucial to understand and identify in which connectivity scenario a Mission-Critical application requires since Azure Landing Zones support different landing zones archetypes.
 
