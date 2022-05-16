@@ -39,7 +39,7 @@ DevOps provides the engineering mindset, processes, and tooling to deliver appli
 - Embrace continuous improvement and allocate a proportion of engineering capacity within each sprint to optimize platform fundamentals.
   - Consider allocating 20-40% of capacity within each sprint to drive fundamental platform improvements and bolster reliability.
 
-- To accelerate the development of new services, consider the creation of a common engineering criteria and reference architectures/libraries for service teams to use, ensuring consistent alignment with core [design principles](mission-critical-design-principles.md).
+- To accelerate the development of new services, consider the creation of a common engineering criteria and reference architectures/libraries for service teams to use, ensuring consistent alignment with core [design principles](Design-Principles.md).
   - Enforce a consistent baseline configuration for reliability, security, and operations through a policy-driven approach using Azure Policy.
 
 > This common engineering criteria and associated artifacts, such as Azure Policies and Terraform for common design patterns, can also be used across other workloads within the broader application ecosystem for an organization.
@@ -152,4 +152,4 @@ This section will therefore highlight key operational aspects associated with ap
 Review the cross-cutting concerns for mission-critical application scenarios.
 
 > [!div class="nextstepaction"]
-> [Architecture pattern](mission-critical-architecture-pattern.md)
+> [Architecture pattern](Architecture-Pattern.md)

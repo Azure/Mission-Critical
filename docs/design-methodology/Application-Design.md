@@ -13,7 +13,7 @@ A _scale-unit_ is a logical unit or function that can be scaled independently. A
 > [!TIP]
 > For more information, see the [Deployment Stamps pattern](http://docs.microsoft.com/azure/architecture/patterns/deployment-stamp) for further details.
 
-For example, the [Mission-Critical Online](https://github.com/azure/mission-critical-online) reference implementation considers a user flow for providing comments or product ratings on catalog items that use APIs for retrieving and posting comments or ratings, and supporting components such as an OAuth endpoint, datastore, and message queues. These stateless API endpoints for retrieving and posting results represent granular functional units that must be able to adapt to changes in demand. However, for these to be truly scalable, the underlying application platform must also be able to scale in-kind. Similarly, to avoid performance bottlenecks in the end-to-end user flow and to achieve sustainable scale, the downstream components and dependencies must also be able to scale to an appropriate degree, either independently, as a separate scale-unit, or together, as part of a single logical unit.
+For example, the [Mission-Critical Online](https://github.com/azure/Mission-Critical-Online) reference implementation considers a user flow for providing comments or product ratings on catalog items that use APIs for retrieving and posting comments or ratings, and supporting components such as an OAuth endpoint, datastore, and message queues. These stateless API endpoints for retrieving and posting results represent granular functional units that must be able to adapt to changes in demand. However, for these to be truly scalable, the underlying application platform must also be able to scale in-kind. Similarly, to avoid performance bottlenecks in the end-to-end user flow and to achieve sustainable scale, the downstream components and dependencies must also be able to scale to an appropriate degree, either independently, as a separate scale-unit, or together, as part of a single logical unit.
 
 This image shows the multiple scale-unit scopes that are considered by this reference implementation user flow. These scopes range from microservice pods to cluster nodes and regional deployment stamps.
 
@@ -225,11 +225,11 @@ In reality, applications can combine loose and tight-coupling, depending on busi
 
 - Separate the delivery of static and dynamic content to users and deliver relevant content from a cache to reduce load on backend services optimize performance for end-users.
 
-- Given the strong recommendation ([Network and connectivity](./mission-critical-networking-connectivity.md) design area) to use Azure Front Door for global routing and Web Application Firewall (WAF) purposes, it's recommended to prioritize the use of Azure Front Door caching capabilities unless gaps exist.
+- Given the strong recommendation ([Network and connectivity](./Networking-Connectivity.md) design area) to use Azure Front Door for global routing and Web Application Firewall (WAF) purposes, it's recommended to prioritize the use of Azure Front Door caching capabilities unless gaps exist.
 
 ### Example - Event-driven approach
 
-The [Mission-Critical Online](https://github.com/Azure/Mission-Critical-online) reference implementation uses microservices to process a single business transaction. It applies write operations asynchronously with a message broker and worker, while read operations are synchronous with the result directly returned to the caller.
+The [Mission-Critical Online](https://github.com/Azure/Mission-Critical-Online) reference implementation uses microservices to process a single business transaction. It applies write operations asynchronously with a message broker and worker, while read operations are synchronous with the result directly returned to the caller.
 
 ![Mission-Critical event driven architecture](./images/mission-critical-event-driven.png "Mission-Critical event-driven approach")
 
@@ -295,12 +295,12 @@ Here are some other resiliency-related patterns:
 - Use [structured logging](https://stackify.com/what-is-structured-logging-and-why-developers-need-it/) for all log messages.
 
 - Select a unified operational data sink for application traces, metrics, and logs to enable operators to seamlessly debug issues.
-  - Ensure operational data is used in conjunction with business requirements to inform an [application health model](./mission-critical-health-modeling.md).
+  - Ensure operational data is used in conjunction with business requirements to inform an [application health model](./Health-Modeling.md).
 
 ## Next step
 
 Review the considerations for the application platform.
 
 > [!div class="nextstepaction"]
-> [Application platform](./mission-critical-application-platform.md)
+> [Application platform](./Application-Platform.md)
 

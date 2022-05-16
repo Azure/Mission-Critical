@@ -481,4 +481,4 @@ This section explores the optimal use of these capabilities, providing key consi
 Review the considerations for quantifying and observing application health.
 
 > [!div class="nextstepaction"]
-> [Health modeling and observability](./mission-critical-health-modeling.md)
+> [Health modeling and observability](./Health-Modeling.md)

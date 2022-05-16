@@ -43,7 +43,7 @@ Recovery Time Objective (RTO) and Recovery Point Objective (RPO) are further cri
 
 The Mission-Critical open source project strives to illustrate the design recommendations provided by this methodology, and should be used as a source of reference to inform the art of the possible.
 
-There are two foundational [reference implementations](mission-critical-overview.md#illustrative-examples):
+There are two foundational [reference implementations](README.md#illustrative-examples):
 
   - [Mission-Critical Online](https://github.com/Azure/Mission-Critical-Online)
   - [Mission-Critical Connected](https://github.com/Azure/Mission-Critical-Connected) 
@@ -56,7 +56,7 @@ There are two foundational [reference implementations](mission-critical-overview
 
 ## 3&mdash;Evaluate the design areas using the design principles
 
-At the core of this methodology lies a critical design path comprised of foundational **[design principles](mission-critical-design-principles.md)** and fundamental **[design area](mission-critical-architecture-pattern.md)** with heavily interrelated and dependent design decisions.
+At the core of this methodology lies a critical design path comprised of foundational **[design principles](Design-Principles.md)** and fundamental **[design area](Architecture-Pattern.md)** with heavily interrelated and dependent design decisions.
 
 The impact of decisions made within each design area will reverberate across other design areas and design decisions. Review the provided considerations and recommendations to better understand the consequences of encompassed decisions, which may produce trade-offs within related design areas. 
 
@@ -77,4 +77,4 @@ Application architectures established using this design methodology must continu
 Review the design principles for mission-critical application scenarios.
 
 > [!div class="nextstepaction"]
-> [Design principles](mission-critical-design-principles.md)
+> [Design principles](Design-Principles.md)

@@ -244,7 +244,7 @@ The considerations and recommendations within this section will therefore focus 
   > [!NOTE]
   > 
   > When deploying into an Azure landing zone, be aware that the required Azure Policy to ensure consistent reliability and security should be provided by the landing zone implementation.
-  > The mission-critical [reference implementations](mission-critical-overview.md#illustrative-examples) provide a suite of baseline policies to drive recommended reliability and security configurations.
+  > The mission-critical [reference implementations](README.md#illustrative-examples) provide a suite of baseline policies to drive recommended reliability and security configurations.
 
 **Azure App Service**
 
@@ -455,4 +455,4 @@ This section will therefore explore key decision factors when selecting an appro
 
 Review the considerations for the data platform.
 > [!div class="nextstepaction"]
-> [Data platform](./mission-critical-data-platform.md)
+> [Data platform](./Data-Platform.md)

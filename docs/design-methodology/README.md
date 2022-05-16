@@ -1,6 +1,6 @@
 # Mission-critical workloads
 
-This section of the [Microsoft Azure Well-Architected Framework](http://docs.microsoft.com/azure/architecture/framework) strives to address the challenges of building mission-critical workloads on Azure. The guidance is based on lessons learned from reviewing numerous customer applications and first-party solutions. This section provides actionable and authoritative guidance that applies Well-Architected best practices as the technical foundation for building and operating a highly reliable solution on Azure at-scale.
+This repository strives to address the challenges of building mission-critical workloads on Azure. The guidance is based on lessons learned from reviewing numerous customer applications and first-party solutions. This section provides actionable and authoritative guidance that applies Well-Architected best practices as the technical foundation for building and operating a highly reliable solution on Azure at-scale.
 
 ## What is a mission-critical workload?
 
@@ -72,4 +72,4 @@ The guidance provided within this series is based on a solution-orientated appro
 Start by reviewing the design methodology for mission-critical application scenarios.
 
 > [!div class="nextstepaction"]
-> [Design methodology](mission-critical-design-methodology.md)
+> [Design methodology](Design-Methodology.md)

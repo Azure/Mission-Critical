@@ -493,4 +493,4 @@ AIOps methodologies can be applied within CI/CD pipelines to supplement traditio
 Review the security considerations.
 
 > [!div class="nextstepaction"]
-> [Security](./mission-critical-Security.md)
+> [Security](./Security.md)

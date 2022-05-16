@@ -4,7 +4,8 @@
 
 > I need to design a highly reliable and mission-critical application on Azure. Where can I learn more about Azure Mission-Critical design methodology so?
 
-The Azure Mission-Critical design principles and design areas are published within this repository and you can learn more about how to use the design methodology [here](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-methodology).
+The Azure Mission-Critical design principles and design areas are published within this repository and you can learn more about how to use the design methodology [here](/docs/design-methodology/Overview.md).
+
 The Azure Mission-Critical design methodology is also available within the [Microsoft Azure Well-Architected Framework](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-methodology) for general consumption.
 
 ## Reference Implementations

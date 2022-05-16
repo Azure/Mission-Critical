@@ -78,4 +78,4 @@ Also, there is added cost associated with engineering investment in fundamental 
 Review cross-cutting concerns associated with mission-critical workloads.
 
 > [!div class="nextstepaction"]
-> [Cross-cutting concerns](mission-critical-cross-cutting-issues.md)
+> [Cross-cutting concerns](Cross-Cutting-Issues.md)

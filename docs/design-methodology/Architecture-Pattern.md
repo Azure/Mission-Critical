@@ -7,14 +7,14 @@ We recommend that you use the provided design guidance to navigate the key desig
 
 |Design area|Summary|
 |---|---|
-|[Application design](mission-critical-application-design.md)|Learn about the importance of a scale-unit architecture in the context of building a highly reliable application. Also explores the cloud application design patterns to ensure reliability aspirations are fully achieved.|
-|[Application platform](mission-critical-application-platform.md)| Decision factors and recommendations related to the selection, design, and configuration of an appropriate application hosting platform.|
-|[Data platform](mission-critical-data-platform.md)|Make decisions by using key characteristics of a data platform&mdash;volume, velocity, variety, veracity. |
-|[Networking and connectivity](mission-critical-networking-connectivity.md)|Network topology concepts at an application level, considering requisite connectivity and redundant traffic management. It highlights critical considerations and recommendations intended to inform the design of a secure and scalable global network topology for a mission-critical application.|
-|[Health modeling and observability](mission-critical-health-modeling.md)|Processes to define a robust health model, mapping quantified application health states through observability and operational constructs to achieve operational maturity.|
-|[Deployment and testing](mission-critical-deployment-testing.md)| Eradicate downtime and maintain application health for deployment operations, providing key considerations and recommendations intended to inform the design of optimal CI/CD pipelines for a mission-critical application.|
-|[Security](mission-critical-security.md)|Protect the application against threats intended to directly or indirectly compromise its reliability.|
-|[Operational procedures](mission-critical-operational-procedures.md)|Adoption of DevOps and related deployment methods is used to drive effective and consistent operational procedures.|
+|[Application design](Application-Design.md)|Learn about the importance of a scale-unit architecture in the context of building a highly reliable application. Also explores the cloud application design patterns to ensure reliability aspirations are fully achieved.|
+|[Application platform](Application-Platform.md)| Decision factors and recommendations related to the selection, design, and configuration of an appropriate application hosting platform.|
+|[Data platform](Data-Platform.md)|Make decisions by using key characteristics of a data platform&mdash;volume, velocity, variety, veracity. |
+|[Networking and connectivity](Networking-Connectivity.md)|Network topology concepts at an application level, considering requisite connectivity and redundant traffic management. It highlights critical considerations and recommendations intended to inform the design of a secure and scalable global network topology for a mission-critical application.|
+|[Health modeling and observability](Health-Modeling.md)|Processes to define a robust health model, mapping quantified application health states through observability and operational constructs to achieve operational maturity.|
+|[Deployment and testing](Deployment-Testing.md)| Eradicate downtime and maintain application health for deployment operations, providing key considerations and recommendations intended to inform the design of optimal CI/CD pipelines for a mission-critical application.|
+|[Security](Security.md)|Protect the application against threats intended to directly or indirectly compromise its reliability.|
+|[Operational procedures](Operational-Procedures.md)|Adoption of DevOps and related deployment methods is used to drive effective and consistent operational procedures.|
 
 ## Reference architecture
 
@@ -34,7 +34,7 @@ Use these reference implementations to construct a sandbox application environme
 
 This mission-critical workload series provides prescriptive architectural guidance to define a highly reliable application for mission-critical workloads that could be deployed within an Azure landing zone.
 
-The mission-critical [reference implementations](mission-critical-overview.md#illustrative-examples) can integrate seamlessly within an Azure landing zone, and is deployable within both the *Online* or *Corp. Connected* Landing Zone formats as demonstrated within the image below.
+The mission-critical [reference implementations](README.md#illustrative-examples) can integrate seamlessly within an Azure landing zone, and is deployable within both the *Online* or *Corp. Connected* Landing Zone formats as demonstrated within the image below.
 
 ![Mission-critical workload and landing zone integration](./images/mission-critical-landing-zones.gif "Mission-critical workload and landing zone integration")
 
@@ -55,5 +55,5 @@ It is crucial to understand and identify in which connectivity scenario a missio
 Review the best practices for architecting mission-critical application scenarios.
 
 > [!div class="nextstepaction"]
-> [Application design](./mission-critical-application-design.md)
+> [Application design](./Application-Design.md)
 

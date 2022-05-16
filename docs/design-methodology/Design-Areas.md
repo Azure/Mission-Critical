@@ -2,14 +2,14 @@
 
 The 8 design areas below represent the architecturally significant topics which must be discussed and designed for when defining a target Mission-Critical application architecture. In this regard, this section of the repository is intended to provide prescriptive and opinionated guidance to support readers in designing a Mission-Critical solution.
 
-- [Application Design](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-application-design)
-- [Application Platform](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-application-platform)
-- [Data Platform](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-data-platform)
-- [Health Modeling](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-health-modeling)
-- [Deployment and Testing](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-deployment-testing)
-- [Networking and Connectivity](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-networking-connectivity)
-- [Security](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-security)
-- [Operational Procedures](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-operational-procedures)
+- [Application Design](Application-Design.md)
+- [Application Platform](Application-Platform.md)
+- [Data Platform](Data-Platform.md)
+- [Health Modeling](Health-Modeling.md)
+- [Deployment and Testing](Deployment-Testing.md)
+- [Networking and Connectivity](Networking-Connectivity.md)
+- [Security](Security.md)
+- [Operational Procedures](Operational-Procedures.md)
 
 These eight critical design areas will be explored at length within ensuing pages, for which critical review considerations and design recommendations are provided along with their broader design impact across other areas. Ultimately, the design areas are interrelated and decisions made within one area can impact or influence decisions across the entire design, so readers are encouraged to use the provided design guidance to navigate the key design decisions.
 
@@ -75,28 +75,6 @@ It is crucial to understand and identify in which connectivity scenario a Missio
 
 > The Azure Mission-Critical reference implementations are fully aligned with the Azure Landing Zones architectural approach and are immediately deployable within an *Online* or *Connected* Landing Zone subscription.
 
----
 
-|Previous Page|Next Page|
-|--|--|
-|[Azure Mission-Critical Design Principles](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-principles)|[Application Design](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-application-design)
-
----
-
-|Design Methodology|
-|--|
-|[How to use the Azure Mission-Critical Design Methodology](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-methodology)
-|[Azure Mission-Critical Design Principles](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-principles)
-|[Azure Mission-Critical Design Areas](./Design-Areas.md)
-|[Application Design](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-application-design)
-|[Application Platform](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-application-platform)
-|[Data Platform](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-data-platform)
-|[Health Modeling and Observability](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-health-modeling)
-|[Deployment and Testing](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-deployment-testing)
-|[Networking and Connectivity](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-networking-connectivity)
-|[Security](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-security)
-|[Operational Procedures](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-operational-procedures)
-
----
-
-[Azure Mission-Critical | Documentation Inventory](/docs/README.md)
+> [!div class="nextstepaction"]
+> [Application Design](Application-Design.md)

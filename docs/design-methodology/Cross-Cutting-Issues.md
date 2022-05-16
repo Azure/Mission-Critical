@@ -1,6 +1,6 @@
 # Cross-cutting concerns of mission-critical workloads
 
-There are several cross-cutting concerns that traverse the [key design areas](mission-critical-overview.md#what-are-the-key-design-areas). This article contextualizes these cross-cutting concerns for subsequent consideration within each design area.
+There are several cross-cutting concerns that traverse the [key design areas](README.md#what-are-the-key-design-areas). This article contextualizes these cross-cutting concerns for subsequent consideration within each design area.
 
 ## Scale limits
 
@@ -46,4 +46,4 @@ Refer to [Azure updates](https://azure.microsoft.com/updates/) for the latest in
 Explore the design areas that provide critical considerations and recommendations for building a mission-critical workload.
 
 > [!div class="nextstepaction"]
-> [Architecture pattern](mission-critical-architecture-pattern.md)
+> [Architecture pattern](Architecture-Pattern.md)

@@ -2,7 +2,7 @@
 
 The selection of an effective application data platform is a further crucial decision area, which has far-reaching implications across other design areas. Azure ultimately offers a multitude of relational, non-relational, and analytical data platforms, which differ greatly in capability. It's therefore essential that key non-functional requirements be fully considered alongside other decision factors such as consistency, operability, cost, and complexity. For example, the ability to operate in a multi-write configuration will have a critical bearing on suitability for a globally available platform.
 
-This design area expands on [application design](mission-critical-application-design.md), providing key considerations and recommendations to inform the selection of an optimal data platform.
+This design area expands on [application design](Application-Design.md), providing key considerations and recommendations to inform the selection of an optimal data platform.
 
 ## The Four Vs of Big Data
 
@@ -781,7 +781,7 @@ Azure Synapse provides an enterprise analytical platform that brings together re
 Review the considerations for networking considerations.
 
 > [!div class="nextstepaction"]
-> [Network and connectivity](mission-critical-networking-connectivity.md)
+> [Network and connectivity](Networking-Connectivity.md)
 
 
 
