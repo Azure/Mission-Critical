@@ -37,4 +37,4 @@ The Azure Mission-Critical project strives to address this complex consumption e
 *Important Note: Azure Mission-Critical will continue to develop additional reference implementations for common industry scenarios, with several implementations currently under development.*
 
 > [!div class="nextstepaction"]
-> [Design methodology](../design-methodology/README.md)
+> [Design methodology overview](../design-methodology/README.md)
