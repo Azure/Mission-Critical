@@ -2,10 +2,6 @@
 
 - [Landing Page](/README.md)
 
-## Introduction
-
-- [What is Azure Mission-Critical?](./Introduction.md)
-
 ## Design Methodology
 
 - [Mission-Critical introduction](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-overview)
