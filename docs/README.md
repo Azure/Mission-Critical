@@ -4,7 +4,7 @@
 
 ## Design Methodology
 
-- [Mission-Critical introduction](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-overview)
+- [Mission-Critical Introduction](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-overview)
 - [How to use the Mission-Critical Design Methodology](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-methodology)
 - [Design Principles](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-principles)
 - [Design Areas](./Design-Areas.md)
