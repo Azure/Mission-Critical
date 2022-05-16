@@ -25,10 +25,10 @@ Azure Mission-Critical is an open source project that provides a **prescriptive 
 
 The reference implementations are separated within dedicated repositories containing all relevant documentation and technical artifacts, along with a *getting started guide*:
 
+[![Azure Mission-Critical Repo Structure](/docs/media/repo-structure.png "Azure Mission-Critical Repo Structure")](./CONTRIBUTE.md)
+
 - [Online Reference Implementation](https://github.com/Azure/Mission-Critical-Online)
 - [Connected Reference Implementation](https://github.com/Azure/Mission-Critical-Connected)
-
-[![Azure Mission-Critical Repo Structure](/docs/media/repo-structure.png "Azure Mission-Critical Repo Structure")](./CONTRIBUTE.md)
 
 > A list of [Frequently Asked Questions](./FAQ.md) is provided to capture common issues and challenges associated with using the Azure Mission-Critical project.
 
