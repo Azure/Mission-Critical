@@ -4,8 +4,8 @@
 
 > I need to design a highly reliable and mission-critical application on Azure. Where can I learn more about Azure Mission-Critical design methodology so?
 
-The Azure Mission-Critical design principles and design areas are published within this repository and you can learn more about how to use the design methodology [here](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-methodology).
-The Azure Mission-Critical design methodology is also available within the [Microsoft Azure Well-Architected Framework](https://docs.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-methodology) for general consumption.
+The Azure Mission-Critical design principles and design areas are published within this repository and you can learn more about how to use the design methodology [here](https://learn.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-methodology).
+The Azure Mission-Critical design methodology is also available within the [Microsoft Azure Well-Architected Framework](https://learn.microsoft.com/azure/architecture/framework/mission-critical/mission-critical-design-methodology) for general consumption.
 
 ## Reference Implementations
 
@@ -25,7 +25,7 @@ The application infrastructure is deployed using Terraform. Other approaches suc
 > How is the infrastructure getting updated?
 
 Most infrastructure components used for Azure Mission-Critical are PaaS services and are maintained by Microsoft.
-Some services, such as Azure Kubernetes Service (AKS) require dedicated maintenance activities, and for AKS this is achieved via [automatic node image upgrades](https://docs.microsoft.com/azure/aks/upgrade-cluster#set-auto-upgrade-channel) in combination with [planned maintenance windows](https://docs.microsoft.com/azure/aks/planned-maintenance) to automatically update the nodes to the most recent AKS node OS image. Larger changes, such as an upgrade of the K8s version are performed as-code by changing the K8s version within the reference implementation file `.ado/pipeline/config/configuration.yaml` and re-running the infrastructure pipeline.
+Some services, such as Azure Kubernetes Service (AKS) require dedicated maintenance activities, and for AKS this is achieved via [automatic node image upgrades](https://learn.microsoft.com/azure/aks/upgrade-cluster#set-auto-upgrade-channel) in combination with [planned maintenance windows](https://learn.microsoft.com/azure/aks/planned-maintenance) to automatically update the nodes to the most recent AKS node OS image. Larger changes, such as an upgrade of the K8s version are performed as-code by changing the K8s version within the reference implementation file `.ado/pipeline/config/configuration.yaml` and re-running the infrastructure pipeline.
 
 ### Security
 
